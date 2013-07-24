@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">CloudMenuAndroid</string>
+    <string name="pre_key_clear_image_cache">pre_key_clear_image_cache</string>
+    <string name="pre_key_custom_api_addr">pre_key_custom_api_addr</string>
+    <string name="pre_key_custom_api_suffix">pre_key_custom_api_suffix</string>
+    <string name="pre_key_work_without_network">pre_key_work_without_network</string>
+    <string name="pre_key_setting_imei">pre_key_setting_imei</string>
+
+</resources>
