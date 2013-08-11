@@ -112,7 +112,7 @@ public class MenuUtils {
 	public static String getImgUrl(Context context, String url) {
 		if (url == null)
 			return null;
-		return RPCHelper.getHostIp(context) + URLEncoder.encode(url);
+		return RPCHelper.getHostIp(context) + url;
 	}
 
 	public static String getCustomIMEI(Context context) {

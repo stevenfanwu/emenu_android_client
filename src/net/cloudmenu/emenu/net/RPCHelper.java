@@ -1,6 +1,7 @@
 package net.cloudmenu.emenu.net;
 
 import net.cloudmenu.emenu.R;
+import net.cloudmenu.emenu.utils.UnitUtils;
 
 import org.apache.http.client.HttpClient;
 import org.apache.http.impl.client.DefaultHttpClient;
@@ -28,7 +29,8 @@ import cn.com.cloudstone.menu.server.thrift.api.IWaiterService;
 public class RPCHelper {
     private static final String TAG = "RPCHelper";
     
-    public static final String DEFAULT_HOST_IP = "192.168.0.106";
+//    public static final String DEFAULT_HOST_IP = "192.168.0.106";
+    public static final String DEFAULT_HOST_IP = "http://10.0.2.2:8080/";
 
     private static final String DEFAULT_API_SUFFIX = ".thrift";
 
@@ -39,6 +41,8 @@ public class RPCHelper {
     private static final int SOCKET_TIME_OUT = 20000;
 
     private static final int CONNECTION_TIME_OUT = 20000;
+    
+    public static final long CACHE_TIME_5_MIN = 5 * UnitUtils.MINUTE;
 
     public static final long CACHE_TIME_LONG = 500 * 24 * 3600 * 1000;
 
