@@ -18,8 +18,8 @@
             android:layout_width="100dp"
             android:layout_height="50dp"
             android:layout_marginBottom="7dp"
-            app:loadingBackground="@drawable/logo_merchant"
-			app:loadFailedDrawable="@drawable/logo_merchant"
+            app:loadingBackground="@drawable/qiaojiangnan_logo"
+			app:loadFailedDrawable="@drawable/qiaojiangnan_logo"
             app:scaleType="centerInside" />
 
         <Button
