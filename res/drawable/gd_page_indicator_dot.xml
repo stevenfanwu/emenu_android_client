@@ -18,33 +18,33 @@
 -->
 
 <selector
-	xmlns:android="http://schemas.android.com/apk/res/android">
+    xmlns:android="http://schemas.android.com/apk/res/android">
 
-	<item
-		android:state_selected="true"
-		android:state_pressed="true"
-		android:drawable="@drawable/gd_page_indicator_dot_selected_pressed" />
+    <item
+        android:state_selected="true"
+        android:state_pressed="true"
+        android:drawable="@drawable/gd_page_indicator_dot_selected_pressed" />
 
-	<item
-		android:state_selected="true"
-		android:state_focused="true"
-		android:drawable="@drawable/gd_page_indicator_dot_selected_focused" />
+    <item
+        android:state_selected="true"
+        android:state_focused="true"
+        android:drawable="@drawable/gd_page_indicator_dot_selected_focused" />
 
-	<item
-		android:state_selected="true"
-		android:drawable="@drawable/gd_page_indicator_dot_selected_normal" />
+    <item
+        android:state_selected="true"
+        android:drawable="@drawable/gd_page_indicator_dot_selected_normal" />
 
-	<item
-		android:state_selected="false"
-		android:state_pressed="true"
-		android:drawable="@drawable/gd_page_indicator_dot_normal_pressed" />
+    <item
+        android:state_selected="false"
+        android:state_pressed="true"
+        android:drawable="@drawable/gd_page_indicator_dot_normal_pressed" />
 
-	<item
-		android:state_selected="false"
-		android:state_focused="true"
-		android:drawable="@drawable/gd_page_indicator_dot_normal_focused" />
+    <item
+        android:state_selected="false"
+        android:state_focused="true"
+        android:drawable="@drawable/gd_page_indicator_dot_normal_focused" />
 
-	<item
-		android:drawable="@drawable/gd_page_indicator_dot_normal_normal" />
+    <item
+        android:drawable="@drawable/gd_page_indicator_dot_normal_normal" />
 
 </selector>

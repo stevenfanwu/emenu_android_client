@@ -18,97 +18,97 @@ import cn.buding.common.asynctask.HandlerMessageTask.Callback;
 import cn.com.cloudstone.menu.server.thrift.api.Menu;
 
 public abstract class MenuBase extends SlideBase {
-	private static final String TAG = "MenuBase";
-	protected Menu mMenu;
-	private GetMenuTask mGetMenuTask;
-	private TextView tvPage;
+    private static final String TAG = "MenuBase";
+    protected Menu mMenu;
+    private GetMenuTask mGetMenuTask;
+    private TextView tvPage;
 
-	@Override
-	protected void onCreate(Bundle savedInstanceState) {
-		super.onCreate(savedInstanceState);
-		setContentView(getLayout());
-		initElements();
-		mMenu = GlobalValue.getIns().getMenu();
-		if (mMenu == null)
-			initData();
-		else
-			initContent();
-	}
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(getLayout());
+        initElements();
+        mMenu = GlobalValue.getIns().getMenu();
+        if (mMenu == null)
+            initData();
+        else
+            initContent();
+    }
 
-	@Override
-	protected void initContent() {
-		super.initContent();
-		setParentLogoUrl();
-		refreshPage();
-	}
+    @Override
+    protected void initContent() {
+        super.initContent();
+        setParentLogoUrl();
+        refreshPage();
+    }
 
-	private void setParentLogoUrl() {
-		Activity context = getParent();
-		while (context != null) {
-			if (context instanceof MainTabHost) {
-				MainTabHost host = (MainTabHost) context;
-				if (mMenu != null)
-					host.setLogoUrl(mMenu.getMenuLogo());
-				else
-					host.setLogoUrl(null);
-			}
-			context = context.getParent();
-		}
-	}
+    private void setParentLogoUrl() {
+        Activity context = getParent();
+        while (context != null) {
+            if (context instanceof MainTabHost) {
+                MainTabHost host = (MainTabHost) context;
+                if (mMenu != null)
+                    host.setLogoUrl(mMenu.getMenuLogo());
+                else
+                    host.setLogoUrl(null);
+            }
+            context = context.getParent();
+        }
+    }
 
-	@Override
-	protected void initElements() {
-		super.initElements();
-		tvPage = (TextView) findViewById(R.id.tv_page);
-		setParentLogoUrl();
-	}
+    @Override
+    protected void initElements() {
+        super.initElements();
+        tvPage = (TextView) findViewById(R.id.tv_page);
+        setParentLogoUrl();
+    }
 
-	protected void initData() {
-		initData(false);
-	}
+    protected void initData() {
+        initData(false);
+    }
 
-	protected void initData(boolean forseRefresh) {
-		if (mGetMenuTask != null && mGetMenuTask.getStatus() == Status.RUNNING)
-			return;
-		mGetMenuTask = new GetMenuTask(this);
-		mGetMenuTask.setForseRefresh(forseRefresh);
-		mGetMenuTask.setCallback(new Callback() {
-			@Override
-			public void onSuccess(HandlerMessageTask task, Object t) {
-				mMenu = mGetMenuTask.getResult();
-				GlobalValue.getIns().setMenu(mMenu);
-				initContent();
-			}
+    protected void initData(boolean forseRefresh) {
+        if (mGetMenuTask != null && mGetMenuTask.getStatus() == Status.RUNNING)
+            return;
+        mGetMenuTask = new GetMenuTask(this);
+        mGetMenuTask.setForseRefresh(forseRefresh);
+        mGetMenuTask.setCallback(new Callback() {
+            @Override
+            public void onSuccess(HandlerMessageTask task, Object t) {
+                mMenu = mGetMenuTask.getResult();
+                GlobalValue.getIns().setMenu(mMenu);
+                initContent();
+            }
 
-			@Override
-			public void onFail(HandlerMessageTask task, Object t) {
-			}
-		});
-		mGetMenuTask.execute();
-	}
+            @Override
+            public void onFail(HandlerMessageTask task, Object t) {
+            }
+        });
+        mGetMenuTask.execute();
+    }
 
-	protected List<GoodsCategory> makeGoodsCategory() {
-		return MenuUtils.getMenuGoodsCategories(mMenu);
-	}
+    protected List<GoodsCategory> makeGoodsCategory() {
+        return MenuUtils.getMenuGoodsCategories(mMenu);
+    }
 
-	@Override
-	public void onPageChanged(PagedView pagedView, int previousPage, int newPage) {
-		super.onPageChanged(pagedView, previousPage, newPage);
-		refreshPage(newPage);
-	}
+    @Override
+    public void onPageChanged(PagedView pagedView, int previousPage, int newPage) {
+        super.onPageChanged(pagedView, previousPage, newPage);
+        refreshPage(newPage);
+    }
 
-	protected void refreshPage() {
-		refreshPage(mPagedView.getCurrentPage());
-	}
+    protected void refreshPage() {
+        refreshPage(mPagedView.getCurrentPage());
+    }
 
-	protected void refreshPage(int page) {
-		int total = 0;
-		if (mAdapter != null)
-			total = mAdapter.getCount();
-		if (total == 0)
-			tvPage.setText("");
-		else
-			tvPage.setText(String.format("第%d页，共%d页", page + 1, total));
-	}
+    protected void refreshPage(int page) {
+        int total = 0;
+        if (mAdapter != null)
+            total = mAdapter.getCount();
+        if (total == 0)
+            tvPage.setText("");
+        else
+            tvPage.setText(String.format("第%d页，共%d页", page + 1, total));
+    }
 
 }

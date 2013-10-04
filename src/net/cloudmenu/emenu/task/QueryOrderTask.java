@@ -4,7 +4,6 @@ import java.util.List;
 
 import net.cloudmenu.emenu.net.RPCHelper;
 import net.cloudmenu.emenu.utils.ProfileHolder;
-import net.cloudmenu.emenu.utils.ThriftUtils;
 
 import org.apache.thrift.TException;
 import org.apache.thrift.TServiceClient;
@@ -19,36 +18,36 @@ import cn.com.cloudstone.menu.server.thrift.api.Order;
 import cn.com.cloudstone.menu.server.thrift.api.TableEmptyException;
 
 public class QueryOrderTask extends TBaseTask {
-	private String mTableId;
-	private List<Order> mOrder;
+    private String mTableId;
+    private List<Order> mOrder;
 
-	public QueryOrderTask(Context context, String tableId) {
-		super(context);
-		mTableId = tableId;
-	}
+    public QueryOrderTask(Context context, String tableId) {
+        super(context);
+        mTableId = tableId;
+    }
 
-	public List<Order> getOrder() {
-		return mOrder;
-	}
+    public List<Order> getOrder() {
+        return mOrder;
+    }
 
-	@Override
-	protected TServiceClient getClient() throws TException {
-		return RPCHelper.getOrderService(mContext);
-	}
+    @Override
+    protected TServiceClient getClient() throws TException {
+        return RPCHelper.getOrderService(mContext);
+    }
 
-	@Override
-	protected Object process(TServiceClient client) throws TException,
-			AException {
-		IOrderService.Client iclient = (Client) client;
-		String sid = ProfileHolder.getIns().getCurrentSid(mContext);
-		try {
-			mOrder = iclient.queryOrder(sid, mTableId);
-			return ECode.SUCCESS;
-		} catch (UserNotLoginException e) {
-			return e;
-		} catch (TableEmptyException e) {
-			return e;
-		}
-	}
+    @Override
+    protected Object process(TServiceClient client) throws TException,
+            AException {
+        IOrderService.Client iclient = (Client) client;
+        String sid = ProfileHolder.getIns().getCurrentSid(mContext);
+        try {
+            mOrder = iclient.queryOrder(sid, mTableId);
+            return ECode.SUCCESS;
+        } catch (UserNotLoginException e) {
+            return e;
+        } catch (TableEmptyException e) {
+            return e;
+        }
+    }
 
 }

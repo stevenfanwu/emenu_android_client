@@ -1,7 +1,6 @@
 package net.cloudmenu.emenu.task;
 
 import net.cloudmenu.emenu.net.RPCHelper;
-import net.cloudmenu.emenu.utils.ThriftUtils;
 
 import org.apache.thrift.TException;
 import org.apache.thrift.TServiceClient;
@@ -14,36 +13,36 @@ import cn.com.cloudstone.menu.server.thrift.api.IMenuService.Client;
 import cn.com.cloudstone.menu.server.thrift.api.Menu;
 
 public class GetMenuTask extends TBaseTask {
-	private Menu mMenu;
-	private boolean mForseRefresh = false;
+    private Menu mMenu;
+    private boolean mForseRefresh = false;
 
-	public GetMenuTask(Context context) {
-		super(context);
-		setShowProgessDialog(true);
-	}
+    public GetMenuTask(Context context) {
+        super(context);
+        setShowProgessDialog(true);
+    }
 
-	public void setForseRefresh(boolean b) {
-		mForseRefresh = b;
-	}
+    public void setForseRefresh(boolean b) {
+        mForseRefresh = b;
+    }
 
-	public Menu getResult() {
-		return mMenu;
-	}
+    public Menu getResult() {
+        return mMenu;
+    }
 
-	@Override
-	protected TServiceClient getClient() throws TException {
-		long cacheTime = RPCHelper.CACHE_TIME_LONG;
-		if (mForseRefresh)
-			cacheTime = RPCHelper.CACHE_TIME_REFRESH;
-		return RPCHelper.getCachedMenuService(mContext, cacheTime);
-	}
+    @Override
+    protected TServiceClient getClient() throws TException {
+        long cacheTime = RPCHelper.CACHE_TIME_LONG;
+        if (mForseRefresh)
+            cacheTime = RPCHelper.CACHE_TIME_REFRESH;
+        return RPCHelper.getCachedMenuService(mContext, cacheTime);
+    }
 
-	@Override
-	protected Object process(TServiceClient client) throws TException,
-			AException {
-		IMenuService.Client iclient = (Client) client;
-		mMenu = iclient.getCurrentMenu();
-		return ECode.SUCCESS;
-	}
+    @Override
+    protected Object process(TServiceClient client) throws TException,
+            AException {
+        IMenuService.Client iclient = (Client) client;
+        mMenu = iclient.getCurrentMenu();
+        return ECode.SUCCESS;
+    }
 
 }

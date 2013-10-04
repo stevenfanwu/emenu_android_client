@@ -34,165 +34,165 @@ import cn.com.cloudstone.menu.server.thrift.api.IProfileService;
 import cn.com.cloudstone.menu.server.thrift.api.IProfileService.Client;
 
 public class Main extends Activity implements OnClickListener,
-		OnLongClickListener {
-	private Button btnLock;
-	private Button btnTable;
-	private Button btnTableInfo;
-	private Button btnManage;
-	private Button btnInfo;
-	private TextView tvLogin;
+        OnLongClickListener {
+    private Button btnLock;
+    private Button btnTable;
+    private Button btnTableInfo;
+    private Button btnManage;
+    private Button btnInfo;
+    private TextView tvLogin;
 
-	@Override
-	public void onCreate(Bundle savedInstanceState) {
-		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_main);
-		initElements();
-	}
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+        initElements();
+    }
 
-	@Override
-	protected void onResume() {
-		super.onResume();
-		refreshContent();
-	}
+    @Override
+    protected void onResume() {
+        super.onResume();
+        refreshContent();
+    }
 
-	private void initElements() {
-		btnLock = (Button) findViewById(R.id.btn_lock);
-		btnTable = (Button) findViewById(R.id.btn_table);
-		btnTableInfo = (Button) findViewById(R.id.btn_table_info);
-		btnManage = (Button) findViewById(R.id.btn_manage);
-		btnInfo = (Button) findViewById(R.id.btn_info);
-		tvLogin = (TextView) findViewById(R.id.tv_login);
-		btnLock.setOnClickListener(this);
-		btnTable.setOnClickListener(this);
-		btnTable.setOnLongClickListener(this);
-		btnTableInfo.setOnClickListener(this);
-		btnManage.setOnClickListener(this);
-		btnLock.setOnClickListener(this);
-		btnInfo.setOnClickListener(this);
-	}
+    private void initElements() {
+        btnLock = (Button) findViewById(R.id.btn_lock);
+        btnTable = (Button) findViewById(R.id.btn_table);
+        btnTableInfo = (Button) findViewById(R.id.btn_table_info);
+        btnManage = (Button) findViewById(R.id.btn_manage);
+        btnInfo = (Button) findViewById(R.id.btn_info);
+        tvLogin = (TextView) findViewById(R.id.tv_login);
+        btnLock.setOnClickListener(this);
+        btnTable.setOnClickListener(this);
+        btnTable.setOnLongClickListener(this);
+        btnTableInfo.setOnClickListener(this);
+        btnManage.setOnClickListener(this);
+        btnLock.setOnClickListener(this);
+        btnInfo.setOnClickListener(this);
+    }
 
-	@Override
-	public void onBackPressed() {
-	}
+    @Override
+    public void onBackPressed() {
+    }
 
-	@Override
-	public boolean onLongClick(View v) {
-		if (v == btnTable) {
-			startActivity(new Intent(this, MainTabHost.class));
-			return true;
-		}
-		return false;
-	}
+    @Override
+    public boolean onLongClick(View v) {
+        if (v == btnTable) {
+            startActivity(new Intent(this, MainTabHost.class));
+            return true;
+        }
+        return false;
+    }
 
-	@Override
-	public void onClick(View v) {
-		if (v == btnLock) {
-			if (ProfileHolder.getIns().isLogined(this)) {
-				showLogoutDialog();
-			} else {
-				showLoginDialog();
-			}
-		} else if (v == btnTable) {
-			if (ProfileHolder.getIns().isLogined(this)) {
-				showTableDialog();
-			} else {
-				showLoginDialog();
-			}
-		} else if (v == btnTableInfo) {
-			showTableInfoDialog();
-		} else if (v == btnManage) {
-			showManageDialog();
-		} else if (v == btnInfo) {
-			// startActivity(new Intent(this, AboutActivity.class));
-			new ProgressDialog(this).show();
-		}
+    @Override
+    public void onClick(View v) {
+        if (v == btnLock) {
+            if (ProfileHolder.getIns().isLogined(this)) {
+                showLogoutDialog();
+            } else {
+                showLoginDialog();
+            }
+        } else if (v == btnTable) {
+            if (ProfileHolder.getIns().isLogined(this)) {
+                showTableDialog();
+            } else {
+                showLoginDialog();
+            }
+        } else if (v == btnTableInfo) {
+            showTableInfoDialog();
+        } else if (v == btnManage) {
+            showManageDialog();
+        } else if (v == btnInfo) {
+            // startActivity(new Intent(this, AboutActivity.class));
+            new ProgressDialog(this).show();
+        }
 
-	}
+    }
 
-	private void refreshContent() {
-		if (ProfileHolder.getIns().isLogined(this)) {
-			tvLogin.setText("欢迎您，"
-					+ ProfileHolder.getIns().getCurrentUser(this));
-		} else {
-			tvLogin.setText("您尚未登陆");
-		}
-	}
+    private void refreshContent() {
+        if (ProfileHolder.getIns().isLogined(this)) {
+            tvLogin.setText("欢迎您，"
+                    + ProfileHolder.getIns().getCurrentUser(this));
+        } else {
+            tvLogin.setText("您尚未登陆");
+        }
+    }
 
-	private void showLoginDialog() {
-		LoginDialog lDialog = new LoginDialog(this);
-		lDialog.setOnLoginSuccessListener(new OnLoginSuccessListener() {
-			@Override
-			public void onLoginSuccess() {
-				refreshContent();
-			}
-		});
-		lDialog.show();
-	}
+    private void showLoginDialog() {
+        LoginDialog lDialog = new LoginDialog(this);
+        lDialog.setOnLoginSuccessListener(new OnLoginSuccessListener() {
+            @Override
+            public void onLoginSuccess() {
+                refreshContent();
+            }
+        });
+        lDialog.show();
+    }
 
-	private void showLogoutDialog() {
-		AlertDialog aDialog = new AlertDialog(this);
-		aDialog.setButton1("确认", new DialogInterface.OnClickListener() {
+    private void showLogoutDialog() {
+        AlertDialog aDialog = new AlertDialog(this);
+        aDialog.setButton1("确认", new DialogInterface.OnClickListener() {
 
-			@Override
-			public void onClick(DialogInterface dialog, int which) {
-				LogoutTask task = new LogoutTask(Main.this);
-				task.setCallback(new Callback() {
-					@Override
-					public void onSuccess(HandlerMessageTask task, Object t) {
-						refreshContent();
-					}
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                LogoutTask task = new LogoutTask(Main.this);
+                task.setCallback(new Callback() {
+                    @Override
+                    public void onSuccess(HandlerMessageTask task, Object t) {
+                        refreshContent();
+                    }
 
-					@Override
-					public void onFail(HandlerMessageTask task, Object t) {
+                    @Override
+                    public void onFail(HandlerMessageTask task, Object t) {
 
-					}
-				});
-				task.execute();
-			}
-		});
-		aDialog.setTitle("提醒");
-		aDialog.setMessage("您确认要注销吗？");
-		aDialog.show();
-	}
+                    }
+                });
+                task.execute();
+            }
+        });
+        aDialog.setTitle("提醒");
+        aDialog.setMessage("您确认要注销吗？");
+        aDialog.show();
+    }
 
-	private void showTableDialog() {
-		TableDialog dialog = new TableDialog(this);
-		dialog.show();
-	}
+    private void showTableDialog() {
+        TableDialog dialog = new TableDialog(this);
+        dialog.show();
+    }
 
-	private void showTableInfoDialog() {
-		TableInfoDialog dialog = new TableInfoDialog(this);
-		dialog.show();
-	}
+    private void showTableInfoDialog() {
+        TableInfoDialog dialog = new TableInfoDialog(this);
+        dialog.show();
+    }
 
-	private void showManageDialog() {
-		ManageDialog dialog = new ManageDialog(this);
-		dialog.show();
-	}
+    private void showManageDialog() {
+        ManageDialog dialog = new ManageDialog(this);
+        dialog.show();
+    }
 
-	class LogoutTask extends TBaseTask {
+    class LogoutTask extends TBaseTask {
 
-		public LogoutTask(Context context) {
-			super(context);
-			setShowProgessDialog(true);
-		}
+        public LogoutTask(Context context) {
+            super(context);
+            setShowProgessDialog(true);
+        }
 
-		@Override
-		protected TServiceClient getClient() throws TException {
-			return RPCHelper.getProfileService(Main.this);
-		}
+        @Override
+        protected TServiceClient getClient() throws TException {
+            return RPCHelper.getProfileService(Main.this);
+        }
 
-		@Override
-		protected Object process(TServiceClient client) throws TException,
-				AException {
-			IProfileService.Client iclient = (Client) client;
-			if (!GlobalConfig.isWorkWithoutNetWork(mContext)) {
-				String sid = ProfileHolder.getIns().getCurrentSid(mContext);
-				iclient.logout(sid);
-			}
-			ProfileHolder.getIns().logout(mContext);
-			return ECode.SUCCESS;
-		}
+        @Override
+        protected Object process(TServiceClient client) throws TException,
+                AException {
+            IProfileService.Client iclient = (Client) client;
+            if (!GlobalConfig.isWorkWithoutNetWork(mContext)) {
+                String sid = ProfileHolder.getIns().getCurrentSid(mContext);
+                iclient.logout(sid);
+            }
+            ProfileHolder.getIns().logout(mContext);
+            return ECode.SUCCESS;
+        }
 
-	}
+    }
 }

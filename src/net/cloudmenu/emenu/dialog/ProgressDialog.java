@@ -6,13 +6,13 @@ import android.content.Context;
 import android.widget.ProgressBar;
 
 public class ProgressDialog extends Dialog {
-	private ProgressBar mProgress;
+    private ProgressBar mProgress;
 
-	public ProgressDialog(Context context) {
-		super(context, R.style.Theme_Dialog_Progress);
-		setCanceledOnTouchOutside(false);
-		mProgress = new ProgressBar(context);
-		setContentView(mProgress);
-	}
+    public ProgressDialog(Context context) {
+        super(context, R.style.Theme_Dialog_Progress);
+        setCanceledOnTouchOutside(false);
+        mProgress = new ProgressBar(context);
+        setContentView(mProgress);
+    }
 
 }

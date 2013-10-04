@@ -13,32 +13,32 @@ import cn.com.cloudstone.menu.server.thrift.api.IOrderService;
 import cn.com.cloudstone.menu.server.thrift.api.UserNotLoginException;
 
 public class CancelGoodsTask extends TBaseTask {
-	private int mOrderId;
-	private int mGoodsId;
+    private int mOrderId;
+    private int mGoodsId;
 
-	public CancelGoodsTask(Context context, int orderId, int goodsId) {
-		super(context);
-		setShowProgessDialog(true);
-		mOrderId = orderId;
-		mGoodsId = goodsId;
-	}
+    public CancelGoodsTask(Context context, int orderId, int goodsId) {
+        super(context);
+        setShowProgessDialog(true);
+        mOrderId = orderId;
+        mGoodsId = goodsId;
+    }
 
-	@Override
-	protected TServiceClient getClient() throws TException {
-		return RPCHelper.getOrderService(mContext);
-	}
+    @Override
+    protected TServiceClient getClient() throws TException {
+        return RPCHelper.getOrderService(mContext);
+    }
 
-	@Override
-	protected Object process(TServiceClient client) throws TException,
-			AException {
-		String sid = ProfileHolder.getIns().getCurrentSid(mContext);
-		try {
-			boolean res = ((IOrderService.Client) client).cancelGoods(sid,
-					mOrderId, mGoodsId);
-			return ECode.SUCCESS;
-		} catch (UserNotLoginException e) {
-			return e;
-		}
-	}
+    @Override
+    protected Object process(TServiceClient client) throws TException,
+            AException {
+        String sid = ProfileHolder.getIns().getCurrentSid(mContext);
+        try {
+            boolean res = ((IOrderService.Client) client).cancelGoods(sid,
+                    mOrderId, mGoodsId);
+            return ECode.SUCCESS;
+        } catch (UserNotLoginException e) {
+            return e;
+        }
+    }
 
 }

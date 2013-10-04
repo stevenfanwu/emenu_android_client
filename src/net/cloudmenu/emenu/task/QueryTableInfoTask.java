@@ -4,7 +4,6 @@ import java.util.List;
 
 import net.cloudmenu.emenu.net.RPCHelper;
 import net.cloudmenu.emenu.utils.ProfileHolder;
-import net.cloudmenu.emenu.utils.ThriftUtils;
 
 import org.apache.thrift.TException;
 import org.apache.thrift.TServiceClient;
@@ -19,44 +18,44 @@ import cn.com.cloudstone.menu.server.thrift.api.TableInfo;
 import cn.com.cloudstone.menu.server.thrift.api.UserNotLoginException;
 
 public class QueryTableInfoTask extends TBaseTask {
-	private List<TableInfo> mInfos;
-	private boolean mForseRefresh = false;
+    private List<TableInfo> mInfos;
+    private boolean mForseRefresh = false;
 
-	public QueryTableInfoTask(Context context) {
-		super(context);
-		setShowProgessDialog(true);
-		setShowCodeMsg(false);
-	}
+    public QueryTableInfoTask(Context context) {
+        super(context);
+        setShowProgessDialog(true);
+        setShowCodeMsg(false);
+    }
 
-	public List<TableInfo> getInfos() {
-		return mInfos;
-	}
+    public List<TableInfo> getInfos() {
+        return mInfos;
+    }
 
-	public void setForseRefresh(boolean b) {
-		mForseRefresh = b;
-	}
+    public void setForseRefresh(boolean b) {
+        mForseRefresh = b;
+    }
 
-	@Override
-	protected TServiceClient getClient() throws TException {
-		long cacheTime = RPCHelper.CACHE_TIME_LONG;
-		if (mForseRefresh)
-			cacheTime = RPCHelper.CACHE_TIME_REFRESH;
-		return RPCHelper.getCachedWaiterService(mContext, cacheTime);
-	}
+    @Override
+    protected TServiceClient getClient() throws TException {
+        long cacheTime = RPCHelper.CACHE_TIME_LONG;
+        if (mForseRefresh)
+            cacheTime = RPCHelper.CACHE_TIME_REFRESH;
+        return RPCHelper.getCachedWaiterService(mContext, cacheTime);
+    }
 
-	@Override
-	protected Object process(TServiceClient client) throws TException,
-			AException {
-		IWaiterService.Client iclient = (Client) client;
-		String sid = ProfileHolder.getIns().getCurrentSid(mContext);
-		try {
-			mInfos = iclient.queryTableInfos(sid);
-			return ECode.SUCCESS;
-		} catch (UserNotLoginException e) {
-			return e;
-		} catch (PermissionDenyExcpetion e) {
-			return e;
-		}
-	}
+    @Override
+    protected Object process(TServiceClient client) throws TException,
+            AException {
+        IWaiterService.Client iclient = (Client) client;
+        String sid = ProfileHolder.getIns().getCurrentSid(mContext);
+        try {
+            mInfos = iclient.queryTableInfos(sid);
+            return ECode.SUCCESS;
+        } catch (UserNotLoginException e) {
+            return e;
+        } catch (PermissionDenyExcpetion e) {
+            return e;
+        }
+    }
 
 }
