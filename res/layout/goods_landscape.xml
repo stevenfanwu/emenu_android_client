@@ -102,7 +102,6 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginRight="5dp"
                     android:layout_weight="1"
                     android:gravity="right"
                     android:text="数量"
@@ -112,7 +111,7 @@
                     android:id="@+id/tv_count"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginRight="5dp"
+                    android:paddingLeft="10dip"
                     android:minEms="2"
                     android:text="0"
                     android:textAppearance="@style/TextAppearance.Red" />

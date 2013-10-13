@@ -33,7 +33,7 @@ public class MenuGoodsView extends RelativeLayout implements OnClickListener {
     protected TextView tvName;
     protected TextView tvDesc;
     protected TextView tvPrice;
-    protected TextView tvCount;
+    protected TextView tvCount; //菜品数量
     protected Button btnAdd;
     protected Button btnSub;
 
@@ -173,13 +173,17 @@ public class MenuGoodsView extends RelativeLayout implements OnClickListener {
         }
         return context;
     }
-
+    
+    /**
+     * 输入菜品数量对话框
+     */
     private void showCountDialog() {
         Context context = getParentContenxt(getContext());
         final EditText etCount = new EditText(context);
         etCount.setInputType(EditorInfo.TYPE_CLASS_NUMBER
                 | EditorInfo.TYPE_NUMBER_FLAG_DECIMAL);
         etCount.setText("" + mOrder.number);
+        etCount.setSelectAllOnFocus(true); //默认全选
         etCount.setLines(1);
         new AlertDialog.Builder(context).setTitle("选择菜品数量")
                 .setPositiveButton("确认", new DialogInterface.OnClickListener() {

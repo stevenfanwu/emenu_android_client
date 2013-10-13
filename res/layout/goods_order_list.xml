@@ -71,6 +71,7 @@
                 android:id="@+id/tv_count"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginRight="5dp"
                 android:gravity="center"
                 android:minEms="2"
                 android:textAppearance="@style/TextAppearance.Red" />
