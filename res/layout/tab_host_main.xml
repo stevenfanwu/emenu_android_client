@@ -18,8 +18,7 @@
             android:layout_width="100dp"
             android:layout_height="50dp"
             android:layout_marginBottom="7dp"
-            app:loadingBackground="@drawable/qiaojiangnan_logo"
-            app:loadFailedDrawable="@drawable/qiaojiangnan_logo"
+            android:alpha="0"
             app:scaleType="centerInside" />
 
         <Button
