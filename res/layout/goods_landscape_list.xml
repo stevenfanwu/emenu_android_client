@@ -40,7 +40,7 @@
             android:lines="1"
             android:paddingLeft="5dp"
             android:paddingRight="5dp"
-            android:text="点餐"
+            android:text="@string/order"
             android:textAppearance="@style/TextAppearance.Red" />
 
         <Button

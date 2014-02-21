@@ -137,8 +137,8 @@ public class MainTabHost extends BaseTabHost implements OnClickListener,
         // mTabIntents[2] = new Intent(this, CommentActivity.class);
 
         mTabIndicator = new String[mTabCount];
-        mTabIndicator[0] = "点    餐";
-        mTabIndicator[1] = "已    点";
+        mTabIndicator[0] = "Menu";
+        mTabIndicator[1] = "Your Order";
         // mTabIndicator[2] = "评    论";
     }
 

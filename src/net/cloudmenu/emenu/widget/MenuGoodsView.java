@@ -96,7 +96,7 @@ public class MenuGoodsView extends RelativeLayout implements OnClickListener {
                 } else {
                     tvPrice.getBackground().setLevel(0);
                 }
-            tvPrice.setText("￥" + mGoods.getPrice());
+            tvPrice.setText("$" + mGoods.getPrice());
         }
         String url = null;
         if (mGoods.getImgsSize() > 0) {

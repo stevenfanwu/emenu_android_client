@@ -86,7 +86,7 @@
                     android:layout_height="wrap_content"
                     android:paddingLeft="10dp"
                     android:paddingRight="10dp"
-                    android:text="点餐"
+                    android:text="@string/order"
                     android:textAppearance="@style/TextAppearance.Red" />
 
                 <Button
@@ -107,7 +107,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:gravity="right"
-                    android:text="数量"
+                    android:text="Count"
                     android:textAppearance="@style/TextAppearance.Red" />
 
                 <TextView

@@ -74,7 +74,7 @@
             android:id="@android:id/tabs"
             android:layout_width="fill_parent"
             android:layout_height="45dp"
-            android:layout_alignBottom="@id/divider"
+            android:layout_above="@id/btn_left"
             android:layout_marginLeft="20dp"
             android:layout_marginRight="10dp"
             android:layout_toLeftOf="@id/btn_login"
@@ -86,8 +86,7 @@
             android:id="@android:id/tabcontent"
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
-            android:layout_above="@id/btn_left"
-            android:layout_below="@android:id/tabs"
+            android:layout_above="@android:id/tabs"
             android:layout_marginBottom="5dp"
             android:background="@color/background_light1"
             android:gravity="top|center_horizontal" >
