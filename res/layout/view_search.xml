@@ -19,7 +19,7 @@
         android:layout_height="wrap_content"
         android:layout_marginRight="5dp"
         android:layout_toLeftOf="@id/btn_close"
-        android:hint="输入要搜索的菜名" />
+        android:hint="@string/food_search_hint" />
 
     <ListView
         android:id="@android:id/list"

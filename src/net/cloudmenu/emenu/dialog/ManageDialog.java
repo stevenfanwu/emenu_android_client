@@ -26,17 +26,17 @@ public class ManageDialog extends ButtonDialog {
 
     public ManageDialog(Context context) {
         super(context);
-        setTitle("系统管理");
-        btnUpdate = addButton(R.id.bt_update, "更新菜单");
-        btnSetting = addButton(R.id.bt_setting, "系统设置");
-        addButton(R.id.bt_cancel, "取消");
+        setTitle(R.string.system_maintainence_management);
+        btnUpdate = addButton(R.id.bt_update, "Menu Update");
+        btnSetting = addButton(R.id.bt_setting, "Settings");
+        addButton(R.id.bt_cancel, "Cancel");
     }
 
     @Override
     public void onClick(View v) {
         if (v == btnUpdate) {
             UpdateMenuTask task = new UpdateMenuTask(getContext());
-            task.setCodeMsg(ECode.SUCCESS, "菜单更新完毕");
+            task.setCodeMsg(ECode.SUCCESS, R.string.system_maintainence_update_finished);
             task.setCallback(new Callback() {
                 @Override
                 public void onSuccess(HandlerMessageTask task, Object t) {
@@ -59,7 +59,7 @@ public class ManageDialog extends ButtonDialog {
 
         public UpdateMenuTask(Context context) {
             super(context);
-            setCodeMsg(ECode.SUCCESS, "菜单更新完毕");
+            setCodeMsg(ECode.SUCCESS, R.string.system_maintainence_update_finished);
             setShowProgessDialog(true);
         }
 

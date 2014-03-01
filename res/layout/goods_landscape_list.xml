@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<merge xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
     android:layout_height="wrap_content" >
 
     <LinearLayout
         android:id="@+id/content"
-        android:layout_width="wrap_content"
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:background="@color/background_light2" >
 
@@ -18,7 +18,7 @@
 
         <TextView
             android:id="@+id/tv_name"
-            android:layout_width="130dp"
+            android:layout_width="120dp"
             android:layout_height="wrap_content"
             android:lines="1"
             android:padding="2dp"
@@ -27,11 +27,11 @@
 
         <TextView
             android:id="@+id/tv_price"
-            android:layout_width="60dp"
+            android:layout_width="120dp"
             android:layout_height="wrap_content"
-            android:gravity="left"
+            android:gravity="center"
             android:lines="1"
-            android:text="￥47.0"
+            android:text="$47.0"
             android:textAppearance="@style/TextAppearance.Red" />
 
         <TextView
@@ -57,12 +57,12 @@
             android:background="@drawable/btn_sub" />
 
         <TextView
-            android:layout_width="wrap_content"
+            android:layout_width="60dp"
             android:layout_height="wrap_content"
             android:layout_marginLeft="10dp"
             android:gravity="right"
             android:lines="1"
-            android:text="数量"
+            android:text="@string/activity_order_item_quantity"
             android:textAppearance="@style/TextAppearance.Red" />
 
         <TextView
@@ -87,4 +87,4 @@
         android:background="@drawable/ic_soldout_small"
         android:visibility="gone" />
 
-</merge>
+</RelativeLayout>

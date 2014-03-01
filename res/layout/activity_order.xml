@@ -9,44 +9,31 @@
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="5dp"
-        android:layout_marginRight="55dp"
+        android:layout_marginRight="5dp"
         android:layout_marginTop="5dp"
         android:background="@color/text_dard_red"
         android:gravity="center_vertical"
         android:paddingBottom="10dp"
         android:paddingTop="10dp" >
 
-        <TextView
+<!--         <TextView
             android:layout_width="50dp"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:text="类"
+            android:text="@string/activity_order_category"
             android:textColor="@android:color/white" />
 
         <View
             android:layout_width="2dp"
             android:layout_height="20dp"
-            android:background="@android:color/white" />
+            android:background="@android:color/white" />  -->
 
         <TextView
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="7"
             android:gravity="center"
-            android:text="菜品名称"
-            android:textColor="@android:color/white" />
-
-        <View
-            android:layout_width="2dp"
-            android:layout_height="20dp"
-            android:background="@android:color/white" />
-
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="2"
-            android:gravity="center"
-            android:text="单价"
+            android:text="@string/activity_order_item"
             android:textColor="@android:color/white" />
 
         <View
@@ -59,7 +46,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="4"
             android:gravity="center"
-            android:text="数量"
+            android:text="@string/activity_order_item_price"
             android:textColor="@android:color/white" />
 
         <View
@@ -68,26 +55,39 @@
             android:background="@android:color/white" />
 
         <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="4"
+            android:gravity="center"
+            android:text="@string/activity_order_item_quantity"
+            android:textColor="@android:color/white" />
+
+        <View
+            android:layout_width="2dp"
+            android:layout_height="20dp"
+            android:background="@android:color/white" />
+
+       <!--  <TextView
             android:id="@+id/tv_status"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="2"
             android:gravity="center"
             android:text="状态"
-            android:textColor="@android:color/white" />
+            android:textColor="@android:color/white" /> 
 
         <View
             android:layout_width="2dp"
             android:layout_height="20dp"
-            android:background="@android:color/white" />
+            android:background="@android:color/white" />   -->
 
         <TextView
             android:id="@+id/tv_remark"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_weight="3"
+            android:layout_weight="4"
             android:gravity="center"
-            android:text="备注"
+            android:text="@string/activity_order_item_note"
             android:textColor="@android:color/white" />
     </LinearLayout>
 
@@ -114,13 +114,13 @@
             android:layout_marginRight="10dp"
             android:paddingLeft="40dp"
             android:paddingRight="40dp"
-            android:text="确认下单" />
+            android:text="@string/activity_order_place_order" />
 
-        <Button
+<!--         <Button
             android:id="@+id/btn_refresh"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="@drawable/btn_refresh" />
+            android:background="@drawable/btn_refresh" /> -->
     </LinearLayout>
 
     <View

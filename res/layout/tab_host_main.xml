@@ -37,14 +37,14 @@
             android:layout_below="@id/logo"
             android:background="@drawable/tab_divider" />
 
-        <Button
+<!--         <Button
             android:id="@+id/btn_contact"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
             android:background="@drawable/btn_contactus" />
-
-        <Button
+ -->
+   <!--      <Button
             android:id="@+id/btn_right"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -68,13 +68,13 @@
             android:layout_alignParentBottom="true"
             android:layout_marginRight="25dp"
             android:layout_toLeftOf="@id/btn_left"
-            android:background="@drawable/btn_service" />
+            android:background="@drawable/btn_service" /> -->
 
         <TabWidget
             android:id="@android:id/tabs"
             android:layout_width="fill_parent"
             android:layout_height="45dp"
-            android:layout_above="@id/btn_left"
+            android:layout_alignParentBottom="true"
             android:layout_marginLeft="20dp"
             android:layout_marginRight="10dp"
             android:layout_toLeftOf="@id/btn_login"

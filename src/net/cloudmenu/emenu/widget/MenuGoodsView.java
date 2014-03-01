@@ -185,8 +185,8 @@ public class MenuGoodsView extends RelativeLayout implements OnClickListener {
         etCount.setText("" + mOrder.number);
         etCount.setSelectAllOnFocus(true); //默认全选
         etCount.setLines(1);
-        new AlertDialog.Builder(context).setTitle("选择菜品数量")
-                .setPositiveButton("确认", new DialogInterface.OnClickListener() {
+        new AlertDialog.Builder(context).setTitle("Please select the number")
+                .setPositiveButton(android.R.string.ok, new DialogInterface.OnClickListener() {
 
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
@@ -200,7 +200,7 @@ public class MenuGoodsView extends RelativeLayout implements OnClickListener {
                         onGoodsCountChanged();
                     }
                 })
-                .setNegativeButton("取消", new DialogInterface.OnClickListener() {
+                .setNegativeButton(android.R.string.cancel, new DialogInterface.OnClickListener() {
 
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
