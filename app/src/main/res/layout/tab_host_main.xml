@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TabHost xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res/net.cloudmenu.emenu"
+    android:id="@android:id/tabhost"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@drawable/cover2" >
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:padding="5dp" >
+
+        <cn.buding.common.widget.AsyncImageView
+            android:id="@+id/logo"
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+            android:layout_marginBottom="7dp"
+            android:alpha="0"
+            app:scaleType="centerInside" />
+
+        <Button
+            android:id="@+id/btn_login"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@id/logo"
+            android:layout_alignParentRight="true"
+            android:background="@drawable/btn_login"
+            android:visibility="invisible" />
+
+        <ImageView
+            android:id="@+id/divider"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/logo"
+            android:background="@drawable/tab_divider" />
+
+        <Button
+            android:id="@+id/btn_contact"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:background="@drawable/btn_contactus" />
+
+        <Button
+            android:id="@+id/btn_right"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:background="@drawable/btn_right" />
+
+        <Button
+            android:id="@+id/btn_left"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginRight="20dp"
+            android:layout_toLeftOf="@id/btn_right"
+            android:background="@drawable/btn_left" />
+
+        <Button
+            android:id="@+id/btn_service"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginRight="25dp"
+            android:layout_toLeftOf="@id/btn_left"
+            android:background="@drawable/btn_service" />
+
+        <TabWidget
+            android:id="@android:id/tabs"
+            android:layout_width="fill_parent"
+            android:layout_height="45dp"
+            android:layout_alignBottom="@id/divider"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="10dp"
+            android:layout_toLeftOf="@id/btn_login"
+            android:layout_toRightOf="@id/logo"
+            android:gravity="center" >
+        </TabWidget>
+
+        <FrameLayout
+            android:id="@android:id/tabcontent"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_above="@id/btn_left"
+            android:layout_below="@android:id/tabs"
+            android:layout_marginBottom="5dp"
+            android:background="@color/background_light1"
+            android:gravity="top|center_horizontal" >
+        </FrameLayout>
+    </RelativeLayout>
+
+</TabHost>

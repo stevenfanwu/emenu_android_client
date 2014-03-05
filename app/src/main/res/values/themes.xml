@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="Theme" parent="android:Theme.Light">
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowAnimationStyle">@style/Animation.Activity</item>
+
+        <!-- Widget -->
+        <item name="android:checkboxStyle">@style/Widget.CompoundButton.CheckBox</item>
+        <item name="android:editTextStyle">@style/Widget.EditText</item>
+        <item name="android:listViewStyle">@style/Widget.ListView</item>
+        <item name="android:buttonStyle">@style/Widget.Button</item>
+        <item name="android:spinnerStyle">@style/Widget.Spinner</item>
+        <item name="android:progressBarStyle">@style/Widget.ProgressBar</item>
+        <item name="android:spinnerItemStyle">@style/Widget.SpinnerItem</item>
+        <item name="menuRadioStyle">@style/Widget.MenuRadioButton</item>
+    </style>
+
+    <style name="Theme.Dialog" parent="android:Theme.Holo.Dialog">
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowNoTitle">true</item>
+
+        <!-- Widget -->
+        <item name="android:checkboxStyle">@style/Widget.CompoundButton.CheckBox</item>
+        <item name="android:editTextStyle">@style/Widget.EditText</item>
+        <item name="android:listViewStyle">@style/Widget.ListView</item>
+        <item name="android:buttonStyle">@style/Widget.Button</item>
+        <item name="android:spinnerStyle">@style/Widget.Spinner</item>
+        <item name="android:spinnerItemStyle">@style/Widget.SpinnerItem</item>
+        <item name="android:progressBarStyle">@style/Widget.ProgressBar</item>
+    </style>
+
+    <style name="Theme.Dialog.Progress">
+        <item name="android:windowBackground">@android:color/transparent</item>
+
+        <!-- Widget -->
+        <item name="android:progressBarStyle">@style/Widget.ProgressBar</item>
+    </style>
+
+    <style name="Theme.Translucent" parent="@style/Theme">
+        <item name="android:windowBackground">@color/translucent</item>
+        <item name="android:colorBackgroundCacheHint">@null</item>
+        <item name="android:windowIsTranslucent">true</item>
+    </style>
+
+</resources>

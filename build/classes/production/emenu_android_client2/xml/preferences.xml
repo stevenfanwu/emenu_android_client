@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    android:title="设置" >
+
+    <PreferenceCategory android:title="缓存设置" >
+        <Preference
+            android:key="@string/pre_key_clear_image_cache"
+            android:summary="点击清空本地保存图片"
+            android:title="缓存空间：" />
+    </PreferenceCategory>
+    <PreferenceCategory android:title="系统设置" >
+        <EditTextPreference
+            android:dialogMessage="设置ip后，重新进入软件即可生效"
+            android:dialogTitle="服务器ip"
+            android:key="@string/pre_key_custom_api_addr"
+            android:negativeButtonText="取消"
+            android:positiveButtonText="确认"
+            android:summary="点击修改服务器ip地址"
+            android:title="服务器ip设置" />
+        <EditTextPreference
+            android:dialogMessage="例如.jsp, .asp"
+            android:dialogTitle="api后缀"
+            android:key="@string/pre_key_custom_api_suffix"
+            android:negativeButtonText="取消"
+            android:positiveButtonText="确认"
+            android:summary="点击修改服务器ip后缀"
+            android:title="服务器ip后缀" />
+
+        <CheckBoxPreference
+            android:defaultValue="false"
+            android:key="@string/pre_key_work_without_network"
+            android:summary="开启后软件将适配无网络情况。不再与互联网进行交互"
+            android:title="无网络使用" />
+    </PreferenceCategory>
+    <PreferenceCategory android:title="系统信息" >
+        <Preference
+            android:key="@string/pre_key_setting_imei"
+            android:title="IMEI" />
+    </PreferenceCategory>
+
+</PreferenceScreen>

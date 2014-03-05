@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <declare-styleable name="StarRatingBar">
+        <attr name="starDrawable" format="reference" />
+        <attr name="starInterval" format="dimension" />
+        <attr name="starCount" format="integer" />
+        <attr name="progress" format="integer" />
+    </declare-styleable>
+    <declare-styleable name="MenuGoodsView">
+        <attr name="layout" format="reference" />
+    </declare-styleable>
+
+    <attr name="gdPageIndicatorStyle" format="reference" />
+
+    <declare-styleable name="PageIndicator">
+        <attr name="dotCount" format="integer" />
+        <attr name="activeDot" format="integer" />
+        <attr name="dotDrawable" format="reference" />
+        <attr name="dotSpacing" format="dimension" />
+        <attr name="gravity">
+            <flag name="top" value="0x30" />
+            <flag name="bottom" value="0x50" />
+            <flag name="left" value="0x03" />
+            <flag name="right" value="0x05" />
+            <flag name="center_vertical" value="0x10" />
+            <flag name="center_horizontal" value="0x01" />
+            <flag name="center" value="0x11" />
+        </attr>
+        <attr name="dotType">
+            <enum name="single" value="0" />
+            <enum name="multiple" value="1" />
+        </attr>
+    </declare-styleable>
+
+    <attr name="menuRadioStyle" format="reference" />
+
+    <declare-styleable name="AsyncImageView">
+        <attr name="imageLayout" format="reference" />
+        <attr name="loadingBackground" format="reference" />
+        <attr name="loadFailedDrawable" format="reference" />
+        <attr name="imageUrl" format="string" />
+        <attr name="scaleType">
+            <enum name="matrix" value="0" />
+            <enum name="fitXY" value="1" />
+            <enum name="fitStart" value="2" />
+            <enum name="fitCenter" value="3" />
+            <enum name="fitEnd" value="4" />
+            <enum name="center" value="5" />
+            <enum name="centerCrop" value="6" />
+            <enum name="centerInside" value="7" />
+        </attr>
+        <attr name="progressStyle" format="reference" />
+    </declare-styleable>
+
+</resources>

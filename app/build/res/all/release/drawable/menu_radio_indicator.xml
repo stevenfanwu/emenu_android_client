@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:drawable="@drawable/menu_radio_indicator_normal" android:state_checked="false"/>
+    <item android:drawable="@drawable/menu_radio_indicator_selected"/>
+
+</selector><!-- From: file:/Users/nicholaszhao/Workspace/emenu_android_client2/app/src/main/res/drawable/menu_radio_indicator.xml -->

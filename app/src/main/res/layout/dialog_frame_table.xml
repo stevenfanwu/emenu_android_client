@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="10dp"
+    android:stretchColumns="1" >
+
+    <TableRow
+        android:layout_marginTop="5dp"
+        android:gravity="center_vertical" >
+
+        <TextView
+            android:text="桌名"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textColor="@android:color/white" />
+
+        <Spinner
+            android:id="@+id/sp_table"
+            android:layout_marginLeft="5dp"
+            android:drawSelectorOnTop="true" />
+    </TableRow>
+
+    <TableRow
+        android:layout_marginTop="5dp"
+        android:gravity="center_vertical" >
+
+        <TextView
+            android:text="人数"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textColor="@android:color/white" />
+
+        <EditText
+            android:id="@+id/et_number"
+            android:layout_marginLeft="5dp"
+            android:inputType="number" />
+    </TableRow>
+
+</TableLayout>

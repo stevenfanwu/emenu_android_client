@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:drawable="@drawable/ic_grid_selected" android:state_selected="true"/>
+    <item android:drawable="@drawable/ic_grid_normal"/>
+
+</selector><!-- From: file:/Users/nicholaszhao/Workspace/emenu_android_client/app/src/main/res/drawable/ic_grid.xml -->

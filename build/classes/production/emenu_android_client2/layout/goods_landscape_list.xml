@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content" >
+
+    <LinearLayout
+        android:id="@+id/content"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@color/background_light2" >
+
+        <cn.buding.common.widget.AsyncImageView
+            android:id="@+id/image"
+            style="@style/Widget.AsyncImageView.Small"
+            android:layout_width="60dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="center_vertical" />
+
+        <TextView
+            android:id="@+id/tv_name"
+            android:layout_width="130dp"
+            android:layout_height="wrap_content"
+            android:lines="1"
+            android:padding="2dp"
+            android:text="宝岛卤肉饭"
+            android:textAppearance="@style/TextAppearance.Red" />
+
+        <TextView
+            android:id="@+id/tv_price"
+            android:layout_width="60dp"
+            android:layout_height="wrap_content"
+            android:gravity="left"
+            android:lines="1"
+            android:text="￥47.0"
+            android:textAppearance="@style/TextAppearance.Red" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:lines="1"
+            android:paddingLeft="5dp"
+            android:paddingRight="5dp"
+            android:text="点餐"
+            android:textAppearance="@style/TextAppearance.Red" />
+
+        <Button
+            android:id="@+id/btn_add"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/btn_add" />
+
+        <Button
+            android:id="@+id/btn_sub"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:background="@drawable/btn_sub" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:gravity="right"
+            android:lines="1"
+            android:text="数量"
+            android:textAppearance="@style/TextAppearance.Red" />
+
+        <TextView
+            android:id="@+id/tv_count"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingLeft="10dip"
+            android:lines="1"
+            android:minEms="2"
+            android:text="0"
+            android:textAppearance="@style/TextAppearance.Red" />
+    </LinearLayout>
+
+    <View
+        android:id="@+id/soldout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@id/content"
+        android:layout_alignLeft="@id/content"
+        android:layout_alignRight="@id/content"
+        android:layout_alignTop="@id/content"
+        android:background="@drawable/ic_soldout_small"
+        android:visibility="gone" />
+
+</merge>

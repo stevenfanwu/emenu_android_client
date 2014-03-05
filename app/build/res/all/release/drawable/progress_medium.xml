@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<animated-rotate xmlns:android="http://schemas.android.com/apk/res/android"
+    android:drawable="@drawable/spinner_white_81"
+    android:pivotX="50%"
+    android:pivotY="50%" /><!-- From: file:/Users/nicholaszhao/Workspace/emenu_android_client2/app/src/main/res/drawable/progress_medium.xml -->

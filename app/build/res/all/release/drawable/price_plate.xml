@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<level-list xmlns:android="http://schemas.android.com/apk/res/android" >
+    <item
+        android:drawable="@drawable/price_plate_red"
+        android:maxLevel="0" />
+    <item
+        android:drawable="@drawable/price_plate_yellow"
+        android:maxLevel="1" />
+</level-list><!-- From: file:/Users/nicholaszhao/Workspace/emenu_android_client2/app/src/main/res/drawable/price_plate.xml -->

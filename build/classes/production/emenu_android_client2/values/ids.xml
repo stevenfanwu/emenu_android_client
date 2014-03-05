@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <item name="bt_update" type="id"/>
+    <item name="bt_cancel" type="id"/>
+    <item name="bt_statistics" type="id"/>
+    <item name="bt_merge_table" type="id"/>
+    <item name="bt_change_table" type="id"/>
+    <item name="bt_clear_table" type="id"/>
+    <item name="bt_exit_menu" type="id"/>
+    <item name="bt_waiter" type="id"/>
+    <item name="bt_pay" type="id"/>
+    <item name="bt_switch" type="id"/>
+    <item name="bt_urge" type="id"/>
+
+</resources>

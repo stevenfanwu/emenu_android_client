@@ -1,0 +1,304 @@
+ECLIPSE ANDROID PROJECT IMPORT SUMMARY
+======================================
+
+Ignored Files:
+--------------
+The following files were *not* copied into the new Gradle project; you
+should evaluate whether these are still needed in your project and if
+so manually move them:
+
+* .gitignore
+* .idea/
+* .idea/.name
+* .idea/compiler.xml
+* .idea/copyright/
+* .idea/copyright/profiles_settings.xml
+* .idea/encodings.xml
+* .idea/misc.xml
+* .idea/modules.xml
+* .idea/scopes/
+* .idea/scopes/scope_settings.xml
+* .idea/vcs.xml
+* .idea/workspace.xml
+* ant.properties
+* app/
+* app/build.gradle
+* app/libs/
+* app/libs/cloudstone.cloudmenu.web.api.jar
+* app/libs/org.apache.thrift.jar
+* app/libs/pinyin4j-2.5.0.jar
+* app/libs/slf4j-android-1.6.1-RC1.jar
+* app/src/
+* app/src/main/
+* app/src/main/AndroidManifest.xml
+* app/src/main/java/
+* app/src/main/java/greendroid/
+* app/src/main/java/greendroid/widget/
+* app/src/main/java/greendroid/widget/PageIndicator.java
+* app/src/main/java/greendroid/widget/PagedAdapter.java
+* app/src/main/java/greendroid/widget/PagedView.java
+* app/src/main/java/net/
+* app/src/main/java/net/cloudmenu/
+* app/src/main/java/net/cloudmenu/emenu/
+* app/src/main/java/net/cloudmenu/emenu/Application.java
+* app/src/main/java/net/cloudmenu/emenu/activity/
+* app/src/main/java/net/cloudmenu/emenu/activity/AboutActivity.java
+* app/src/main/java/net/cloudmenu/emenu/activity/CommentActivity.java
+* app/src/main/java/net/cloudmenu/emenu/activity/Main.java
+* app/src/main/java/net/cloudmenu/emenu/activity/MainTabHost.java
+* app/src/main/java/net/cloudmenu/emenu/activity/MenuBase.java
+* app/src/main/java/net/cloudmenu/emenu/activity/MenuGallery.java
+* app/src/main/java/net/cloudmenu/emenu/activity/MenuList.java
+* app/src/main/java/net/cloudmenu/emenu/activity/MenuTabBase.java
+* app/src/main/java/net/cloudmenu/emenu/activity/MenuTabHost.java
+* app/src/main/java/net/cloudmenu/emenu/activity/OrderActivity.java
+* app/src/main/java/net/cloudmenu/emenu/activity/PictureGallery.java
+* app/src/main/java/net/cloudmenu/emenu/activity/PreferencesActivity.java
+* app/src/main/java/net/cloudmenu/emenu/activity/SlideBase.java
+* app/src/main/java/net/cloudmenu/emenu/dialog/
+* app/src/main/java/net/cloudmenu/emenu/dialog/AlertDialog.java
+* app/src/main/java/net/cloudmenu/emenu/dialog/ButtonDialog.java
+* app/src/main/java/net/cloudmenu/emenu/dialog/CheckDialog.java
+* app/src/main/java/net/cloudmenu/emenu/dialog/LoginDialog.java
+* app/src/main/java/net/cloudmenu/emenu/dialog/ManageDialog.java
+* app/src/main/java/net/cloudmenu/emenu/dialog/ProgressDialog.java
+* app/src/main/java/net/cloudmenu/emenu/dialog/RadioDialog.java
+* app/src/main/java/net/cloudmenu/emenu/dialog/ServiceDialog.java
+* app/src/main/java/net/cloudmenu/emenu/dialog/TableDialog.java
+* app/src/main/java/net/cloudmenu/emenu/dialog/TableInfoDialog.java
+* app/src/main/java/net/cloudmenu/emenu/dialog/WaiterDialog.java
+* app/src/main/java/net/cloudmenu/emenu/net/
+* app/src/main/java/net/cloudmenu/emenu/net/RPCHelper.java
+* app/src/main/java/net/cloudmenu/emenu/task/
+* app/src/main/java/net/cloudmenu/emenu/task/CancelGoodsTask.java
+* app/src/main/java/net/cloudmenu/emenu/task/GetMenuTask.java
+* app/src/main/java/net/cloudmenu/emenu/task/LoginTask.java
+* app/src/main/java/net/cloudmenu/emenu/task/QueryOrderTask.java
+* app/src/main/java/net/cloudmenu/emenu/task/QueryTableInfoTask.java
+* app/src/main/java/net/cloudmenu/emenu/task/TBaseTask.java
+* app/src/main/java/net/cloudmenu/emenu/utils/
+* app/src/main/java/net/cloudmenu/emenu/utils/GlobalConfig.java
+* app/src/main/java/net/cloudmenu/emenu/utils/GlobalValue.java
+* app/src/main/java/net/cloudmenu/emenu/utils/MenuUtils.java
+* app/src/main/java/net/cloudmenu/emenu/utils/ProfileHolder.java
+* app/src/main/java/net/cloudmenu/emenu/utils/ThriftUtils.java
+* app/src/main/java/net/cloudmenu/emenu/utils/UnitUtils.java
+* app/src/main/java/net/cloudmenu/emenu/utils/ViewUtils.java
+* app/src/main/java/net/cloudmenu/emenu/widget/
+* app/src/main/java/net/cloudmenu/emenu/widget/FitTextView.java
+* app/src/main/java/net/cloudmenu/emenu/widget/MenuGoodsView.java
+* app/src/main/java/net/cloudmenu/emenu/widget/MenuPageView.java
+* app/src/main/java/net/cloudmenu/emenu/widget/OrderGoodsView.java
+* app/src/main/java/net/cloudmenu/emenu/widget/SearchView.java
+* app/src/main/java/net/cloudmenu/emenu/widget/StarRatingBar.java
+* app/src/main/res/
+* app/src/main/res/anim/
+* app/src/main/res/anim/accelerate_interpolator.xml
+* app/src/main/res/anim/decelerate_interpolator.xml
+* app/src/main/res/anim/fade_in.xml
+* app/src/main/res/anim/fade_out.xml
+* app/src/main/res/color/
+* app/src/main/res/color/menu_tab_text.xml
+* app/src/main/res/drawable-hdpi/
+* app/src/main/res/drawable-hdpi/ic_launcher.png
+* app/src/main/res/drawable-ldpi/
+* app/src/main/res/drawable-ldpi/ic_launcher.png
+* app/src/main/res/drawable-mdpi/
+* app/src/main/res/drawable-mdpi/btn_add_normal.png
+* app/src/main/res/drawable-mdpi/btn_add_pressed.png
+* app/src/main/res/drawable-mdpi/btn_arrow_left.png
+* app/src/main/res/drawable-mdpi/btn_arrow_right.png
+* app/src/main/res/drawable-mdpi/btn_check_background.png
+* app/src/main/res/drawable-mdpi/btn_check_off.png
+* app/src/main/res/drawable-mdpi/btn_check_on.png
+* app/src/main/res/drawable-mdpi/btn_close_normal.png
+* app/src/main/res/drawable-mdpi/btn_close_pressed.png
+* app/src/main/res/drawable-mdpi/btn_contackus_normal.png
+* app/src/main/res/drawable-mdpi/btn_contackus_pressed.png
+* app/src/main/res/drawable-mdpi/btn_cover_info_normal.png
+* app/src/main/res/drawable-mdpi/btn_cover_info_pressed.png
+* app/src/main/res/drawable-mdpi/btn_cover_lock_normal.png
+* app/src/main/res/drawable-mdpi/btn_cover_lock_pressed.png
+* app/src/main/res/drawable-mdpi/btn_cover_manage_normal.png
+* app/src/main/res/drawable-mdpi/btn_cover_manage_pressed.png
+* app/src/main/res/drawable-mdpi/btn_cover_table_normal.png
+* app/src/main/res/drawable-mdpi/btn_cover_table_pressed.png
+* app/src/main/res/drawable-mdpi/btn_cover_tableware_normal.png
+* app/src/main/res/drawable-mdpi/btn_cover_tableware_pressed.png
+* app/src/main/res/drawable-mdpi/btn_default_normal.9.png
+* app/src/main/res/drawable-mdpi/btn_default_pressed.9.png
+* app/src/main/res/drawable-mdpi/btn_delete_disable.png
+* app/src/main/res/drawable-mdpi/btn_delete_normal.png
+* app/src/main/res/drawable-mdpi/btn_delete_pressed.png
+* app/src/main/res/drawable-mdpi/btn_left_normal.png
+* app/src/main/res/drawable-mdpi/btn_left_pressed.png
+* app/src/main/res/drawable-mdpi/btn_login.png
+* app/src/main/res/drawable-mdpi/btn_refresh_disable.png
+* app/src/main/res/drawable-mdpi/btn_refresh_normal.png
+* app/src/main/res/drawable-mdpi/btn_refresh_pressed.png
+* app/src/main/res/drawable-mdpi/btn_right_normal.png
+* app/src/main/res/drawable-mdpi/btn_right_pressed.png
+* app/src/main/res/drawable-mdpi/btn_service_normal.png
+* app/src/main/res/drawable-mdpi/btn_service_pressed.png
+* app/src/main/res/drawable-mdpi/btn_spinner_normal.9.png
+* app/src/main/res/drawable-mdpi/btn_spinner_pressed.9.png
+* app/src/main/res/drawable-mdpi/btn_sub_disable.png
+* app/src/main/res/drawable-mdpi/btn_sub_normal.png
+* app/src/main/res/drawable-mdpi/btn_sub_pressed.png
+* app/src/main/res/drawable-mdpi/btn_tab_normal.9.png
+* app/src/main/res/drawable-mdpi/btn_tab_selected.9.png
+* app/src/main/res/drawable-mdpi/cover.jpg
+* app/src/main/res/drawable-mdpi/cover2.jpg
+* app/src/main/res/drawable-mdpi/divider_red.png
+* app/src/main/res/drawable-mdpi/divider_white.png
+* app/src/main/res/drawable-mdpi/dotted_line5_segment.png
+* app/src/main/res/drawable-mdpi/dotted_line_red_segment.png
+* app/src/main/res/drawable-mdpi/dotted_line_segment.png
+* app/src/main/res/drawable-mdpi/flag_sold_out.png
+* app/src/main/res/drawable-mdpi/gd_page_indicator_dot_normal_focused.png
+* app/src/main/res/drawable-mdpi/gd_page_indicator_dot_normal_normal.png
+* app/src/main/res/drawable-mdpi/gd_page_indicator_dot_normal_pressed.png
+* app/src/main/res/drawable-mdpi/gd_page_indicator_dot_selected_focused.png
+* app/src/main/res/drawable-mdpi/gd_page_indicator_dot_selected_normal.png
+* app/src/main/res/drawable-mdpi/gd_page_indicator_dot_selected_pressed.png
+* app/src/main/res/drawable-mdpi/ic_grid_normal.png
+* app/src/main/res/drawable-mdpi/ic_grid_selected.png
+* app/src/main/res/drawable-mdpi/ic_list_normal.png
+* app/src/main/res/drawable-mdpi/ic_list_selected.png
+* app/src/main/res/drawable-mdpi/ic_search_pressed.png
+* app/src/main/res/drawable-mdpi/ic_soldout.9.png
+* app/src/main/res/drawable-mdpi/ic_soldout_small.png
+* app/src/main/res/drawable-mdpi/image_missing.9.png
+* app/src/main/res/drawable-mdpi/image_missing_small.9.png
+* app/src/main/res/drawable-mdpi/logo_large.png
+* app/src/main/res/drawable-mdpi/mask_pink.9.png
+* app/src/main/res/drawable-mdpi/menu_radio_indicator_normal.9.png
+* app/src/main/res/drawable-mdpi/menu_radio_indicator_selected.9.png
+* app/src/main/res/drawable-mdpi/panel_background_red.9.png
+* app/src/main/res/drawable-mdpi/panel_red.9.png
+* app/src/main/res/drawable-mdpi/pepper_0.png
+* app/src/main/res/drawable-mdpi/pepper_1.png
+* app/src/main/res/drawable-mdpi/price_plate_red.png
+* app/src/main/res/drawable-mdpi/price_plate_yellow.png
+* app/src/main/res/drawable-mdpi/spinner_white_81.png
+* app/src/main/res/drawable-mdpi/tab_divider.9.png
+* app/src/main/res/drawable-mdpi/tab_normal.9.png
+* app/src/main/res/drawable-mdpi/tab_selected.9.png
+* app/src/main/res/drawable-mdpi/textfield_normal.9.png
+* app/src/main/res/drawable-mdpi/textfield_pressed.9.png
+* app/src/main/res/drawable-mdpi/tips_frame.9.png
+* app/src/main/res/drawable/
+* app/src/main/res/drawable/btn_add.xml
+* app/src/main/res/drawable/btn_check.xml
+* app/src/main/res/drawable/btn_close.xml
+* app/src/main/res/drawable/btn_contactus.xml
+* app/src/main/res/drawable/btn_cover_info.xml
+* app/src/main/res/drawable/btn_cover_lock.xml
+* app/src/main/res/drawable/btn_cover_manage.xml
+* app/src/main/res/drawable/btn_cover_table.xml
+* app/src/main/res/drawable/btn_cover_tableware.xml
+* app/src/main/res/drawable/btn_default.xml
+* app/src/main/res/drawable/btn_delete.xml
+* app/src/main/res/drawable/btn_left.xml
+* app/src/main/res/drawable/btn_refresh.xml
+* app/src/main/res/drawable/btn_right.xml
+* app/src/main/res/drawable/btn_service.xml
+* app/src/main/res/drawable/btn_spinner.xml
+* app/src/main/res/drawable/btn_sub.xml
+* app/src/main/res/drawable/btn_tab.xml
+* app/src/main/res/drawable/dark_red_top.xml
+* app/src/main/res/drawable/dotted_line5.xml
+* app/src/main/res/drawable/dotted_line_red.xml
+* app/src/main/res/drawable/edit_text.xml
+* app/src/main/res/drawable/gd_page_indicator_dot.xml
+* app/src/main/res/drawable/ic_grid.xml
+* app/src/main/res/drawable/ic_launcher.png
+* app/src/main/res/drawable/ic_list.xml
+* app/src/main/res/drawable/menu_radio_indicator.xml
+* app/src/main/res/drawable/pepper.xml
+* app/src/main/res/drawable/price_plate.xml
+* app/src/main/res/drawable/progress_medium.xml
+* app/src/main/res/drawable/tab_indicator.xml
+* app/src/main/res/layout/
+* app/src/main/res/layout/activity_about.xml
+* app/src/main/res/layout/activity_main.xml
+* app/src/main/res/layout/activity_menu_gallery.xml
+* app/src/main/res/layout/activity_menu_list.xml
+* app/src/main/res/layout/activity_order.xml
+* app/src/main/res/layout/activity_picture_gallery.xml
+* app/src/main/res/layout/category_indicator.xml
+* app/src/main/res/layout/dialog_alert.xml
+* app/src/main/res/layout/dialog_frame_check.xml
+* app/src/main/res/layout/dialog_frame_login.xml
+* app/src/main/res/layout/dialog_frame_manage.xml
+* app/src/main/res/layout/dialog_frame_radio.xml
+* app/src/main/res/layout/dialog_frame_table.xml
+* app/src/main/res/layout/dialog_frame_table_info.xml
+* app/src/main/res/layout/dialog_frame_waiter.xml
+* app/src/main/res/layout/goods_landscape.xml
+* app/src/main/res/layout/goods_landscape_list.xml
+* app/src/main/res/layout/goods_landscape_small.xml
+* app/src/main/res/layout/goods_order_list.xml
+* app/src/main/res/layout/goods_portait.xml
+* app/src/main/res/layout/goods_portait_small.xml
+* app/src/main/res/layout/item_picture.xml
+* app/src/main/res/layout/list_item_search.xml
+* app/src/main/res/layout/list_item_table_info.xml
+* app/src/main/res/layout/page_grid6.xml
+* app/src/main/res/layout/page_horizontal1.xml
+* app/src/main/res/layout/page_horizontal2.xml
+* app/src/main/res/layout/page_horizontal3.xml
+* app/src/main/res/layout/page_list16.xml
+* app/src/main/res/layout/page_order8.xml
+* app/src/main/res/layout/page_triangle4.xml
+* app/src/main/res/layout/tab_host_main.xml
+* app/src/main/res/layout/tab_host_menu.xml
+* app/src/main/res/layout/tab_indicator_main.xml
+* app/src/main/res/layout/tab_indicator_menu.xml
+* app/src/main/res/layout/view_search.xml
+* app/src/main/res/values/
+* app/src/main/res/values/attr.xml
+* app/src/main/res/values/colors.xml
+* app/src/main/res/values/ids.xml
+* app/src/main/res/values/strings.xml
+* app/src/main/res/values/styles.xml
+* app/src/main/res/values/themes.xml
+* app/src/main/res/xml/
+* app/src/main/res/xml/preferences.xml
+* build.gradle
+* emenu.keystore
+* gradle/
+* gradle/wrapper/
+* gradle/wrapper/gradle-wrapper.jar
+* gradle/wrapper/gradle-wrapper.properties
+* gradlew
+* gradlew.bat
+* settings.gradle
+
+Moved Files:
+------------
+Android Gradle projects use a different directory structure than ADT
+Eclipse projects. Here's how the projects were restructured:
+
+* AndroidManifest.xml => app/src/main/AndroidManifest.xml
+* libs/cloudstone.cloudmenu.web.api.jar => app/libs/cloudstone.cloudmenu.web.api.jar
+* libs/org.apache.thrift.jar => app/libs/org.apache.thrift.jar
+* libs/pinyin4j-2.5.0.jar => app/libs/pinyin4j-2.5.0.jar
+* libs/slf4j-android-1.6.1-RC1.jar => app/libs/slf4j-android-1.6.1-RC1.jar
+* res/ => app/src/main/res/
+* src/ => app/src/main/java/
+
+Next Steps:
+-----------
+You can now build the project. The Gradle project needs network
+connectivity to download dependencies.
+
+Bugs:
+-----
+If for some reason your project does not build, and you determine that
+it is due to a bug or limitation of the Eclipse to Gradle importer,
+please file a bug at http://b.android.com with category
+Component-Tools.
+
+(This import summary is for your information only, and can be deleted
+after import once you are satisfied with the results.)

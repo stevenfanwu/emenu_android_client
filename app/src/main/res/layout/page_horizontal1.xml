@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:emenu="http://schemas.android.com/apk/res/net.cloudmenu.emenu"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <net.cloudmenu.emenu.widget.MenuGoodsView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="5dp"
+        android:tag="largeImg"
+        emenu:layout="@layout/goods_landscape" />
+
+</merge>

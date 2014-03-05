@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:drawable="@drawable/btn_sub_pressed" android:state_pressed="true"/>
+    <item android:drawable="@drawable/btn_sub_pressed" android:state_focused="true"/>
+    <item android:drawable="@drawable/btn_sub_disable" android:state_enabled="false"/>
+    <item android:drawable="@drawable/btn_sub_normal"/>
+
+</selector><!-- From: file:/Users/nicholaszhao/Workspace/emenu_android_client/app/src/main/res/drawable/btn_sub.xml -->

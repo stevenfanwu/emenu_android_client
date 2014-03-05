@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<bitmap xmlns:android="http://schemas.android.com/apk/res/android"
+    android:src="@drawable/dotted_line_red_segment"
+    android:tileMode="repeat" />
+<!-- From: file:/Users/nicholaszhao/Workspace/emenu_android_client/app/src/main/res/drawable/dotted_line_red.xml -->

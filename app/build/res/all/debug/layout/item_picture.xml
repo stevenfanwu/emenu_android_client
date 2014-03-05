@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<cn.buding.common.widget.AsyncImageView xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/Widget.AsyncImageView.Large"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" />
+<!-- From: file:/Users/nicholaszhao/Workspace/emenu_android_client/app/src/main/res/layout/item_picture.xml -->
