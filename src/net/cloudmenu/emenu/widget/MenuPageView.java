@@ -95,7 +95,7 @@ public class MenuPageView extends LinearLayout implements OnClickListener {
             case Grid6:
                 return R.layout.page_grid6;
             case Triangle4:
-                return R.layout.page_triangle4;
+                return R.layout.page_grid6_vertical;
             case List16:
                 return R.layout.page_list16;
             case Order8:

@@ -20,15 +20,14 @@ import cn.buding.common.asynctask.HandlerMessageTask;
 import cn.buding.common.asynctask.HandlerMessageTask.Callback;
 import cn.buding.common.widget.AsyncImageView;
 
-public class MainTabHost extends BaseTabHost implements OnClickListener,
-        OnLongClickListener {
+public class MainTabHost extends BaseTabHost implements OnLongClickListener {
     public static final String EXTRA_MENU_DEFAULT_INDEX = "extra_menu_deafult_index";
     public static final String ACTION_BUTTON = "net.cloudmenu.emenu.action.button";
     public static final String EXTRA_BUTTON_ID = "extra_button_id";
-    private Button btnLeft;
-    private Button btnRight;
-    private Button btnService;
-    private Button btnContact;
+//    private Button btnLeft;
+//    private Button btnRight;
+//    private Button btnService;
+//    private Button btnContact;
     private AsyncImageView mLogo;
 
     private int mMenuDefaultIndex;
@@ -47,14 +46,14 @@ public class MainTabHost extends BaseTabHost implements OnClickListener,
     @Override
     protected void initElements() {
         super.initElements();
-        btnLeft = (Button) findViewById(R.id.btn_left);
-        btnRight = (Button) findViewById(R.id.btn_right);
-        btnService = (Button) findViewById(R.id.btn_service);
-        btnContact = (Button) findViewById(R.id.btn_contact);
-        btnLeft.setOnClickListener(this);
-        btnRight.setOnClickListener(this);
-        btnService.setOnClickListener(this);
-        btnContact.setOnClickListener(this);
+//        btnLeft = (Button) findViewById(R.id.btn_left);
+//        btnRight = (Button) findViewById(R.id.btn_right);
+//        btnService = (Button) findViewById(R.id.btn_service);
+//        btnContact = (Button) findViewById(R.id.btn_contact);
+//        btnLeft.setOnClickListener(this);
+//        btnRight.setOnClickListener(this);
+//        btnService.setOnClickListener(this);
+//        btnContact.setOnClickListener(this);
         mLogo = (AsyncImageView) findViewById(R.id.logo);
         mLogo.setOnLongClickListener(this);
     }
@@ -74,16 +73,16 @@ public class MainTabHost extends BaseTabHost implements OnClickListener,
             return;
         }
         final EditText editPwd = new EditText(this);
-        AlertDialog dialog = new AlertDialog.Builder(this).setTitle("请输入您的密码")
+        AlertDialog dialog = new AlertDialog.Builder(this).setTitle(getString(R.string.password_required))
                 .setView(editPwd)
-                .setPositiveButton("确认", new DialogInterface.OnClickListener() {
+                .setPositiveButton(android.R.string.ok, new DialogInterface.OnClickListener() {
 
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                         String pwd = editPwd.getText().toString();
                         confirmWaiterPwd(pwd);
                     }
-                }).setNegativeButton("取消", null).show();
+                }).setNegativeButton(android.R.string.cancel, null).show();
 
     }
 
@@ -105,22 +104,22 @@ public class MainTabHost extends BaseTabHost implements OnClickListener,
         task.execute();
     }
 
-    @Override
-    public void onClick(View v) {
-        if (v == btnLeft) {
-            Intent intent = new Intent(ACTION_BUTTON);
-            intent.putExtra(EXTRA_BUTTON_ID, btnLeft.getId());
-            sendBroadcast(intent);
-        } else if (v == btnRight) {
-            Intent intent = new Intent(ACTION_BUTTON);
-            intent.putExtra(EXTRA_BUTTON_ID, btnRight.getId());
-            sendBroadcast(intent);
-        } else if (v == btnService) {
-            new ServiceDialog(this).show();
-        } else if (v == btnContact) {
-
-        }
-    }
+//    @Override
+//    public void onClick(View v) {
+//        if (v == btnLeft) {
+//            Intent intent = new Intent(ACTION_BUTTON);
+//            intent.putExtra(EXTRA_BUTTON_ID, btnLeft.getId());
+//            sendBroadcast(intent);
+//        } else if (v == btnRight) {
+//            Intent intent = new Intent(ACTION_BUTTON);
+//            intent.putExtra(EXTRA_BUTTON_ID, btnRight.getId());
+//            sendBroadcast(intent);
+//        } else if (v == btnService) {
+//            new ServiceDialog(this).show();
+//        } else if (v == btnContact) {
+//
+//        }
+//    }
 
     @Override
     protected int getLayout() {
@@ -137,8 +136,8 @@ public class MainTabHost extends BaseTabHost implements OnClickListener,
         // mTabIntents[2] = new Intent(this, CommentActivity.class);
 
         mTabIndicator = new String[mTabCount];
-        mTabIndicator[0] = "点    餐";
-        mTabIndicator[1] = "已    点";
+        mTabIndicator[0] = "Menu";
+        mTabIndicator[1] = "Your Order";
         // mTabIndicator[2] = "评    论";
     }
 

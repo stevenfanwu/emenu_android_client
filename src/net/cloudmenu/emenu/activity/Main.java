@@ -111,10 +111,10 @@ public class Main extends Activity implements OnClickListener,
 
     private void refreshContent() {
         if (ProfileHolder.getIns().isLogined(this)) {
-            tvLogin.setText("欢迎您，"
+            tvLogin.setText(getString(R.string.welcome) + ','
                     + ProfileHolder.getIns().getCurrentUser(this));
         } else {
-            tvLogin.setText("您尚未登陆");
+            tvLogin.setText(getString(R.string.not_login));
         }
     }
 
@@ -131,7 +131,7 @@ public class Main extends Activity implements OnClickListener,
 
     private void showLogoutDialog() {
         AlertDialog aDialog = new AlertDialog(this);
-        aDialog.setButton1("确认", new DialogInterface.OnClickListener() {
+        aDialog.setButton1(getString(android.R.string.ok), new DialogInterface.OnClickListener() {
 
             @Override
             public void onClick(DialogInterface dialog, int which) {
@@ -150,8 +150,8 @@ public class Main extends Activity implements OnClickListener,
                 task.execute();
             }
         });
-        aDialog.setTitle("提醒");
-        aDialog.setMessage("您确认要注销吗？");
+        aDialog.setTitle("Warning");
+        aDialog.setMessage(getString(R.string.confirm_logout));
         aDialog.show();
     }
 

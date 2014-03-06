@@ -18,5 +18,6 @@
     <color name="text_light_gray">#ff999999</color>
     <color name="background_light2">#fff1d6b3</color>
     <color name="background_light1">#fffff6e6</color>
+    <color name="test_text_color">#820000</color>
 
 </resources>

@@ -4,15 +4,6 @@
     android:layout_width="fill_parent"
     android:layout_height="fill_parent" >
 
-    <RadioGroup
-        android:id="@+id/rg_submenu"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="5dp"
-        android:layout_marginRight="5dp"
-        android:orientation="horizontal" >
-    </RadioGroup>
-
     <greendroid.widget.PageIndicator
         android:id="@+id/page_indicator"
         android:layout_width="wrap_content"
@@ -23,12 +14,36 @@
         android:paddingBottom="10dp"
         emenu:dotDrawable="@drawable/gd_page_indicator_dot" />
 
+    <RadioGroup
+        android:id="@+id/rg_submenu"
+        android:layout_width="120dp"
+        android:layout_height="fill_parent"
+        android:layout_above="@id/page_indicator"
+        android:layout_alignParentTop="true"
+        android:gravity="center"
+        android:background="#EFEFF4"
+        android:orientation="vertical" >
+    </RadioGroup>
+
     <greendroid.widget.PagedView
         android:id="@+id/paged_view"
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
         android:layout_above="@id/page_indicator"
-        android:layout_marginTop="50dp" />
+        android:layout_marginTop="50dp"
+        android:layout_toRightOf="@+id/rg_submenu" />
+
+<!-- 	<GridView
+        android:id="@+id/paged_view"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:numColumns="2"
+        android:verticalSpacing="30dp"
+    	android:horizontalSpacing="24dp"
+    	android:stretchMode="columnWidth"
+        android:layout_above="@id/page_indicator"
+        android:layout_marginTop="50dp"
+        android:layout_toRightOf="@+id/rg_submenu" /> -->
 
     <TextView
         android:id="@+id/tv_page"

@@ -209,32 +209,32 @@ public class SearchView extends RelativeLayout implements TextWatcher,
             TextView tvName = (TextView) convertView.findViewById(R.id.tv_name);
             TextView tvPrice = (TextView) convertView
                     .findViewById(R.id.tv_price);
-            TextView tvCategory = (TextView) convertView
-                    .findViewById(R.id.tv_category);
-            View header = convertView.findViewById(R.id.header);
-            tvPrice.setText("￥" + good.getPrice());
+//            TextView tvCategory = (TextView) convertView
+//                    .findViewById(R.id.tv_category);
+//            View header = convertView.findViewById(R.id.header);
+            tvPrice.setText("$" + good.getPrice());
             tvName.setText(good.getName());
-            tvCategory.setText(good.getCategory());
-            if (isCategoryBegeiner(position)) {
-                tvCategory.setVisibility(View.VISIBLE);
-                header.setVisibility(View.VISIBLE);
-            } else {
-                tvCategory.setVisibility(View.GONE);
-                header.setVisibility(View.GONE);
-            }
+//            tvCategory.setText(good.getCategory());
+//            if (isCategoryBegeiner(position)) {
+//                tvCategory.setVisibility(View.VISIBLE);
+//                header.setVisibility(View.VISIBLE);
+//            } else {
+//                tvCategory.setVisibility(View.GONE);
+//                header.setVisibility(View.GONE);
+//            }
             return convertView;
         }
 
-        private boolean isCategoryBegeiner(int position) {
-            if (position == 0)
-                return true;
-            if (position < mList.size() && position > 0) {
-                String c1 = mList.get(position).getCategory();
-                String c2 = mList.get(position - 1).getCategory();
-                return !c1.equals(c2);
-            }
-            return false;
-        }
+//        private boolean isCategoryBegeiner(int position) {
+//            if (position == 0)
+//                return true;
+//            if (position < mList.size() && position > 0) {
+//                String c1 = mList.get(position).getCategory();
+//                String c2 = mList.get(position - 1).getCategory();
+//                return !c1.equals(c2);
+//            }
+//            return false;
+//        }
     }
 
 }

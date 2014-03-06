@@ -43,9 +43,9 @@ public class LoginDialog extends AlertDialog implements OnClickListener,
 
     public LoginDialog(Context context) {
         super(context);
-        setTitle("欢迎登陆");
-        setButton1("登陆", this);
-        setButton2("取消", this);
+        setTitle(context.getString(R.string.login_welcome));
+        setButton1(context.getString(android.R.string.ok), this);
+        setButton2(context.getString(android.R.string.cancel), this);
         setView(R.layout.dialog_frame_login);
         initElements();
     }
