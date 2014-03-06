@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<selector xmlns:android="http://schemas.android.com/apk/res/android">
-
-    <item android:drawable="@drawable/btn_check_on" android:state_checked="true"/>
-    <item android:drawable="@drawable/btn_check_off"/>
-
-</selector><!-- From: file:/Users/nicholaszhao/Workspace/emenu_android_client/app/src/main/res/drawable/btn_check.xml -->

@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<cn.buding.common.widget.ZoomImageView xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:scaleType="fitCenter" />
-<!-- From: file:/Users/nicholaszhao/Workspace/emenu_android_client/app/src/main/res/layout/simple_zoom_image_view.xml -->
