@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="cloudstone.cloudmenu.web.api">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/app/libs/cloudstone.cloudmenu.web.api.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
