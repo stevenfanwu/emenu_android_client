@@ -39,8 +39,8 @@
 
     <style name="Widget.MenuRadioButton" parent="android:Widget.CompoundButton.RadioButton">
         <item name="android:button">@null</item>
-        <item name="android:background">@drawable/menu_radio_indicator</item>
-        <item name="android:textColor">@color/text_dard_red</item>
+<!--         <item name="android:background">@drawable/menu_radio_indicator</item>  --> 
+       <item name="android:textColor">@drawable/menu_radio_indicator</item>
     </style>
 
     <style name="Widget.EditText" parent="android:Widget.EditText">

@@ -25,8 +25,8 @@ public class MenuTabHost extends BaseTabHost {
         mTabIcons[1] = R.drawable.ic_list;
 
         mTabIndicator = new String[mTabCount];
-        mTabIndicator[0] = "图例";
-        mTabIndicator[1] = "列表";
+        mTabIndicator[0] = "Grid";
+        mTabIndicator[1] = "List";
     }
 
     @Override

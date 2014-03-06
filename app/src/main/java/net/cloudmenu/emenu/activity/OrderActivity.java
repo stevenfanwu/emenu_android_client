@@ -56,10 +56,10 @@ public class OrderActivity extends MenuBase implements
     private MenuPageMap mPages = new MenuPageMap();
 
     private View tvRemark;
-    private View tvStatus;
+//    private View tvStatus;
 
     private Button btnConfirm;
-    private Button btnRefresh;
+//    private Button btnRefresh;
     private TextView tvPrice;
 
     @Override
@@ -81,7 +81,7 @@ public class OrderActivity extends MenuBase implements
     }
 
     private void refreshData() {
-        btnRefresh.setEnabled(GlobalValue.getIns().getOrder() != null);
+//        btnRefresh.setEnabled(GlobalValue.getIns().getOrder() != null);
         initCurrentOrderData();
         makePages();
         refreshPage();
@@ -91,7 +91,7 @@ public class OrderActivity extends MenuBase implements
     }
 
     private CheckDialog mCheckDialog;
-    private RadioDialog mRadioDialog;
+//    private RadioDialog mRadioDialog;
     private AlertDialog mConfirmDialog;
 
     @Override
@@ -100,7 +100,7 @@ public class OrderActivity extends MenuBase implements
         if (v == tvRemark) {
             if (mCheckDialog == null) {
                 mCheckDialog = new CheckDialog(this);
-                mCheckDialog.setButton1("确认",
+                mCheckDialog.setButton1(getString(android.R.string.ok),
                         new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialog,
@@ -117,53 +117,53 @@ public class OrderActivity extends MenuBase implements
                         });
             }
             mCheckDialog.show();
-        } else if (v == tvStatus) {
-            if (mRadioDialog == null) {
-                mRadioDialog = new RadioDialog(this);
-                mRadioDialog.setButton1("确认",
-                        new DialogInterface.OnClickListener() {
-                            @Override
-                            public void onClick(DialogInterface dialog,
-                                    int which) {
-                                String text = mRadioDialog.getCheckedText();
-                                List<GoodsOrder> items = mItems
-                                        .get(GlobalValue.TYPE_CURRENT);
-                                GoodState state = MenuUtils.getState(text);
-                                for (GoodsOrder item : items) {
-                                    item.setGoodstate(state);
-                                }
-                                mAdapter.notifyDataSetChanged();
-                            }
-                        });
-            }
-            mRadioDialog.show();
+//        } else if (v == tvStatus) {
+//            if (mRadioDialog == null) {
+//                mRadioDialog = new RadioDialog(this);
+//                mRadioDialog.setButton1(getString(android.R.string.ok),
+//                        new DialogInterface.OnClickListener() {
+//                            @Override
+//                            public void onClick(DialogInterface dialog,
+//                                    int which) {
+//                                String text = mRadioDialog.getCheckedText();
+//                                List<GoodsOrder> items = mItems
+//                                        .get(GlobalValue.TYPE_CURRENT);
+//                                GoodState state = MenuUtils.getState(text);
+//                                for (GoodsOrder item : items) {
+//                                    item.setGoodstate(state);
+//                                }
+//                                mAdapter.notifyDataSetChanged();
+//                            }
+//                        });
+//            }
+//            mRadioDialog.show();
         } else if (v == btnConfirm) {
             List<GoodsOrder> items = mItems.get(GlobalValue.TYPE_CURRENT);
             if (items.size() == 0) {
-                MyToast.makeText(this, "您尚未点餐").show();
+                MyToast.makeText(this, getString(R.string.activity_order_no_order)).show();
                 return;
             }
             mConfirmDialog = createConfirmDialog();
             mConfirmDialog.show();
-        } else if (v == btnRefresh) {
-            List<Order> order = GlobalValue.getIns().getOrder();
-            if (order == null || order.size() == 0)
-                return;
-            final QueryOrderTask orderTask = new QueryOrderTask(this, order
-                    .get(0).getTableId());
-            orderTask.setCallback(new Callback() {
-                @Override
-                public void onSuccess(HandlerMessageTask task, Object t) {
-                    GlobalValue.getIns().setOrder(orderTask.getOrder());
-                    initData();
-                }
-
-                @Override
-                public void onFail(HandlerMessageTask task, Object t) {
-
-                }
-            });
-            orderTask.execute();
+//        } else if (v == btnRefresh) {
+//            List<Order> order = GlobalValue.getIns().getOrder();
+//            if (order == null || order.size() == 0)
+//                return;
+//            final QueryOrderTask orderTask = new QueryOrderTask(this, order
+//                    .get(0).getTableId());
+//            orderTask.setCallback(new Callback() {
+//                @Override
+//                public void onSuccess(HandlerMessageTask task, Object t) {
+//                    GlobalValue.getIns().setOrder(orderTask.getOrder());
+//                    initData();
+//                }
+//
+//                @Override
+//                public void onFail(HandlerMessageTask task, Object t) {
+//
+//                }
+//            });
+//            orderTask.execute();
         }
     }
 
@@ -172,7 +172,7 @@ public class OrderActivity extends MenuBase implements
         if (mConfirmDialog == null) {
             mConfirmDialog = new AlertDialog(this);
             if (!isWorkWithoutNetWork) {
-                mConfirmDialog.setButton1("确认",
+                mConfirmDialog.setButton1(getString(android.R.string.ok),
                         new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialog,
@@ -180,19 +180,19 @@ public class OrderActivity extends MenuBase implements
                                 submitOrder();
                             }
                         });
-                mConfirmDialog.setButton2("取消", null);
-                mConfirmDialog.setTitle("提交订单");
+                mConfirmDialog.setButton2(getString(android.R.string.cancel), null);
+                mConfirmDialog.setTitle(getString(R.string.activity_order_submit_title));
             } else {
-                mConfirmDialog.setButton1("确认", null);
-                mConfirmDialog.setTitle("完成点单");
+                mConfirmDialog.setButton1(getString(android.R.string.ok), null);
+                mConfirmDialog.setTitle(getString(R.string.activity_order_complete));
             }
         }
         if (!isWorkWithoutNetWork) {
             double price = getTotalPrice();
-            String msg = String.format("您此次点餐%.1f元，是否提交订单？", price);
+            String msg = String.format("Your total order is $%.1f, do you want to submit your order？", price);
             mConfirmDialog.setMessage(msg);
         } else {
-            mConfirmDialog.setMessage("请将菜单交给服务员完成点菜");
+            mConfirmDialog.setMessage(getString(R.string.activity_order_incomplete_need_assistance));
         }
         return mConfirmDialog;
     }
@@ -216,7 +216,7 @@ public class OrderActivity extends MenuBase implements
     }
 
     private void refreshTotalPrice() {
-        tvPrice.setText("总价" + getTotalPrice() + "元");
+        tvPrice.setText(getString(R.string.activity_order_total_price) + getTotalPrice());
     }
 
     private double getTotalPrice() {
@@ -233,13 +233,13 @@ public class OrderActivity extends MenuBase implements
     protected void initElements() {
         super.initElements();
         tvRemark = findViewById(R.id.tv_remark);
-        tvStatus = findViewById(R.id.tv_status);
+//        tvStatus = findViewById(R.id.tv_status);
         btnConfirm = (Button) findViewById(R.id.btn_confirm);
-        btnRefresh = (Button) findViewById(R.id.btn_refresh);
+//        btnRefresh = (Button) findViewById(R.id.btn_refresh);
         tvPrice = (TextView) findViewById(R.id.tv_price);
-        btnRefresh.setOnClickListener(this);
+//        btnRefresh.setOnClickListener(this);
         tvRemark.setOnClickListener(this);
-        tvStatus.setOnClickListener(this);
+//        tvStatus.setOnClickListener(this);
         btnConfirm.setOnClickListener(this);
     }
 
@@ -361,7 +361,7 @@ public class OrderActivity extends MenuBase implements
             super(context);
             mOrders = orders;
             setShowProgessDialog(true);
-            setCodeMsg(ECode.SUCCESS, "下单成功");
+            setCodeMsg(ECode.SUCCESS, getString(R.string.activity_order_complete));
             setCodeMsg(ECODE_INVALIDE_GOODS_SECOND_TIME, "订单中有商品无法售卖，请咨询相关人士。");
         }
 
@@ -398,8 +398,8 @@ public class OrderActivity extends MenuBase implements
         protected void processResult(Object result) {
             if (result instanceof UnderMinChargeException) {
                 UnderMinChargeException e = (UnderMinChargeException) result;
-                showResultMessage("本桌最低消费额为" + e.getMinCharge() + "元，"
-                        + "请您继续点餐");
+                showResultMessage("The minimal order is $" + e.getMinCharge()
+                        + "Please continue your order.");
             } else if (result instanceof HasInvalidGoodsException) {
                 showResultMessage("菜单中有商品已售罄，需要更新菜单，请确认后重新下单");
                 initData(true);

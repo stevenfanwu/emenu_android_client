@@ -109,7 +109,7 @@ public abstract class MenuBase extends SlideBase {
         if (total == 0)
             tvPage.setText("");
         else
-            tvPage.setText(String.format("第%d页，共%d页", page + 1, total));
+            tvPage.setText(String.format("Page %d of %d", page + 1, total));
     }
 
 }

@@ -31,9 +31,9 @@ public class OrderGoodsView extends MenuGoodsView implements
         OnLongClickListener {
 
     protected TextView tvNotes;
-    protected TextView tvStatus;
-    protected Button btnDelete;
-    protected TextView tvCategory;
+//    protected TextView tvStatus;
+//    protected Button btnDelete;
+//    protected TextView tvCategory;
 
     public OrderGoodsView(Context context, AttributeSet attrs) {
         super(context, attrs);
@@ -42,25 +42,25 @@ public class OrderGoodsView extends MenuGoodsView implements
     @Override
     protected void initContent() {
         super.initContent();
-        tvCategory.setText(parseCategory(mGoods.getCategory()));
+//        tvCategory.setText(parseCategory(mGoods.getCategory()));
         GoodState state = mOrder.getGoodstate();
         String stateStr = MenuUtils.getStateStr(state);
         // String stateStr = mItem.getOrder().getStatus();
-        tvStatus.setText(stateStr);
+//        tvStatus.setText(stateStr);
         List<String> remarks = mOrder.getRemarks();
         String remark = parseRemarks(remarks);
         if (remark == null || remark.length() == 0)
-            remark = "暂无备注";
+            remark = "";
         tvNotes.setText(remark);
 
         if (GlobalValue.isTypeOrdered(mMenuType)) {
-            btnDelete.setVisibility(View.INVISIBLE);
+//            btnDelete.setVisibility(View.INVISIBLE);
             tvNotes.setEnabled(false);
-            tvStatus.setEnabled(false);
+//            tvStatus.setEnabled(false);
         } else {
-            btnDelete.setVisibility(View.VISIBLE);
+//            btnDelete.setVisibility(View.VISIBLE);
             tvNotes.setEnabled(true);
-            tvStatus.setEnabled(true);
+//            tvStatus.setEnabled(true);
         }
     }
 
@@ -89,12 +89,12 @@ public class OrderGoodsView extends MenuGoodsView implements
     protected void initElements() {
         super.initElements();
         tvNotes = (TextView) findViewById(R.id.tv_notes);
-        tvStatus = (TextView) findViewById(R.id.tv_status);
-        btnDelete = (Button) findViewById(R.id.btn_delete);
-        tvCategory = (TextView) findViewById(R.id.tv_category);
-        btnDelete.setOnClickListener(this);
+//        tvStatus = (TextView) findViewById(R.id.tv_status);
+//        btnDelete = (Button) findViewById(R.id.btn_delete);
+//        tvCategory = (TextView) findViewById(R.id.tv_category);
+//        btnDelete.setOnClickListener(this);
         tvNotes.setOnClickListener(this);
-        tvStatus.setOnClickListener(this);
+//        tvStatus.setOnClickListener(this);
         setOnLongClickListener(this);
     }
 
@@ -118,31 +118,30 @@ public class OrderGoodsView extends MenuGoodsView implements
             // only ordered goods could be canceled.
             return;
         }
-        String msg = String.format("您确认将%d号中的[%s]退掉吗?", mOrder.getOrderid(),
-                mGoods.getName());
-        new AlertDialog.Builder(getContext()).setTitle("确认退菜").setMessage(msg)
-                .setPositiveButton("确认", new DialogInterface.OnClickListener() {
+        String msg = String.format("Do you want to cancel [%s] ?", mGoods.getName());
+        new AlertDialog.Builder(getContext()).setTitle(android.R.string.dialog_alert_title).setMessage(msg)
+                .setPositiveButton(android.R.string.ok, new DialogInterface.OnClickListener() {
 
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                         showCancelGoodsPwdDialog();
                     }
-                }).setNegativeButton("取消", null).show();
+                }).setNegativeButton(android.R.string.cancel, null).show();
 
     }
 
     private void showCancelGoodsPwdDialog() {
         final EditText editPwd = new EditText(getContext());
-        new AlertDialog.Builder(getContext()).setTitle("请输入您的密码")
+        new AlertDialog.Builder(getContext()).setTitle(R.string.password_required)
                 .setView(editPwd)
-                .setPositiveButton("确认", new DialogInterface.OnClickListener() {
+                .setPositiveButton(android.R.string.ok, new DialogInterface.OnClickListener() {
 
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                         String pwd = editPwd.getText().toString();
                         confirmWaiterPwd(pwd);
                     }
-                }).setNegativeButton("取消", null).show();
+                }).setNegativeButton(android.R.string.cancel, null).show();
 
     }
 
@@ -190,12 +189,10 @@ public class OrderGoodsView extends MenuGoodsView implements
     @Override
     public void onClick(View v) {
         super.onClick(v);
-        if (v == btnDelete) {
-            createDeleteDialog().show();
-        } else if (v == tvNotes) {
+        if (v == tvNotes) {
             if (mCheckDialog == null) {
                 mCheckDialog = new CheckDialog(getContext());
-                mCheckDialog.setButton1("确定",
+                mCheckDialog.setButton1("Ok",
                         new DialogInterface.OnClickListener() {
 
                             @Override
@@ -210,26 +207,26 @@ public class OrderGoodsView extends MenuGoodsView implements
             }
             mCheckDialog.setChecked(mOrder.getRemarks());
             mCheckDialog.show();
-        } else if (v == tvStatus) {
-            if (mRadioDialog == null) {
-                mRadioDialog = new RadioDialog(getContext());
-                mRadioDialog.setButton1("确定",
-                        new DialogInterface.OnClickListener() {
-
-                            @Override
-                            public void onClick(DialogInterface dialog,
-                                    int which) {
-                                String text = mRadioDialog.getCheckedText();
-                                mOrder.setGoodstate(MenuUtils.getState(text));
-                                initContent();
-                            }
-                        });
-            }
-            GoodState state = mOrder.getGoodstate();
-            String text = MenuUtils.getStateStr(state);
-            // String text = mItem.getOrder().getStatus();
-            mRadioDialog.setChecked(text);
-            mRadioDialog.show();
+//        } else if (v == tvStatus) {
+//            if (mRadioDialog == null) {
+//                mRadioDialog = new RadioDialog(getContext());
+//                mRadioDialog.setButton1("Ok",
+//                        new DialogInterface.OnClickListener() {
+//
+//                            @Override
+//                            public void onClick(DialogInterface dialog,
+//                                    int which) {
+//                                String text = mRadioDialog.getCheckedText();
+//                                mOrder.setGoodstate(MenuUtils.getState(text));
+//                                initContent();
+//                            }
+//                        });
+//            }
+//            GoodState state = mOrder.getGoodstate();
+//            String text = MenuUtils.getStateStr(state);
+//            // String text = mItem.getOrder().getStatus();
+//            mRadioDialog.setChecked(text);
+//            mRadioDialog.show();
         }
     }
 
@@ -238,7 +235,7 @@ public class OrderGoodsView extends MenuGoodsView implements
         super.onGoodsCountChanged();
         if (mOrder.getNumber() == 0) {
             AlertDialog dialog = createDeleteDialog();
-            dialog.setButton(AlertDialog.BUTTON_NEGATIVE, "取消",
+            dialog.setButton(AlertDialog.BUTTON_NEGATIVE, "Cancel",
                     new DialogInterface.OnClickListener() {
                         @Override
                         public void onClick(DialogInterface dialog, int which) {
@@ -251,8 +248,8 @@ public class OrderGoodsView extends MenuGoodsView implements
 
     private AlertDialog createDeleteDialog() {
         AlertDialog dialog = new AlertDialog.Builder(getContext())
-                .setTitle("提醒").setMessage("您确定要删除这道菜？")
-                .setPositiveButton("确定", new DialogInterface.OnClickListener() {
+                .setTitle(android.R.string.dialog_alert_title).setMessage("Do you want to cancel this？")
+                .setPositiveButton(android.R.string.ok, new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                         onOrderDelete();

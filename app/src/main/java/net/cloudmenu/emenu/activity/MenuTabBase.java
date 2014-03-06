@@ -1,5 +1,20 @@
 package net.cloudmenu.emenu.activity;
 
+
+import greendroid.widget.PagedView;
+import greendroid.widget.PagedView.OnPagedViewChangeListener;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import cn.com.cloudstone.menu.server.thrift.api.Goods;
+import cn.com.cloudstone.menu.server.thrift.api.MenuPage;
+
+import net.cloudmenu.emenu.R;
+import net.cloudmenu.emenu.utils.MenuUtils.GoodsCategory;
+import net.cloudmenu.emenu.widget.SearchView;
+import net.cloudmenu.emenu.widget.SearchView.OnGoodsClickListener;
+import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup.LayoutParams;
 import android.widget.Button;
@@ -24,7 +39,6 @@ public abstract class MenuTabBase extends MenuBase implements
         OnPagedViewChangeListener, OnCheckedChangeListener,
         OnGoodsClickListener {
     private static final String TAG = "MenuTabBase";
-
     protected List<GoodsCategory> mGoodsCategories;
     private RadioGroup rgSubmenu;
 

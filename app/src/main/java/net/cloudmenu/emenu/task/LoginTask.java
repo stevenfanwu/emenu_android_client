@@ -1,7 +1,9 @@
 package net.cloudmenu.emenu.task;
 
+
 import android.content.Context;
 
+import net.cloudmenu.emenu.R;
 import net.cloudmenu.emenu.utils.ProfileHolder;
 
 import org.apache.thrift.TException;
@@ -21,8 +23,8 @@ public class LoginTask extends TBaseTask {
     public LoginTask(Context context, String user, String pwd) {
         super(context);
         setShowProgessDialog(true);
-        setCodeMsg(ECODE_WRONG_PARAMS, "用户名或密码错误");
-        setCodeMsg(ECODE_WRONG_IMEI, "您的设备不在允许列表中");
+        setCodeMsg(ECODE_WRONG_PARAMS, context.getString(R.string.wrong_login));
+        setCodeMsg(ECODE_WRONG_IMEI, context.getString(R.string.wrong_device));
         mUser = user;
         mPwd = pwd;
     }

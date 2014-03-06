@@ -1,5 +1,20 @@
 package net.cloudmenu.emenu.activity;
 
+import greendroid.widget.PageIndicator;
+import greendroid.widget.PagedAdapter;
+import greendroid.widget.PagedView;
+import greendroid.widget.PagedView.OnPagedViewChangeListener;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+import net.cloudmenu.emenu.R;
+import net.cloudmenu.emenu.utils.GlobalValue;
+import net.cloudmenu.emenu.widget.MenuPageView;
+import net.cloudmenu.emenu.widget.MenuPageView.LayoutType;
+
 import android.app.Activity;
 import android.content.BroadcastReceiver;
 import android.content.Context;
@@ -11,22 +26,7 @@ import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
-
-import net.cloudmenu.emenu.R;
-import net.cloudmenu.emenu.utils.GlobalValue;
-import net.cloudmenu.emenu.widget.MenuPageView;
-import net.cloudmenu.emenu.widget.MenuPageView.LayoutType;
-
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-
 import cn.com.cloudstone.menu.server.thrift.api.MenuPage;
-import greendroid.widget.PageIndicator;
-import greendroid.widget.PagedAdapter;
-import greendroid.widget.PagedView;
-import greendroid.widget.PagedView.OnPagedViewChangeListener;
 
 public abstract class SlideBase extends Activity implements
         OnPagedViewChangeListener, OnClickListener {

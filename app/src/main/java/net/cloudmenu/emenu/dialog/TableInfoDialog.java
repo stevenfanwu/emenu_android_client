@@ -35,8 +35,8 @@ public class TableInfoDialog extends AlertDialog implements OnItemClickListener 
 
     public TableInfoDialog(Context context) {
         super(context);
-        setTitle("桌况查询");
-        setButton2("取消", null);
+        setTitle(R.string.table_status_check);
+        setButton2("Cancel", null);
         getButton1().setVisibility(View.INVISIBLE);
         setView(R.layout.dialog_frame_table_info);
         mListview = (ListView) findViewById(android.R.id.list);
@@ -138,13 +138,13 @@ public class TableInfoDialog extends AlertDialog implements OnItemClickListener 
             if (status != null) {
                 switch (status) {
                 case Empty:
-                    stat = "空闲";
+                    stat = "Empty";
                     break;
                 case Occupied:
-                    stat = "已用";
+                    stat = "Full";
                     break;
                 case Ordered:
-                    stat = "预定";
+                    stat = "Reserved";
                     break;
                 }
             }
