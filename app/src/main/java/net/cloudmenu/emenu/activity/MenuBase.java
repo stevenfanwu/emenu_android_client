@@ -22,7 +22,7 @@ public abstract class MenuBase extends SlideBase {
     private static final String TAG = "MenuBase";
     protected Menu mMenu;
     private GetMenuTask mGetMenuTask;
-    private TextView tvPage;
+//    private TextView tvPage;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -60,7 +60,7 @@ public abstract class MenuBase extends SlideBase {
     @Override
     protected void initElements() {
         super.initElements();
-        tvPage = (TextView) findViewById(R.id.tv_page);
+//        tvPage = (TextView) findViewById(R.id.tv_page);
         setParentLogoUrl();
     }
 
@@ -106,10 +106,10 @@ public abstract class MenuBase extends SlideBase {
         int total = 0;
         if (mAdapter != null)
             total = mAdapter.getCount();
-        if (total == 0)
-            tvPage.setText("");
-        else
-            tvPage.setText(String.format("Page %d of %d", page + 1, total));
+//        if (total == 0)
+//            tvPage.setText("");
+//        else
+//            tvPage.setText(String.format("Page %d of %d", page + 1, total));
     }
 
 }

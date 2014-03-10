@@ -33,7 +33,7 @@ public abstract class SlideBase extends Activity implements
     private static final String TAG = "SlideBase";
 
     protected PagedView mPagedView;
-    protected PageIndicator mPageIndicator;
+//    protected PageIndicator mPageIndicator;
 
     protected PagedAdapter mAdapter;
 
@@ -78,14 +78,14 @@ public abstract class SlideBase extends Activity implements
 
     protected void initContent() {
         mAdapter = makeAdapter();
-        mAdapter.registerDataSetObserver(new DataSetObserver() {
-            @Override
-            public void onChanged() {
-                mPageIndicator.setDotCount(mAdapter.getCount());
-            }
-        });
+//        mAdapter.registerDataSetObserver(new DataSetObserver() {
+//            @Override
+//            public void onChanged() {
+//                mPageIndicator.setDotCount(mAdapter.getCount());
+//            }
+//        });
         mPagedView.setAdapter(mAdapter);
-        mPageIndicator.setDotCount(mAdapter.getCount());
+//        mPageIndicator.setDotCount(mAdapter.getCount());
     }
 
     protected abstract PagedAdapter makeAdapter();
@@ -94,13 +94,13 @@ public abstract class SlideBase extends Activity implements
 
     protected void initElements() {
         mPagedView = (PagedView) findViewById(R.id.paged_view);
-        mPageIndicator = (PageIndicator) findViewById(R.id.page_indicator);
+//        mPageIndicator = (PageIndicator) findViewById(R.id.page_indicator);
         mPagedView.setOnPageChangeListener(this);
     }
 
     @Override
     public void onPageChanged(PagedView pagedView, int previousPage, int newPage) {
-        mPageIndicator.setActiveDot(newPage);
+//        mPageIndicator.setActiveDot(newPage);
     }
 
     @Override

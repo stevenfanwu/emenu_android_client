@@ -3,8 +3,8 @@
 
 <!--     <item android:drawable="@drawable/menu_radio_indicator_normal" android:state_checked="false"/>
     <item android:drawable="@drawable/menu_radio_indicator_selected"/> -->
-    
-    <item android:color="@color/text_dard_red" android:state_checked="false"/>
-    <item android:color="@color/test_text_color"/>
+
+    <item android:color="#888888" android:state_checked="false"/>
+    <item android:color="#FFFFFF"/>
 
 </selector>

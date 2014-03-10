@@ -4,24 +4,23 @@
     android:layout_width="fill_parent"
     android:layout_height="fill_parent" >
 
-    <greendroid.widget.PageIndicator
-        android:id="@+id/page_indicator"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="10dp"
-        android:paddingBottom="10dp"
-        emenu:dotDrawable="@drawable/gd_page_indicator_dot" />
+    <!--<greendroid.widget.PageIndicator-->
+        <!--android:id="@+id/page_indicator"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_alignParentBottom="true"-->
+        <!--android:layout_centerHorizontal="true"-->
+        <!--android:layout_marginTop="10dp"-->
+        <!--android:paddingBottom="10dp"-->
+        <!--emenu:dotDrawable="@drawable/gd_page_indicator_dot" />-->
 
     <RadioGroup
         android:id="@+id/rg_submenu"
         android:layout_width="120dp"
         android:layout_height="fill_parent"
-        android:layout_above="@id/page_indicator"
         android:layout_alignParentTop="true"
         android:gravity="center"
-        android:background="#EFEFF4"
+        android:background="#820000"
         android:orientation="vertical" >
     </RadioGroup>
 
@@ -29,7 +28,6 @@
         android:id="@+id/paged_view"
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
-        android:layout_above="@id/page_indicator"
         android:layout_marginTop="50dp"
         android:layout_toRightOf="@+id/rg_submenu" />
 
@@ -45,21 +43,21 @@
         android:layout_marginTop="50dp"
         android:layout_toRightOf="@+id/rg_submenu" /> -->
 
-    <TextView
-        android:id="@+id/tv_page"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentRight="true"
-        android:layout_alignTop="@id/page_indicator"
-        android:layout_marginRight="10dp"
-        android:textAppearance="?android:attr/textAppearanceSmall"
-        android:textColor="@color/text_dard_red" />
+    <!--<TextView-->
+        <!--android:id="@+id/tv_page"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_alignParentRight="true"-->
+        <!--android:layout_alignTop="@id/page_indicator"-->
+        <!--android:layout_marginRight="10dp"-->
+        <!--android:textAppearance="?android:attr/textAppearanceSmall"-->
+        <!--android:textColor="@color/text_dard_red" />-->
 
-    <View
-        android:layout_width="fill_parent"
-        android:layout_height="0.5dp"
-        android:layout_above="@id/page_indicator"
-        android:background="@drawable/divider_red" />
+    <!--<View-->
+        <!--android:layout_width="fill_parent"-->
+        <!--android:layout_height="0.5dp"-->
+        <!--android:layout_above="@id/page_indicator"-->
+        <!--android:background="@drawable/divider_red" />-->
 
     <Button
         android:id="@+id/btn_search"

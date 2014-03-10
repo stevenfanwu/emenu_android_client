@@ -26,10 +26,6 @@ public class MainTabHost extends BaseTabHost implements OnLongClickListener {
     public static final String EXTRA_MENU_DEFAULT_INDEX = "extra_menu_deafult_index";
     public static final String ACTION_BUTTON = "net.cloudmenu.emenu.action.button";
     public static final String EXTRA_BUTTON_ID = "extra_button_id";
-//    private Button btnLeft;
-//    private Button btnRight;
-//    private Button btnService;
-//    private Button btnContact;
     private AsyncImageView mLogo;
 
     private int mMenuDefaultIndex;
@@ -141,6 +137,11 @@ public class MainTabHost extends BaseTabHost implements OnLongClickListener {
         mTabIndicator[0] = "Menu";
         mTabIndicator[1] = "Your Order";
         // mTabIndicator[2] = "评    论";
+
+        mTabIcons = new int[mTabCount];
+        mTabIcons[0] = R.drawable.ic_menu;
+        mTabIcons[1] = R.drawable.ic_your_order;
+
     }
 
     @Override

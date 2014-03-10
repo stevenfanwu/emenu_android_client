@@ -129,21 +129,20 @@
         android:layout_above="@id/ll_confirm"
         android:background="@drawable/divider_red" />
 
-    <greendroid.widget.PageIndicator
-        android:id="@+id/page_indicator"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_above="@id/ll_confirm"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="10dp"
-        android:paddingBottom="10dp"
-        emenu:dotDrawable="@drawable/gd_page_indicator_dot" />
+    <!--<greendroid.widget.PageIndicator-->
+        <!--android:id="@+id/page_indicator"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_above="@id/ll_confirm"-->
+        <!--android:layout_centerHorizontal="true"-->
+        <!--android:layout_marginTop="10dp"-->
+        <!--android:paddingBottom="10dp"-->
+        <!--emenu:dotDrawable="@drawable/gd_page_indicator_dot" />-->
 
     <greendroid.widget.PagedView
         android:id="@+id/paged_view"
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
-        android:layout_above="@id/page_indicator"
         android:layout_below="@id/ll_name" />
 
     <TextView
@@ -151,7 +150,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentRight="true"
-        android:layout_alignTop="@id/page_indicator"
         android:layout_marginRight="10dp"
         android:textAppearance="?android:attr/textAppearanceSmall"
         android:textColor="@color/text_dard_red" />

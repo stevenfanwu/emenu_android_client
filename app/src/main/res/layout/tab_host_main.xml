@@ -3,8 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res/net.cloudmenu.emenu"
     android:id="@android:id/tabhost"
     android:layout_width="fill_parent"
-    android:layout_height="fill_parent"
-    android:background="@drawable/cover2" >
+    android:layout_height="fill_parent" >
 
     <RelativeLayout
         android:layout_width="fill_parent"
@@ -30,12 +29,12 @@
             android:background="@drawable/btn_login"
             android:visibility="invisible" />
 
-        <ImageView
-            android:id="@+id/divider"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/logo"
-            android:background="@drawable/tab_divider" />
+        <!--<ImageView-->
+            <!--android:id="@+id/divider"-->
+            <!--android:layout_width="fill_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_below="@id/logo"-->
+            <!--android:background="@drawable/tab_divider" />-->
 
 <!--         <Button
             android:id="@+id/btn_contact"
@@ -73,12 +72,9 @@
         <TabWidget
             android:id="@android:id/tabs"
             android:layout_width="fill_parent"
-            android:layout_height="45dp"
+            android:layout_height="60dp"
             android:layout_alignParentBottom="true"
-            android:layout_marginLeft="20dp"
-            android:layout_marginRight="10dp"
-            android:layout_toLeftOf="@id/btn_login"
-            android:layout_toRightOf="@id/logo"
+            android:background="@android:color/black"
             android:gravity="center" >
         </TabWidget>
 
@@ -87,8 +83,6 @@
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
             android:layout_above="@android:id/tabs"
-            android:layout_marginBottom="5dp"
-            android:background="@color/background_light1"
             android:gravity="top|center_horizontal" >
         </FrameLayout>
     </RelativeLayout>
