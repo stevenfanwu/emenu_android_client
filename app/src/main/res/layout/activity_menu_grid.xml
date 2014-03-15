@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:emenu="http://schemas.android.com/apk/res-auto"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent" >
+
+    <RadioGroup
+        android:id="@+id/rg_submenu"
+        android:layout_width="120dp"
+        android:layout_height="fill_parent"
+        android:layout_alignParentTop="true"
+        android:gravity="center"
+        android:background="#820000"
+        android:orientation="vertical" >
+    </RadioGroup>
+
+    <!--<greendroid.widget.PagedView-->
+        <!--android:id="@+id/paged_view"-->
+        <!--android:layout_width="fill_parent"-->
+        <!--android:layout_height="fill_parent"-->
+        <!--android:layout_marginTop="50dp"-->
+        <!--android:layout_toRightOf="@+id/rg_submenu" />-->
+
+    <GridView
+    android:id="@+id/menu_gridview"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:numColumns="2"
+    android:verticalSpacing="30dp"
+    android:horizontalSpacing="24dp"
+    android:stretchMode="columnWidth"
+    android:layout_marginTop="50dp"
+    android:layout_toRightOf="@+id/rg_submenu" />
+
+    <Button
+        android:id="@+id/btn_search"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="5dp"
+        android:background="@drawable/ic_search_pressed"
+        android:padding="5dp" />
+
+    <net.cloudmenu.emenu.widget.SearchView
+        android:id="@+id/search_view"
+        android:layout_width="400dp"
+        android:layout_height="fill_parent"
+        android:layout_alignRight="@id/btn_search"
+        android:layout_alignTop="@id/btn_search"
+        android:visibility="gone" />
+
+</RelativeLayout>

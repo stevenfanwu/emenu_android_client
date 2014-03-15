@@ -24,24 +24,23 @@
         android:orientation="vertical" >
     </RadioGroup>
 
-    <greendroid.widget.PagedView
-        android:id="@+id/paged_view"
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
-        android:layout_marginTop="50dp"
-        android:layout_toRightOf="@+id/rg_submenu" />
+    <!--<greendroid.widget.PagedView-->
+        <!--android:id="@+id/paged_view"-->
+        <!--android:layout_width="fill_parent"-->
+        <!--android:layout_height="fill_parent"-->
+        <!--android:layout_marginTop="50dp"-->
+        <!--android:layout_toRightOf="@+id/rg_submenu" />-->
 
-<!-- 	<GridView
-        android:id="@+id/paged_view"
+ 	<GridView
+        android:id="@+id/grid_view"
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
         android:numColumns="2"
         android:verticalSpacing="30dp"
     	android:horizontalSpacing="24dp"
     	android:stretchMode="columnWidth"
-        android:layout_above="@id/page_indicator"
         android:layout_marginTop="50dp"
-        android:layout_toRightOf="@+id/rg_submenu" /> -->
+        android:layout_toRightOf="@+id/rg_submenu" />
 
     <!--<TextView-->
         <!--android:id="@+id/tv_page"-->

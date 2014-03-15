@@ -1,41 +1,41 @@
 package net.cloudmenu.emenu.activity;
 
-import greendroid.widget.PageIndicator;
-import greendroid.widget.PagedAdapter;
-import greendroid.widget.PagedView;
-import greendroid.widget.PagedView.OnPagedViewChangeListener;
-
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import android.app.Activity;
+import android.content.Context;
+import android.content.IntentFilter;
+import android.os.Bundle;
+import android.util.Log;
+import android.view.View;
+import android.view.View.OnClickListener;
+import android.view.ViewGroup;
+import android.widget.GridView;
+import android.widget.ListAdapter;
 
 import net.cloudmenu.emenu.R;
 import net.cloudmenu.emenu.utils.GlobalValue;
 import net.cloudmenu.emenu.widget.MenuPageView;
 import net.cloudmenu.emenu.widget.MenuPageView.LayoutType;
 
-import android.app.Activity;
-import android.content.BroadcastReceiver;
-import android.content.Context;
-import android.content.Intent;
-import android.content.IntentFilter;
-import android.database.DataSetObserver;
-import android.os.Bundle;
-import android.util.Log;
-import android.view.View;
-import android.view.View.OnClickListener;
-import android.view.ViewGroup;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
 import cn.com.cloudstone.menu.server.thrift.api.MenuPage;
+import greendroid.widget.PagedAdapter;
+import greendroid.widget.PagedView;
+import greendroid.widget.PagedView.OnPagedViewChangeListener;
 
 public abstract class SlideBase extends Activity implements
         OnPagedViewChangeListener, OnClickListener {
     private static final String TAG = "SlideBase";
 
     protected PagedView mPagedView;
-//    protected PageIndicator mPageIndicator;
-
     protected PagedAdapter mAdapter;
+
+    protected GridView gridView;
+    protected ListAdapter listAdapter;
+    protected boolean usePagedView = true;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,7 +43,6 @@ public abstract class SlideBase extends Activity implements
         setContentView(getLayout());
         initElements();
         IntentFilter filter = new IntentFilter(MainTabHost.ACTION_BUTTON);
-        registerReceiver(mReceiver, filter);
     }
 
     @Override
@@ -58,49 +57,36 @@ public abstract class SlideBase extends Activity implements
 
     }
 
-    private BroadcastReceiver mReceiver = new BroadcastReceiver() {
-
-        @Override
-        public void onReceive(Context context, Intent intent) {
-            if (MainTabHost.ACTION_BUTTON.equals(intent.getAction())) {
-                int id = intent.getIntExtra(MainTabHost.EXTRA_BUTTON_ID, 0);
-                switch (id) {
-                case R.id.btn_left:
-                    mPagedView.smoothScrollToPrevious();
-                    break;
-                case R.id.btn_right:
-                    mPagedView.smoothScrollToNext();
-                    break;
-                }
-            }
-        }
-    };
 
     protected void initContent() {
-        mAdapter = makeAdapter();
-//        mAdapter.registerDataSetObserver(new DataSetObserver() {
-//            @Override
-//            public void onChanged() {
-//                mPageIndicator.setDotCount(mAdapter.getCount());
-//            }
-//        });
-        mPagedView.setAdapter(mAdapter);
-//        mPageIndicator.setDotCount(mAdapter.getCount());
+        if(usePagedView) {
+            mAdapter = makeAdapter();
+            mPagedView.setAdapter(mAdapter);
+        } else {
+            listAdapter = newListAdapter();
+            gridView.setAdapter(listAdapter);
+        }
     }
 
     protected abstract PagedAdapter makeAdapter();
 
+    protected ListAdapter newListAdapter() {
+        return null;
+    }
+
     protected abstract int getLayout();
 
     protected void initElements() {
-        mPagedView = (PagedView) findViewById(R.id.paged_view);
-//        mPageIndicator = (PageIndicator) findViewById(R.id.page_indicator);
-        mPagedView.setOnPageChangeListener(this);
+        if(usePagedView) {
+            mPagedView = (PagedView) findViewById(R.id.paged_view);
+            mPagedView.setOnPageChangeListener(this);
+        } else {
+           gridView = (GridView) findViewById(R.id.grid_view);
+        }
     }
 
     @Override
     public void onPageChanged(PagedView pagedView, int previousPage, int newPage) {
-//        mPageIndicator.setActiveDot(newPage);
     }
 
     @Override
@@ -109,7 +95,7 @@ public abstract class SlideBase extends Activity implements
 
     @Override
     public void onStopTracking(PagedView pagedView) {
-    };
+    }
 
     public class MenuPageMap extends HashMap<Integer, List<? extends MenuPage>> {
 

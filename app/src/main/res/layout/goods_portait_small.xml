@@ -98,7 +98,7 @@
         android:layout_marginBottom="30dp"
         android:background="@drawable/price_plate"
         android:gravity="center"
-        android:text="￥47.0"
+        android:text="$47.0"
         android:textAppearance="?android:attr/textAppearanceInverse" />
 
     <View

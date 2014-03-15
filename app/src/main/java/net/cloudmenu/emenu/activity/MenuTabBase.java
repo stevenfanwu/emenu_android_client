@@ -1,20 +1,6 @@
 package net.cloudmenu.emenu.activity;
 
 
-import greendroid.widget.PagedView;
-import greendroid.widget.PagedView.OnPagedViewChangeListener;
-
-import java.util.ArrayList;
-import java.util.List;
-
-import cn.com.cloudstone.menu.server.thrift.api.Goods;
-import cn.com.cloudstone.menu.server.thrift.api.MenuPage;
-
-import net.cloudmenu.emenu.R;
-import net.cloudmenu.emenu.utils.MenuUtils.GoodsCategory;
-import net.cloudmenu.emenu.widget.SearchView;
-import net.cloudmenu.emenu.widget.SearchView.OnGoodsClickListener;
-import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup.LayoutParams;
 import android.widget.Button;
@@ -98,25 +84,33 @@ public abstract class MenuTabBase extends MenuBase implements
 
     @Override
     public void onGoodsClick(Goods g) {
-        int page = -1;
-        for (int i = 0; i < mAdapter.getCount(); i++) {
-            MenuPage p = (MenuPage) mAdapter.getItem(i);
-            if (p.getGoodsList().contains(g)) {
-                page = i;
-                break;
+        if(usePagedView) {
+            int page = -1;
+            for (int i = 0; i < mAdapter.getCount(); i++) {
+                MenuPage p = (MenuPage) mAdapter.getItem(i);
+                if (p.getGoodsList().contains(g)) {
+                    page = i;
+                    break;
+                }
             }
-        }
-        if (page != -1) {
-            mPagedView.scrollToPage(page);
+            if (page != -1) {
+                mPagedView.scrollToPage(page);
+            }
         }
     }
 
     @Override
     public void onCheckedChanged(RadioGroup group, int checkedId) {
-        if (group == rgSubmenu && !mDisableCheckListener) {
-            int startPage = checkedId;
-            mPagedView.scrollToPage(startPage);
+        if(usePagedView){
+            if (group == rgSubmenu && !mDisableCheckListener) {
+                int startPage = checkedId;
+                mPagedView.scrollToPage(startPage);
+            }
+        } else{
+            //To-Do: scroll to the first item in selected radiogroup
+
         }
+
     }
 
     private void initGoodsCategory() {

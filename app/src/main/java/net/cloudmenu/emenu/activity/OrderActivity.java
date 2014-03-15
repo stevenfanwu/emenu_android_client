@@ -84,7 +84,6 @@ public class OrderActivity extends MenuBase implements
 //        btnRefresh.setEnabled(GlobalValue.getIns().getOrder() != null);
         initCurrentOrderData();
         makePages();
-        refreshPage();
         refreshTotalPrice();
         if (mAdapter != null)
             mAdapter.notifyDataSetChanged();

@@ -40,7 +40,6 @@ public abstract class MenuBase extends SlideBase {
     protected void initContent() {
         super.initContent();
         setParentLogoUrl();
-        refreshPage();
     }
 
     private void setParentLogoUrl() {
@@ -95,21 +94,9 @@ public abstract class MenuBase extends SlideBase {
     @Override
     public void onPageChanged(PagedView pagedView, int previousPage, int newPage) {
         super.onPageChanged(pagedView, previousPage, newPage);
-        refreshPage(newPage);
+
     }
 
-    protected void refreshPage() {
-        refreshPage(mPagedView.getCurrentPage());
-    }
 
-    protected void refreshPage(int page) {
-        int total = 0;
-        if (mAdapter != null)
-            total = mAdapter.getCount();
-//        if (total == 0)
-//            tvPage.setText("");
-//        else
-//            tvPage.setText(String.format("Page %d of %d", page + 1, total));
-    }
 
 }
