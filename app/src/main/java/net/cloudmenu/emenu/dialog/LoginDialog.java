@@ -57,15 +57,15 @@ public class LoginDialog extends AlertDialog implements OnClickListener,
     public void show() {
         super.show();
         if (mFirstTime) {
-            initUserData();
+            //initUserData();
             mFirstTime = false;
         }
     }
 
     private void initElements() {
         etPassword = (EditText) findViewById(R.id.et_password);
-        spUsername = (Spinner) findViewById(R.id.sp_username);
-        spUsername.setOnItemSelectedListener(this);
+        //spUsername = (Spinner) findViewById(R.id.sp_username);
+        //spUsername.setOnItemSelectedListener(this);
         cbRemPwd = (CheckBox) findViewById(R.id.cb_rem_pwd);
         String remPwd = PreferenceHelper.getHelper(getContext())
                 .readPreference(PRE_KEY_REM_PWD_CHECKED);

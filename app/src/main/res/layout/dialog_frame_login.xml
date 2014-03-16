@@ -17,7 +17,7 @@
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:textColor="@android:color/white" />
 
-        <Spinner
+        <EditText
             android:id="@+id/sp_username"
             android:layout_marginLeft="5dp"
             android:drawSelectorOnTop="true" />

@@ -30,15 +30,11 @@ import cn.com.cloudstone.menu.server.thrift.api.IWaiterService;
 public class RPCHelper {
     private static final String TAG = "RPCHelper";
     
-//    public static final String DEFAULT_HOST_IP = "192.168.0.106";
+    // public static final String DEFAULT_HOST_IP = "192.168.0.106";
     public static final String DEFAULT_HOST_IP = "http://10.0.2.2:8080/";
 
     private static final String DEFAULT_API_SUFFIX = ".thrift";
 
-    // public static final String DEFAULT_HOST_IP = "http://110.231.175.37/";
-    // public static final String DEFAULT_HOST_IP =
-    // "http://anboo-tech.eicp.net/";
-    // private static final String DEFAULT_API_SUFFIX = ".ashx";
     private static final int SOCKET_TIME_OUT = 20000;
 
     private static final int CONNECTION_TIME_OUT = 20000;
