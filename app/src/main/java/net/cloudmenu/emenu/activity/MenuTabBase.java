@@ -96,9 +96,22 @@ public abstract class MenuTabBase extends MenuBase implements
             if (page != -1) {
                 mPagedView.scrollToPage(page);
             }
+        } else {
+            int position= this.getItemPosition(g);
+            gridView.setSelection(position);
         }
     }
 
+    protected  int getItemPosition(Goods goods) {
+     throw new UnsupportedOperationException();
+    }
+
+    protected  int getFirstItemPositionInPage(int pageNumber) {
+        throw new UnsupportedOperationException();
+    }
+
+    // Scroll to the first item that belongs to group. For example, appetizer, main dish, etc.
+    // checkedId is the input page number. By default, each page contains 6 food items.
     @Override
     public void onCheckedChanged(RadioGroup group, int checkedId) {
         if(usePagedView){
@@ -107,8 +120,9 @@ public abstract class MenuTabBase extends MenuBase implements
                 mPagedView.scrollToPage(startPage);
             }
         } else{
-            //To-Do: scroll to the first item in selected radiogroup
-
+            if (group == rgSubmenu && !mDisableCheckListener) {
+                gridView.setSelection(getFirstItemPositionInPage(checkedId));
+            }
         }
 
     }

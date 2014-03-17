@@ -33,9 +33,9 @@ import cn.com.cloudstone.menu.server.thrift.api.IProfileService;
 import cn.com.cloudstone.menu.server.thrift.api.IProfileService.Client;
 
 public class LoginDialog extends AlertDialog implements OnClickListener,
-        OnItemSelectedListener, OnCheckedChangeListener {
+        OnCheckedChangeListener {
     private EditText etPassword;
-    private Spinner spUsername;
+    private EditText spUsername;
     private CheckBox cbRemPwd;
 
     private OnLoginSuccessListener mOnLoginSuccessListener;
@@ -64,7 +64,7 @@ public class LoginDialog extends AlertDialog implements OnClickListener,
 
     private void initElements() {
         etPassword = (EditText) findViewById(R.id.et_password);
-        //spUsername = (Spinner) findViewById(R.id.sp_username);
+        spUsername = (EditText) findViewById(R.id.sp_username);
         //spUsername.setOnItemSelectedListener(this);
         cbRemPwd = (CheckBox) findViewById(R.id.cb_rem_pwd);
         String remPwd = PreferenceHelper.getHelper(getContext())
@@ -82,17 +82,17 @@ public class LoginDialog extends AlertDialog implements OnClickListener,
                     PRE_KEY_REM_PWD_CHECKED, "" + isChecked);
         }
     }
-
-    @Override
-    public void onItemSelected(AdapterView<?> arg0, View arg1, int arg2,
-            long arg3) {
-        String user = spUsername.getItemAtPosition(arg2).toString();
-        if (cbRemPwd.isChecked()) {
-            String pwd = ProfileHolder.getIns()
-                    .getCachedPwd(getContext(), user);
-            etPassword.setText(pwd);
-        }
-    }
+//
+//    @Override
+//    public void onItemSelected(AdapterView<?> arg0, View arg1, int arg2,
+//            long arg3) {
+//        //String user = spUsername.getItemAtPosition(arg2).toString();
+//        if (cbRemPwd.isChecked()) {
+//            String pwd = ProfileHolder.getIns()
+//                    .getCachedPwd(getContext(), user);
+//            etPassword.setText(pwd);
+//        }
+//    }
 
     private void initUserAdapter(List<String> users) {
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(getContext(),
@@ -100,33 +100,33 @@ public class LoginDialog extends AlertDialog implements OnClickListener,
         for (String s : users)
             adapter.add(s);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        spUsername.setAdapter(adapter);
+        //spUsername.setAdapter(adapter);
     }
 
-    private void initUserData() {
-        final GetUsersTask userTask = new GetUsersTask(getContext());
-        userTask.setCallback(new Callback() {
-            @Override
-            public void onSuccess(HandlerMessageTask task, Object t) {
-                initUserAdapter(userTask.getResult());
-            }
-
-            @Override
-            public void onFail(HandlerMessageTask task, Object t) {
-            }
-        });
-        userTask.execute();
-    }
+//    private void initUserData() {
+//        final GetUsersTask userTask = new GetUsersTask(getContext());
+//        userTask.setCallback(new Callback() {
+//            @Override
+//            public void onSuccess(HandlerMessageTask task, Object t) {
+//                initUserAdapter(userTask.getResult());
+//            }
+//
+//            @Override
+//            public void onFail(HandlerMessageTask task, Object t) {
+//            }
+//        });
+//        userTask.execute();
+//    }
 
     @Override
     public void onClick(DialogInterface dialog, int which) {
         switch (which) {
         case R.id.bt_1:
-            if (spUsername.getSelectedItem() == null) {
-                break;
-            }
+//            if (spUsername.getSelectedItem() == null) {
+//                break;
+//            }
             String pwd = etPassword.getText().toString();
-            String user = spUsername.getSelectedItem().toString();
+            String user = spUsername.getText().toString();
             LoginTask task = makeLoginTask(user, pwd);
             task.execute();
             break;
@@ -199,7 +199,7 @@ public class LoginDialog extends AlertDialog implements OnClickListener,
 
     }
 
-    @Override
-    public void onNothingSelected(AdapterView<?> arg0) {
-    }
+//    @Override
+//    public void onNothingSelected(AdapterView<?> arg0) {
+//    }
 }
