@@ -38,7 +38,7 @@ public class MenuGallery extends MenuTabBase  {
     protected ListAdapter newListAdapter(){
         MenuPageMap map = new MenuPageMap();
         map.put(GlobalValue.TYPE_CURRENT, mMenu.getPages());
-        return new MenuListAdapter(this, map);
+        return new MenuListAdapter(this, map, mGoodsCategories);
     }
 
     @Override

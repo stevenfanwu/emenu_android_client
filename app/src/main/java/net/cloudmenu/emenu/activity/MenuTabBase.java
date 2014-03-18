@@ -64,7 +64,7 @@ public abstract class MenuTabBase extends MenuBase implements
 
     private boolean mDisableCheckListener = false;
 
-    private void checkSliently(int id) {
+    public void checkSliently(int id) {
         mDisableCheckListener = true;
         rgSubmenu.check(id);
         mDisableCheckListener = false;

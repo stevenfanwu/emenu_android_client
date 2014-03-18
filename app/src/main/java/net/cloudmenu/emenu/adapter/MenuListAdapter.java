@@ -10,13 +10,17 @@ import android.view.ViewGroup;
 import android.widget.ListAdapter;
 
 import net.cloudmenu.emenu.R;
+import net.cloudmenu.emenu.activity.MenuTabBase;
 import net.cloudmenu.emenu.utils.GlobalValue;
+import net.cloudmenu.emenu.utils.MenuUtils;
 import net.cloudmenu.emenu.widget.MenuGoodsView;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 
 import cn.com.cloudstone.menu.server.thrift.api.Goods;
 import cn.com.cloudstone.menu.server.thrift.api.MenuPage;
@@ -25,28 +29,47 @@ public class MenuListAdapter implements ListAdapter {
     private Map<Integer, List<? extends MenuPage>> mPages;
     private int[] mTypes = new int[] { GlobalValue.TYPE_CURRENT };
     private final DataSetObservable mDataSetObservable = new DataSetObservable();
-    private Map<Integer, List< ? extends Goods>> itemsByCategory = new HashMap<Integer, List<? extends Goods>>();
+    // The type of item: menu or order
+    private Map<Integer, List< ? extends Goods>> itemByType = new HashMap<Integer, List<? extends Goods>>();
     private Map<Goods, Integer> itemPositionMap = new HashMap<Goods, Integer>();
-    private Context mContext;
+    private Map<Integer, Integer> itemPositionToCategoryMap = new HashMap<Integer, Integer>();
+    private MenuTabBase mContext;
 
-    public MenuListAdapter(Context c, Map<Integer, List<? extends MenuPage>> pages) {
+    public MenuListAdapter(MenuTabBase c, Map<Integer, List<? extends MenuPage>> pages,
+                           List<MenuUtils.GoodsCategory> itemCategories) {
         mContext = c;
         mPages = pages;
+
+        // Map good items to type
         for (Map.Entry<Integer, List< ? extends MenuPage>> entry : mPages.entrySet()) {
             List<Goods> goodsList= new ArrayList<Goods>();
             for(MenuPage menuPage : entry.getValue()){
                 goodsList.addAll(menuPage.getGoodsList());
             }
-            itemsByCategory.put(entry.getKey(), goodsList);
+            itemByType.put(entry.getKey(), goodsList);
         }
 
+        // Map items to positions.
+        // Map item positions to category. Note that the category ID is the same as the page number
+        // that this category first starts.
         int itemPosition = 0;
+        int pageNumber = 0;
+        Set<Integer> itemCategoryType = new HashSet<Integer>();
+        for(MenuUtils.GoodsCategory category : itemCategories){
+            itemCategoryType.add(category.getStart());
+        }
         for (Map.Entry<Integer, List< ? extends MenuPage>> entry : mPages.entrySet()) {
             for(MenuPage menuPage : entry.getValue()){
-                for(Goods goods : menuPage.getGoodsList()){
-                    itemPositionMap.put(goods, itemPosition);
+                boolean isFirstItemInPage = true;
+                for(Goods item : menuPage.getGoodsList()){
+                    itemPositionMap.put(item, itemPosition);
+                    if(isFirstItemInPage && itemCategoryType.contains(pageNumber)){
+                        itemPositionToCategoryMap.put(itemPosition, pageNumber);
+                        isFirstItemInPage = false;
+                    }
                     itemPosition++;
                 }
+                pageNumber++;
             }
         }
 
@@ -112,7 +135,7 @@ public class MenuListAdapter implements ListAdapter {
     }
 
     private int getCount(int type) {
-        List<? extends Goods> goodsList = itemsByCategory.get(type);
+        List<? extends Goods> goodsList = itemByType.get(type);
         if (goodsList == null)
             return 0;
         return goodsList.size();
@@ -125,7 +148,7 @@ public class MenuListAdapter implements ListAdapter {
         for (int i : mTypes) {
             int count = getCount(i);
             if (position < count) {
-                return itemsByCategory.get(i).get(position);
+                return itemByType.get(i).get(position);
             } else {
                 position -= count;
             }
@@ -170,20 +193,26 @@ public class MenuListAdapter implements ListAdapter {
         return itemPosition;
     }
 
+    // Return MenuGoodsView instead of menuPageview
     @Override
-    // To-Do: return MenuGoodsView instead of menuPageview
     public View getView(int position, View convertView, ViewGroup parent) {
-        Goods item = getItem(position);
-        if (item == null) {
-            return new View(mContext);
-        }
+            Goods item = getItem(position);
+            if (item == null) {
+                return new View(mContext);
+            }
 
-        LayoutInflater inflater = (LayoutInflater)mContext.getSystemService
-                (Context.LAYOUT_INFLATER_SERVICE);
+            LayoutInflater inflater = (LayoutInflater) mContext.getSystemService
+                    (Context.LAYOUT_INFLATER_SERVICE);
 
-        MenuGoodsView view = (MenuGoodsView)inflater.inflate(R.layout.page_horizontal1, null);
-        view.setGoods(getType(position), item);
-        view.setVisibility(View.VISIBLE);
-        return view;
+            MenuGoodsView view = (MenuGoodsView) inflater.inflate(R.layout.page_horizontal1, null);
+            view.setGoods(getType(position), item);
+            view.setVisibility(View.VISIBLE);
+
+            // Change the radioGroup submenu while scrolling to the first item of a category
+            if (itemPositionToCategoryMap.get(position - 1) != null) {
+                mContext.checkSliently(itemPositionToCategoryMap.get(position - 1));
+            }
+
+            return view;
     }
 }
