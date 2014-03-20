@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <TabHost xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res/net.cloudmenu.emenu"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@android:id/tabhost"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent" >
@@ -9,8 +9,7 @@
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
         android:gravity="center"
-        android:orientation="vertical"
-        android:padding="5dp" >
+        android:orientation="vertical">
 
         <cn.buding.common.widget.AsyncImageView
             android:id="@+id/logo"

@@ -22,7 +22,6 @@ public abstract class MenuBase extends SlideBase {
     private static final String TAG = "MenuBase";
     protected Menu mMenu;
     private GetMenuTask mGetMenuTask;
-//    private TextView tvPage;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -59,7 +58,6 @@ public abstract class MenuBase extends SlideBase {
     @Override
     protected void initElements() {
         super.initElements();
-//        tvPage = (TextView) findViewById(R.id.tv_page);
         setParentLogoUrl();
     }
 
