@@ -1,6 +1,7 @@
 package net.cloudmenu.emenu.task;
 
 import android.content.Context;
+import android.util.Log;
 
 import net.cloudmenu.emenu.net.RPCHelper;
 import net.cloudmenu.emenu.utils.ProfileHolder;
@@ -51,6 +52,7 @@ public class QueryTableInfoTask extends TBaseTask {
         String sid = ProfileHolder.getIns().getCurrentSid(mContext);
         try {
             mInfos = iclient.queryTableInfos(sid);
+            Log.d("QueryTable", "table size " + mInfos.size());
             return ECode.SUCCESS;
         } catch (UserNotLoginException e) {
             return e;

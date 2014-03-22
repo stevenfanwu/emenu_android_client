@@ -2,7 +2,7 @@ apply plugin: 'android'
 
 android {
     compileSdkVersion 19
-    buildToolsVersion "19.0.2"
+    buildToolsVersion '19.0.2'
 
     defaultConfig {
         minSdkVersion 8
@@ -18,13 +18,18 @@ android {
     lintOptions {
         abortOnError false
     }
+    packagingOptions {
+        exclude 'META-INF/LICENSE.txt'
+        exclude 'META-INF/NOTICE.txt'
+    }
+
 }
 
 dependencies {
     compile 'com.android.support:appcompat-v7:+'
-    compile files('libs/cloudstone.cloudmenu.web.api.jar')
-    compile files('libs/org.apache.thrift.jar')
     compile files('libs/pinyin4j-2.5.0.jar')
     compile files('libs/slf4j-android-1.6.1-RC1.jar')
     compile files('libs/commons-codec-1.4.jar')
+    compile files('libs/thrift.jar')
+    compile files('libs/libthrift-0.9.1.jar')
 }

@@ -3,6 +3,7 @@ package net.cloudmenu.emenu.activity;
 import android.app.Activity;
 import android.os.AsyncTask.Status;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.TextView;
 
 import net.cloudmenu.emenu.R;
@@ -80,6 +81,7 @@ public abstract class MenuBase extends SlideBase {
 
             @Override
             public void onFail(HandlerMessageTask task, Object t) {
+                Log.e("Menu", "failed to load" + t);
             }
         });
         mGetMenuTask.execute();

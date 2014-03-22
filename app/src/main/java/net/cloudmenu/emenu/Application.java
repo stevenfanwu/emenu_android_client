@@ -88,6 +88,7 @@ public class Application extends android.app.Application {
                     info.setIMEI(MenuUtils.getCustomIMEI(mContext));
                     String sid = ProfileHolder.getIns().getCurrentSid(mContext);
                     info.setSessionId(sid);
+                    info.setRestaurentId(2);
                     client.submitPadInfo(info);
                 } catch (TException e) {
                     Log.w(TAG, "Send padinfo error");

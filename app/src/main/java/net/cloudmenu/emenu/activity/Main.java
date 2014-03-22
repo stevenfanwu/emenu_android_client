@@ -5,6 +5,7 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.View.OnLongClickListener;
@@ -187,9 +188,13 @@ public class Main extends Activity implements OnClickListener,
         protected Object process(TServiceClient client) throws TException,
                 AException {
             IProfileService.Client iclient = (Client) client;
-            if (!GlobalConfig.isWorkWithoutNetWork(mContext)) {
-                String sid = ProfileHolder.getIns().getCurrentSid(mContext);
-                iclient.logout(sid);
+            try {
+                if (!GlobalConfig.isWorkWithoutNetWork(mContext)) {
+                    String sid = ProfileHolder.getIns().getCurrentSid(mContext);
+                    iclient.logout(sid);
+                }
+            } catch (Throwable e) {
+                Log.e("Logout", "failed", e);
             }
             ProfileHolder.getIns().logout(mContext);
             return ECode.SUCCESS;

@@ -1,6 +1,7 @@
 package net.cloudmenu.emenu.task;
 
 import android.content.Context;
+import android.util.Log;
 
 import net.cloudmenu.emenu.net.RPCHelper;
 
@@ -41,8 +42,13 @@ public class GetMenuTask extends TBaseTask {
     @Override
     protected Object process(TServiceClient client) throws TException,
             AException {
-        IMenuService.Client iclient = (Client) client;
-        mMenu = iclient.getCurrentMenu();
+        try {
+            IMenuService.Client iclient = (Client) client;
+            mMenu = iclient.getCurrentMenu();
+        } catch (Throwable e) {
+            Log.e("Menu task", "failed", e);
+            return ECode.FAIL;
+        }
         return ECode.SUCCESS;
     }
 

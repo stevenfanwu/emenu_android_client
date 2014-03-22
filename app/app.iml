@@ -73,10 +73,10 @@
     <orderEntry type="library" exported="" name="commons-codec-1.4" level="project" />
     <orderEntry type="library" exported="" name="appcompat-v7-19.0.1" level="project" />
     <orderEntry type="library" exported="" name="pinyin4j-2.5.0" level="project" />
-    <orderEntry type="library" exported="" name="cloudstone.cloudmenu.web.api" level="project" />
+    <orderEntry type="library" exported="" name="thrift" level="project" />
     <orderEntry type="library" exported="" name="support-v4-19.0.1" level="project" />
     <orderEntry type="library" exported="" name="slf4j-android-1.6.1-RC1" level="project" />
-    <orderEntry type="library" exported="" name="org.apache.thrift" level="project" />
+    <orderEntry type="library" exported="" name="libthrift-0.9.1" level="project" />
   </component>
 </module>
 

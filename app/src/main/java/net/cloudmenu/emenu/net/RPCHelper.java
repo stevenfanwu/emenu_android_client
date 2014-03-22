@@ -17,7 +17,7 @@ import org.apache.thrift.TException;
 import org.apache.thrift.TServiceClient;
 import org.apache.thrift.protocol.TBinaryProtocol;
 import org.apache.thrift.protocol.TProtocol;
-import org.apache.thrift.transport.TCachedHttpClient;
+import org.apache.thrift.transport.TTransport;
 import org.apache.thrift.transport.THttpClient;
 import org.apache.thrift.transport.TTransport;
 
@@ -31,7 +31,7 @@ public class RPCHelper {
     private static final String TAG = "RPCHelper";
     
     // public static final String DEFAULT_HOST_IP = "192.168.0.106";
-    public static final String DEFAULT_HOST_IP = "http://10.0.2.2:8080/";
+    public static final String DEFAULT_HOST_IP = "http://hummingbirdsystem.com/";
 
     private static final String DEFAULT_API_SUFFIX = ".thrift";
 
@@ -70,17 +70,6 @@ public class RPCHelper {
         return new DefaultHttpClient(param);
     }
 
-    private static TProtocol getTProtocolWithCache(Context context, String url,
-            boolean clearCacheMode, long cacheTime) throws TException {
-        HttpClient client = getHttpCilent();
-        TCachedHttpClient transport = new TCachedHttpClient(context,
-                getHostIp(context) + url + getApiSuffix(context), client);
-        transport.setClearCache(clearCacheMode);
-        transport.setCacheAvailableTime(cacheTime);
-        transport.open();
-        return new TBinaryProtocol(transport);
-    }
-
     private static TProtocol getTProtocol(Context context, String url)
             throws TException {
         HttpClient client = getHttpCilent();
@@ -89,7 +78,6 @@ public class RPCHelper {
         Log.i(TAG, "url = " + finalUrl);
         transport.open();
         TBinaryProtocol protocol = new TBinaryProtocol(transport);
-        protocol.setReadLength(MAX_READ_LENGTH);
         return protocol;
     }
 
@@ -112,14 +100,14 @@ public class RPCHelper {
 
     public static IProfileService.Client getCachedProfileService(Context context)
             throws TException {
-        return new IProfileService.Client(getTProtocolWithCache(context,
-                "profileservice", false, CACHE_TIME_SHORT));
+        return new IProfileService.Client(getTProtocol(context,
+                "profileservice"));
     }
 
     public static IProfileService.Client getCachedProfileService(
             Context context, long cacheTime) throws TException {
-        return new IProfileService.Client(getTProtocolWithCache(context,
-                "profileservice", false, cacheTime));
+        return new IProfileService.Client(getTProtocol(context,
+                "profileservice"));
     }
 
     public static IOrderService.Client getOrderService(Context context)
@@ -139,8 +127,8 @@ public class RPCHelper {
 
     public static IWaiterService.Client getCachedWaiterService(Context context,
             long cacheTime) throws TException {
-        return new IWaiterService.Client(getTProtocolWithCache(context,
-                "waiterservice", false, cacheTime));
+        return new IWaiterService.Client(getTProtocol(context,
+                "waiterservice"));
     }
 
     public static IMenuService.Client getCachedMenuService(Context context)
@@ -150,14 +138,14 @@ public class RPCHelper {
 
     public static IMenuService.Client getCachedMenuService(Context context,
             long cacheTime) throws TException {
-        return new IMenuService.Client(getTProtocolWithCache(context,
-                "menuservice", false, cacheTime));
+        return new IMenuService.Client(getTProtocol(context,
+                "menuservice"));
     }
 
     public static IMenuService.Client getClearCacheMenuService(Context context)
             throws TException {
-        return new IMenuService.Client(getTProtocolWithCache(context,
-                "menuservice", true, CACHE_TIME_LONG));
+        return new IMenuService.Client(getTProtocol(context,
+                "menuservice"));
     }
 
     public static void releaseClient(TServiceClient client) {

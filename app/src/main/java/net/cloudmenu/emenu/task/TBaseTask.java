@@ -39,9 +39,6 @@ public abstract class TBaseTask extends HandlerMessageTask {
             res = process(client);
         } catch (TException e) {
             return ECode.FAIL;
-        } catch (AException e) {
-            setCodeMsg(ECODE_AEXCEPTION, e.getMsg());
-            return ECODE_AEXCEPTION;
         } finally {
             ThriftUtils.releaseClient(client);
         }
