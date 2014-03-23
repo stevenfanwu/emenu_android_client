@@ -4,6 +4,7 @@ import android.content.Context;
 import android.util.Log;
 
 import net.cloudmenu.emenu.net.RPCHelper;
+import net.cloudmenu.emenu.utils.ProfileHolder;
 
 import org.apache.thrift.TException;
 import org.apache.thrift.TServiceClient;
@@ -44,7 +45,7 @@ public class GetMenuTask extends TBaseTask {
             AException {
         try {
             IMenuService.Client iclient = (Client) client;
-            mMenu = iclient.getCurrentMenu();
+            mMenu = iclient.getCurrentMenu(ProfileHolder.getIns().getCurrentSid(mContext));
         } catch (Throwable e) {
             Log.e("Menu task", "failed", e);
             return ECode.FAIL;

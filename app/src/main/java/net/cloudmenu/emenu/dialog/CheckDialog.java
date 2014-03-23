@@ -10,6 +10,7 @@ import android.widget.CompoundButton.OnCheckedChangeListener;
 import net.cloudmenu.emenu.R;
 import net.cloudmenu.emenu.net.RPCHelper;
 import net.cloudmenu.emenu.task.TBaseTask;
+import net.cloudmenu.emenu.utils.ProfileHolder;
 
 import org.apache.thrift.TException;
 import org.apache.thrift.TServiceClient;
@@ -134,7 +135,7 @@ public class CheckDialog extends AlertDialog {
         protected Object process(TServiceClient client) throws TException,
                 AException {
             IMenuService.Client iclient = (Client) client;
-            mResult = iclient.getAllNotes();
+            mResult = iclient.getAllNotes(ProfileHolder.getIns().getCurrentSid(mContext));
             return ECode.SUCCESS;
         }
 
