@@ -69,12 +69,20 @@ public abstract class SlideBase extends Activity implements
 
 
     protected void initContent() {
-        if(viewType == ViewType.PAGEVIEW) {
-            mAdapter = makeAdapter();
-            mPagedView.setAdapter(mAdapter);
-        } else {
-            gridAdapter = newListAdapter();
-            gridView.setAdapter(gridAdapter);
+        switch (viewType) {
+            case PAGEVIEW:
+                mAdapter = makeAdapter();
+                mPagedView.setAdapter(mAdapter);
+                break;
+            case GRIDVIEW:
+                gridAdapter = newListAdapter();
+                gridView.setAdapter(gridAdapter);
+                break;
+            case LISTVIEW:
+
+                break;
+            default:
+                throw new IllegalStateException("Unknown View Type");
         }
     }
 
@@ -87,11 +95,19 @@ public abstract class SlideBase extends Activity implements
     protected abstract int getLayout();
 
     protected void initElements() {
-        if(viewType == ViewType.PAGEVIEW) {
-            mPagedView = (PagedView) findViewById(R.id.paged_view);
-            mPagedView.setOnPageChangeListener(this);
-        } else {
-           gridView = (GridView) findViewById(R.id.grid_view);
+        switch (viewType) {
+            case PAGEVIEW:
+                mPagedView = (PagedView) findViewById(R.id.paged_view);
+                mPagedView.setOnPageChangeListener(this);
+                break;
+            case GRIDVIEW:
+                gridView = (GridView) findViewById(R.id.grid_view);
+                break;
+            case LISTVIEW:
+
+                break;
+            default:
+                throw new IllegalStateException("Unknown View Type");
         }
     }
 

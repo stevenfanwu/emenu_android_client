@@ -84,21 +84,29 @@ public abstract class MenuTabBase extends MenuBase implements
 
     @Override
     public void onGoodsClick(Goods g) {
-        if(viewType == ViewType.PAGEVIEW) {
-            int page = -1;
-            for (int i = 0; i < mAdapter.getCount(); i++) {
-                MenuPage p = (MenuPage) mAdapter.getItem(i);
-                if (p.getGoodsList().contains(g)) {
-                    page = i;
-                    break;
+        switch (viewType) {
+            case PAGEVIEW:
+                int page = -1;
+                for (int i = 0; i < mAdapter.getCount(); i++) {
+                    MenuPage p = (MenuPage) mAdapter.getItem(i);
+                    if (p.getGoodsList().contains(g)) {
+                        page = i;
+                        break;
+                    }
                 }
-            }
-            if (page != -1) {
-                mPagedView.scrollToPage(page);
-            }
-        } else {
-            int position= this.getItemPosition(g);
-            gridView.setSelection(position);
+                if (page != -1) {
+                    mPagedView.scrollToPage(page);
+                }
+                break;
+            case GRIDVIEW:
+                int position= this.getItemPosition(g);
+                gridView.setSelection(position);
+                break;
+            case LISTVIEW:
+
+                break;
+            default:
+                throw new IllegalStateException("Unknown View Type");
         }
     }
 
@@ -114,17 +122,24 @@ public abstract class MenuTabBase extends MenuBase implements
     // checkedId is the input page number. By default, each page contains 6 food items.
     @Override
     public void onCheckedChanged(RadioGroup group, int checkedId) {
-        if(viewType == ViewType.PAGEVIEW){
-            if (group == rgSubmenu && !mDisableCheckListener) {
-                int startPage = checkedId;
-                mPagedView.scrollToPage(startPage);
-            }
-        } else{
-            if (group == rgSubmenu && !mDisableCheckListener) {
-                gridView.setSelection(getFirstItemPositionInPage(checkedId));
-            }
-        }
+        switch (viewType) {
+            case PAGEVIEW:
+                if (group == rgSubmenu && !mDisableCheckListener) {
+                    int startPage = checkedId;
+                    mPagedView.scrollToPage(startPage);
+                }
+                break;
+            case GRIDVIEW:
+                if (group == rgSubmenu && !mDisableCheckListener) {
+                    gridView.setSelection(getFirstItemPositionInPage(checkedId));
+                }
+                break;
+            case LISTVIEW:
 
+                break;
+            default:
+                throw new IllegalStateException("Unknown View Type");
+        }
     }
 
     private void initGoodsCategory() {
