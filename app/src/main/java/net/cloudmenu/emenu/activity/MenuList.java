@@ -4,7 +4,7 @@ import android.os.Bundle;
 import android.widget.ListAdapter;
 
 import net.cloudmenu.emenu.R;
-import net.cloudmenu.emenu.adapter.MenuGridAdapter;
+import net.cloudmenu.emenu.adapter.MenuListAdapter;
 import net.cloudmenu.emenu.utils.GlobalValue;
 import net.cloudmenu.emenu.utils.MenuUtils;
 import net.cloudmenu.emenu.utils.MenuUtils.GoodsCategory;
@@ -21,7 +21,7 @@ public class MenuList extends MenuTabBase {
     private List<MenuListPage> mMenuPages;
 
     public MenuList(){
-        this.viewType = ViewType.PAGEVIEW;
+        this.viewType = ViewType.LISTVIEW;
     }
 
     @Override
@@ -45,17 +45,17 @@ public class MenuList extends MenuTabBase {
     protected ListAdapter newListAdapter(){
         MenuPageMap map = new MenuPageMap();
         map.put(GlobalValue.TYPE_CURRENT, mMenu.getPages());
-        return new MenuGridAdapter(this, map, mGoodsCategories);
+        return new MenuListAdapter(this, map, mGoodsCategories);
     }
 
     @Override
     protected int getItemPosition(Goods goods) {
-        return ((MenuGridAdapter) this.gridAdapter).getItemPosition(goods);
+        return ((MenuListAdapter) this.listAdapter).getItemPosition(goods);
     }
 
     @Override
     protected int getFirstItemPositionInPage(int pageNumber) {
-        return ((MenuGridAdapter) this.gridAdapter).getFirstItemPositionInPage(pageNumber);
+        return ((MenuListAdapter) this.listAdapter).getFirstItemPositionInPage(pageNumber);
     }
 
 

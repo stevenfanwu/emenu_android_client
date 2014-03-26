@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+ <net.cloudmenu.emenu.widget.MenuGoodsView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:emenu="http://schemas.android.com/apk/res-auto"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_margin="10dp"
+            android:layout_marginBottom="10dp"
+            emenu:layout="@layout/goods_landscape_list" />

@@ -75,11 +75,12 @@ public abstract class SlideBase extends Activity implements
                 mPagedView.setAdapter(mAdapter);
                 break;
             case GRIDVIEW:
-                gridAdapter = newListAdapter();
+                gridAdapter = newGridAdapter();
                 gridView.setAdapter(gridAdapter);
                 break;
             case LISTVIEW:
-
+                listAdapter = newListAdapter();
+                listView.setAdapter(listAdapter);
                 break;
             default:
                 throw new IllegalStateException("Unknown View Type");
@@ -88,6 +89,9 @@ public abstract class SlideBase extends Activity implements
 
     protected abstract PagedAdapter makeAdapter();
 
+    protected ListAdapter newGridAdapter() {
+        return null;
+    }
     protected ListAdapter newListAdapter() {
         return null;
     }
@@ -104,7 +108,7 @@ public abstract class SlideBase extends Activity implements
                 gridView = (GridView) findViewById(R.id.grid_view);
                 break;
             case LISTVIEW:
-
+                listView = (ListView) findViewById(R.id.list_view);
                 break;
             default:
                 throw new IllegalStateException("Unknown View Type");
