@@ -37,11 +37,15 @@ public abstract class SlideBase extends Activity implements
     protected GridView gridView;
     protected ListAdapter gridAdapter;
 
-
-    protected boolean usePagedView = true;
-    protected boolean useListView = false;
-
     protected ListView listView;
+    protected ListAdapter listAdapter;
+
+    protected enum ViewType {
+        PAGEVIEW,
+        GRIDVIEW,
+        LISTVIEW
+    }
+    protected ViewType viewType = ViewType.PAGEVIEW;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -65,7 +69,7 @@ public abstract class SlideBase extends Activity implements
 
 
     protected void initContent() {
-        if(usePagedView) {
+        if(viewType == ViewType.PAGEVIEW) {
             mAdapter = makeAdapter();
             mPagedView.setAdapter(mAdapter);
         } else {
@@ -83,7 +87,7 @@ public abstract class SlideBase extends Activity implements
     protected abstract int getLayout();
 
     protected void initElements() {
-        if(usePagedView) {
+        if(viewType == ViewType.PAGEVIEW) {
             mPagedView = (PagedView) findViewById(R.id.paged_view);
             mPagedView.setOnPageChangeListener(this);
         } else {

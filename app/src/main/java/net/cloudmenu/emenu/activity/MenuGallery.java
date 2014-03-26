@@ -14,7 +14,7 @@ public class MenuGallery extends MenuTabBase  {
     private static final String TAG = "MenuActivity";
 
     public MenuGallery(){
-        this.usePagedView = false;
+        this.viewType = ViewType.GRIDVIEW;
     }
 
     @Override

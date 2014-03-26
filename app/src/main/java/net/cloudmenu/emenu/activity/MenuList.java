@@ -21,7 +21,7 @@ public class MenuList extends MenuTabBase {
     private List<MenuListPage> mMenuPages;
 
     public MenuList(){
-        this.usePagedView = false;
+        this.viewType = ViewType.PAGEVIEW;
     }
 
     @Override

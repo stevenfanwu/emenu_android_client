@@ -84,7 +84,7 @@ public abstract class MenuTabBase extends MenuBase implements
 
     @Override
     public void onGoodsClick(Goods g) {
-        if(usePagedView) {
+        if(viewType == ViewType.PAGEVIEW) {
             int page = -1;
             for (int i = 0; i < mAdapter.getCount(); i++) {
                 MenuPage p = (MenuPage) mAdapter.getItem(i);
@@ -114,7 +114,7 @@ public abstract class MenuTabBase extends MenuBase implements
     // checkedId is the input page number. By default, each page contains 6 food items.
     @Override
     public void onCheckedChanged(RadioGroup group, int checkedId) {
-        if(usePagedView){
+        if(viewType == ViewType.PAGEVIEW){
             if (group == rgSubmenu && !mDisableCheckListener) {
                 int startPage = checkedId;
                 mPagedView.scrollToPage(startPage);
