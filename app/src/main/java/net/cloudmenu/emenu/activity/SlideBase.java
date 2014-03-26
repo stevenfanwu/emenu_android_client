@@ -10,6 +10,7 @@ import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.widget.GridView;
 import android.widget.ListAdapter;
+import android.widget.ListView;
 
 import net.cloudmenu.emenu.R;
 import net.cloudmenu.emenu.utils.GlobalValue;
@@ -34,8 +35,13 @@ public abstract class SlideBase extends Activity implements
     protected PagedAdapter mAdapter;
 
     protected GridView gridView;
-    protected ListAdapter listAdapter;
+    protected ListAdapter gridAdapter;
+
+
     protected boolean usePagedView = true;
+    protected boolean useListView = false;
+
+    protected ListView listView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -63,8 +69,8 @@ public abstract class SlideBase extends Activity implements
             mAdapter = makeAdapter();
             mPagedView.setAdapter(mAdapter);
         } else {
-            listAdapter = newListAdapter();
-            gridView.setAdapter(listAdapter);
+            gridAdapter = newListAdapter();
+            gridView.setAdapter(gridAdapter);
         }
     }
 

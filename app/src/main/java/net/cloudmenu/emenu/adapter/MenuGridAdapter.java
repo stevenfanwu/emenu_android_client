@@ -25,7 +25,7 @@ import java.util.Set;
 import cn.com.cloudstone.menu.server.thrift.api.Goods;
 import cn.com.cloudstone.menu.server.thrift.api.MenuPage;
 
-public class MenuListAdapter implements ListAdapter {
+public class MenuGridAdapter implements ListAdapter {
     private Map<Integer, List<? extends MenuPage>> mPages;
     private int[] mTypes = new int[] { GlobalValue.TYPE_CURRENT };
     private final DataSetObservable mDataSetObservable = new DataSetObservable();
@@ -35,7 +35,7 @@ public class MenuListAdapter implements ListAdapter {
     private Map<Integer, Integer> itemPositionToCategoryMap = new HashMap<Integer, Integer>();
     private MenuTabBase mContext;
 
-    public MenuListAdapter(MenuTabBase c, Map<Integer, List<? extends MenuPage>> pages,
+    public MenuGridAdapter(MenuTabBase c, Map<Integer, List<? extends MenuPage>> pages,
                            List<MenuUtils.GoodsCategory> itemCategories) {
         mContext = c;
         mPages = pages;

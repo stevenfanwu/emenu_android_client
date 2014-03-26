@@ -4,7 +4,7 @@ import android.os.Bundle;
 import android.widget.ListAdapter;
 
 import net.cloudmenu.emenu.R;
-import net.cloudmenu.emenu.adapter.MenuListAdapter;
+import net.cloudmenu.emenu.adapter.MenuGridAdapter;
 import net.cloudmenu.emenu.utils.GlobalValue;
 
 import cn.com.cloudstone.menu.server.thrift.api.Goods;
@@ -38,17 +38,17 @@ public class MenuGallery extends MenuTabBase  {
     protected ListAdapter newListAdapter(){
         MenuPageMap map = new MenuPageMap();
         map.put(GlobalValue.TYPE_CURRENT, mMenu.getPages());
-        return new MenuListAdapter(this, map, mGoodsCategories);
+        return new MenuGridAdapter(this, map, mGoodsCategories);
     }
 
     @Override
     protected int getItemPosition(Goods goods) {
-        return ((MenuListAdapter) this.listAdapter).getItemPosition(goods);
+        return ((MenuGridAdapter) this.gridAdapter).getItemPosition(goods);
     }
 
     @Override
     protected int getFirstItemPositionInPage(int pageNumber) {
-        return ((MenuListAdapter) this.listAdapter).getFirstItemPositionInPage(pageNumber);
+        return ((MenuGridAdapter) this.gridAdapter).getFirstItemPositionInPage(pageNumber);
     }
 
 }

@@ -14,7 +14,14 @@
         android:orientation="vertical" >
     </RadioGroup>
 
-    <greendroid.widget.PagedView
+    <!--<greendroid.widget.PagedView-->
+        <!--android:id="@+id/paged_view"-->
+        <!--android:layout_width="fill_parent"-->
+        <!--android:layout_height="fill_parent"-->
+        <!--android:layout_marginTop="50dp"-->
+        <!--android:layout_toRightOf="@+id/rg_submenu"/>-->
+
+    <ListView
         android:id="@+id/paged_view"
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
