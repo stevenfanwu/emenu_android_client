@@ -18,7 +18,7 @@
     <string name="confirm_logout">Are you sure to log out?</string>
     <string name="wrong_login">Incorrect username and/or password.</string>
     <string name="wrong_device">Your device is not in the management list.</string>
-    <string name="food_search_hint">Name</string>
+    <string name="food_search_hint">\u0020 Search</string>
     <string name="order">Order</string>
     <string name="main_btn_lock">Unlock</string>
     <string name="main_btn_menu">Menu</string>

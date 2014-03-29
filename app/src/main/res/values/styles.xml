@@ -44,8 +44,7 @@
     </style>
 
     <style name="Widget.EditText" parent="android:Widget.EditText">
-        <item name="android:background">@drawable/edit_text</item>
-        <item name="android:textColor">@android:color/white</item>
+        <item name="android:textColor">@android:color/black</item>
     </style>
 
     <style name="Widget.ListView" parent="android:Widget.AbsListView">
