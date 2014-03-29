@@ -35,16 +35,6 @@
         android:hint="@string/food_search_hint"
         android:drawableLeft="@drawable/ic_search"/>
 
-    <Button
-        android:id="@+id/btn_search"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentRight="true"
-        android:layout_marginRight="10dp"
-        android:layout_marginTop="5dp"
-        android:background="@drawable/ic_search_pressed"
-        android:padding="5dp" />
-
     <net.cloudmenu.emenu.widget.SearchView
         android:id="@+id/search_view"
         android:layout_width="400dp"

@@ -3,7 +3,6 @@ package net.cloudmenu.emenu.activity;
 
 import android.view.View;
 import android.view.ViewGroup.LayoutParams;
-import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
@@ -30,7 +29,7 @@ public abstract class MenuTabBase extends MenuBase implements
     private RadioGroup rgSubmenu;
 
     private SearchView mSearchView;
-    private Button btnSearch;
+//    private Button btnSearch;
     private EditText searchEditText;
 
     @Override
@@ -40,8 +39,8 @@ public abstract class MenuTabBase extends MenuBase implements
 
         mSearchView = (SearchView) findViewById(R.id.search_view);
         mSearchView.setOnGoodsClickListener(this);
-        btnSearch = (Button) findViewById(R.id.btn_search);
-        btnSearch.setOnClickListener(this);
+//        btnSearch = (Button) findViewById(R.id.btn_search);
+//        btnSearch.setOnClickListener(this);
 
         searchEditText = (EditText) findViewById(R.id.menu_search_box);
         searchEditText.setOnClickListener(this);
@@ -50,17 +49,7 @@ public abstract class MenuTabBase extends MenuBase implements
     @Override
     public void onClick(View v) {
         super.onClick(v);
-        if (v == btnSearch) {
-            if (mSearchView.getVisibility() == View.VISIBLE)
-                return;
-            List<Goods> mGoods = new ArrayList<Goods>();
-            for (MenuPage page : mMenu.getPages()) {
-                mGoods.addAll(page.getGoodsList());
-            }
-            mSearchView.setGoodsList(mGoods);
-            mSearchView.setVisibility(View.VISIBLE);
-        }
-        else if (v == searchEditText) {
+        if (v == searchEditText) {
             if (mSearchView.getVisibility() == View.VISIBLE)
                 return;
             List<Goods> mGoods = new ArrayList<Goods>();
