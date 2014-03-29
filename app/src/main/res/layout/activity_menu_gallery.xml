@@ -32,16 +32,6 @@
         android:layout_marginTop="50dp"
         android:layout_toRightOf="@+id/rg_submenu" />
 
-    <!--<TextView-->
-        <!--android:id="@+id/tv_page"-->
-        <!--android:layout_width="wrap_content"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:layout_alignParentRight="true"-->
-        <!--android:layout_alignTop="@id/page_indicator"-->
-        <!--android:layout_marginRight="10dp"-->
-        <!--android:textAppearance="?android:attr/textAppearanceSmall"-->
-        <!--android:textColor="@color/text_dard_red" />-->
-
     <Button
         android:id="@+id/btn_search"
         android:layout_width="wrap_content"

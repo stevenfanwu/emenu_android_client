@@ -45,13 +45,13 @@ public abstract class MenuBase extends SlideBase {
     private void setParentLogoUrl() {
         Activity context = getParent();
         while (context != null) {
-            if (context instanceof MainTabHost) {
-                MainTabHost host = (MainTabHost) context;
-                if (mMenu != null)
-                    host.setLogoUrl(mMenu.getMenuLogo());
-                else
-                    host.setLogoUrl(null);
-            }
+//            if (context instanceof MainTabHost) {
+//                MainTabHost host = (MainTabHost) context;
+//                if (mMenu != null)
+//                    host.setLogoUrl(mMenu.getMenuLogo());
+//                else
+//                    host.setLogoUrl(null);
+//            }
             context = context.getParent();
         }
     }

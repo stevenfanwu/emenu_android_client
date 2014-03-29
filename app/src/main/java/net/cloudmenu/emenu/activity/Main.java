@@ -17,7 +17,6 @@ import net.cloudmenu.emenu.dialog.AlertDialog;
 import net.cloudmenu.emenu.dialog.LoginDialog;
 import net.cloudmenu.emenu.dialog.LoginDialog.OnLoginSuccessListener;
 import net.cloudmenu.emenu.dialog.ManageDialog;
-import net.cloudmenu.emenu.dialog.ProgressDialog;
 import net.cloudmenu.emenu.dialog.TableDialog;
 import net.cloudmenu.emenu.dialog.TableInfoDialog;
 import net.cloudmenu.emenu.net.RPCHelper;
@@ -41,8 +40,7 @@ public class Main extends Activity implements OnClickListener,
     private Button btnTable;
     private Button btnTableInfo;
     private Button btnManage;
-    private Button btnInfo;
-    private TextView tvLogin;
+//    private TextView tvLogin;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -59,18 +57,16 @@ public class Main extends Activity implements OnClickListener,
 
     private void initElements() {
         btnLock = (Button) findViewById(R.id.btn_lock);
-        btnTable = (Button) findViewById(R.id.btn_table);
+        btnTable = (Button) findViewById(R.id.btn_menu);
         btnTableInfo = (Button) findViewById(R.id.btn_table_info);
         btnManage = (Button) findViewById(R.id.btn_manage);
-        btnInfo = (Button) findViewById(R.id.btn_info);
-        tvLogin = (TextView) findViewById(R.id.tv_login);
+//        tvLogin = (TextView) findViewById(R.id.tv_login);
         btnLock.setOnClickListener(this);
         btnTable.setOnClickListener(this);
         btnTable.setOnLongClickListener(this);
         btnTableInfo.setOnClickListener(this);
         btnManage.setOnClickListener(this);
         btnLock.setOnClickListener(this);
-        btnInfo.setOnClickListener(this);
     }
 
     @Override
@@ -104,19 +100,16 @@ public class Main extends Activity implements OnClickListener,
             showTableInfoDialog();
         } else if (v == btnManage) {
             showManageDialog();
-        } else if (v == btnInfo) {
-            // startActivity(new Intent(this, AboutActivity.class));
-            new ProgressDialog(this).show();
         }
 
     }
 
     private void refreshContent() {
         if (ProfileHolder.getIns().isLogined(this)) {
-            tvLogin.setText(getString(R.string.welcome) + ','
-                    + ProfileHolder.getIns().getCurrentUser(this));
+//            tvLogin.setText(getString(R.string.welcome) + ','
+//                    + ProfileHolder.getIns().getCurrentUser(this));
         } else {
-            tvLogin.setText(getString(R.string.not_login));
+//            tvLogin.setText(getString(R.string.not_login));
         }
     }
 

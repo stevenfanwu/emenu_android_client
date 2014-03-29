@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
+    <!-- strings in activity_main.xml -->
     <string name="app_name">Hummingbird</string>
     <string name="pre_key_clear_image_cache">pre_key_clear_image_cache</string>
     <string name="pre_key_custom_api_addr">pre_key_custom_api_addr</string>
@@ -19,6 +20,10 @@
     <string name="wrong_device">Your device is not in the management list.</string>
     <string name="food_search_hint">Name</string>
     <string name="order">Order</string>
+    <string name="main_btn_lock">Unlock</string>
+    <string name="main_btn_menu">Menu</string>
+    <string name="main_btn_table_info">Table</string>
+    <string name="main_btn_manage">Settings</string>
 
     <!-- strings in activity_order.xml -->
     <string name="activity_order_category">Category</string>

@@ -92,7 +92,7 @@ public class PreferencesActivity extends PreferenceActivity implements
                             clearImageBuffer();
                         }
                     });
-            builder.setNegativeButton("取消",
+            builder.setNegativeButton("Cancel",
                     new DialogInterface.OnClickListener() {
                         @Override
                         public void onClick(DialogInterface dialog, int which) {

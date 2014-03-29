@@ -35,7 +35,7 @@ public class WaiterDialog extends ButtonDialog implements
         addButton(R.id.bt_clear_table, "清台");
         // addButton(R.id.bt_change_table, "转台");
         // addButton(R.id.bt_merge_table, "并桌");
-        addButton(R.id.bt_cancel, "取消");
+        addButton(R.id.bt_cancel, "Cancel");
     }
 
     @Override

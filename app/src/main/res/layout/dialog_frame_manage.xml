@@ -9,20 +9,20 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_weight="1"
-        android:text="更新菜单" />
+        android:text="Update Menu" />
 
     <Button
         android:id="@+id/bt_setting"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_weight="1"
-        android:text="系统设置" />
+        android:text="Settings" />
 
     <Button
         android:id="@+id/bt_cancel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_weight="1"
-        android:text="取消" />
+        android:text="Cancel" />
 
 </LinearLayout>

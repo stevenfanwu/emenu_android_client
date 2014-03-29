@@ -23,7 +23,7 @@ public class AlertDialog extends Dialog {
         super(context, R.style.Theme_Dialog);
         setContentView(R.layout.dialog_alert);
         initElements();
-        setButton2("取消", null);
+        setButton2("Cancel", null);
     }
 
     private void initElements() {
