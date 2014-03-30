@@ -25,27 +25,39 @@
         android:id="@+id/list_view"
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="80dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
         android:divider="@android:color/transparent"
         android:dividerHeight="10.0sp"
         android:layout_toRightOf="@+id/rg_submenu"/>
 
-    <Button
-        android:id="@+id/btn_search"
-        android:layout_width="wrap_content"
+    <EditText
+        android:id="@+id/menu_search_box"
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
-        android:layout_alignParentRight="true"
-        android:layout_marginRight="10dp"
-        android:layout_marginTop="5dp"
-        android:background="@drawable/ic_search_pressed"
-        android:padding="5dp" />
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_toRightOf="@id/rg_submenu"
+        android:hint="@string/food_search_hint"
+        android:drawableLeft="@drawable/ic_search"/>
 
     <net.cloudmenu.emenu.widget.SearchView
         android:id="@+id/search_view"
         android:layout_width="400dp"
         android:layout_height="fill_parent"
-        android:layout_alignRight="@id/btn_search"
-        android:layout_alignTop="@id/btn_search"
+        android:layout_alignLeft="@id/menu_search_box"
+        android:layout_alignTop="@id/menu_search_box"
         android:visibility="gone" />
+
+    <View
+        android:layout_width="fill_parent"
+        android:layout_height="1dp"
+        android:layout_alignLeft="@id/menu_search_box"
+        android:layout_alignRight="@id/grid_view"
+        android:layout_below="@id/menu_search_box"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:background="@color/translucent"/>
 
 </RelativeLayout>

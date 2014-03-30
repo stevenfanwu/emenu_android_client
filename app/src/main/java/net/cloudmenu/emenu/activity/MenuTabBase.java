@@ -3,7 +3,7 @@ package net.cloudmenu.emenu.activity;
 
 import android.view.View;
 import android.view.ViewGroup.LayoutParams;
-import android.widget.Button;
+import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.RadioGroup.OnCheckedChangeListener;
@@ -29,7 +29,8 @@ public abstract class MenuTabBase extends MenuBase implements
     private RadioGroup rgSubmenu;
 
     private SearchView mSearchView;
-    private Button btnSearch;
+//    private Button btnSearch;
+    private EditText searchEditText;
 
     @Override
     protected void initElements() {
@@ -38,14 +39,17 @@ public abstract class MenuTabBase extends MenuBase implements
 
         mSearchView = (SearchView) findViewById(R.id.search_view);
         mSearchView.setOnGoodsClickListener(this);
-        btnSearch = (Button) findViewById(R.id.btn_search);
-        btnSearch.setOnClickListener(this);
+//        btnSearch = (Button) findViewById(R.id.btn_search);
+//        btnSearch.setOnClickListener(this);
+
+        searchEditText = (EditText) findViewById(R.id.menu_search_box);
+        searchEditText.setOnClickListener(this);
     }
 
     @Override
     public void onClick(View v) {
         super.onClick(v);
-        if (v == btnSearch) {
+        if (v == searchEditText) {
             if (mSearchView.getVisibility() == View.VISIBLE)
                 return;
             List<Goods> mGoods = new ArrayList<Goods>();
