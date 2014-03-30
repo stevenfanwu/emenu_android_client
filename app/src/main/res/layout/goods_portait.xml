@@ -58,7 +58,6 @@
                 android:layout_height="wrap_content"
                 android:layout_alignParentLeft="true"
                 android:layout_below="@id/tv_name"
-                android:layout_toLeftOf="@id/tv_price"
                 android:lines="3"
                 android:padding="2dp"
                 android:text="配料：五花肉，姜末，生抽，老抽，八角，料酒，冰糖，五香粉，胡椒粉" />
@@ -72,39 +71,38 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:gravity="center_vertical" >
+            android:gravity="center_vertical">
 
-            <!--<TextView-->
-                <!--android:layout_width="wrap_content"-->
-                <!--android:layout_height="wrap_content"-->
-                <!--android:paddingLeft="10dp"-->
-                <!--android:paddingRight="10dp"-->
-                <!--android:text="@string/order"-->
-                <!--android:textAppearance="@style/TextAppearance.Red" />-->
-
-            <Button
-                android:id="@+id/btn_sub"
-                android:layout_width="15dp"
-                android:layout_height="15dp"
-                android:background="@drawable/ic_minus" />
-
-            <TextView
-                android:id="@+id/tv_count"
+            <LinearLayout
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginRight="10dp"
-                android:layout_marginLeft="10dp"
-                android:minEms="2"
-                android:text="0"
-                android:textAppearance="@style/TextAppearance.Red"
-                android:gravity="center" />
+                android:layout_height="30dp"
+                android:gravity="center"
+                android:background="@color/text_selected_red">
+                <Button
+                    android:id="@+id/btn_sub"
+                    android:layout_width="15dp"
+                    android:layout_height="15dp"
+                    android:layout_marginLeft="10dp"
+                    android:background="@drawable/ic_minus" />
 
-            <Button
-                android:id="@+id/btn_add"
-                android:layout_width="15dp"
-                android:layout_height="15dp"
-                android:background="@drawable/ic_add" />
+                <TextView
+                    android:id="@+id/tv_count"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginRight="5dp"
+                    android:layout_marginLeft="5dp"
+                    android:minEms="2"
+                    android:text="0"
+                    android:textAppearance="@style/TextAppearance.White"
+                    android:gravity="center" />
 
+                <Button
+                    android:id="@+id/btn_add"
+                    android:layout_width="15dp"
+                    android:layout_height="15dp"
+                    android:layout_marginRight="10dp"
+                    android:background="@drawable/ic_add" />
+            </LinearLayout>
             <!--<TextView-->
                 <!--android:layout_width="wrap_content"-->
                 <!--android:layout_height="wrap_content"-->

@@ -10,7 +10,7 @@
         android:layout_height="fill_parent"
         android:layout_alignParentTop="true"
         android:gravity="center"
-        android:background="#820000"
+        android:background="@color/text_selected_red"
         android:orientation="vertical" >
     </RadioGroup>
 
