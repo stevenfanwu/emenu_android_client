@@ -72,6 +72,11 @@
         <item name="android:textColor">@color/text_red</item>
     </style>
 
+    <style name="TextAppearance.Black" parent="@android:style/TextAppearance.Medium">
+        <item name="android:textColor">@android:color/black</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
     <style name="TextAppearance.Red.Dard">
         <item name="android:textColor">@color/text_dard_red</item>
     </style>
