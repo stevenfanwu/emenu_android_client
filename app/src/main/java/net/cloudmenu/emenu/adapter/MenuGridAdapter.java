@@ -4,6 +4,7 @@ package net.cloudmenu.emenu.adapter;
 import android.content.Context;
 import android.database.DataSetObservable;
 import android.database.DataSetObserver;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -196,7 +197,11 @@ public class MenuGridAdapter implements ListAdapter {
     // Return MenuGoodsView instead of menuPageview
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
-            Goods item = getItem(position);
+
+        MenuGoodsView view = (MenuGoodsView) convertView;
+        Goods item = getItem(position);
+        if (convertView == null) {
+
             if (item == null) {
                 return new View(mContext);
             }
@@ -204,14 +209,16 @@ public class MenuGridAdapter implements ListAdapter {
             LayoutInflater inflater = (LayoutInflater) mContext.getSystemService
                     (Context.LAYOUT_INFLATER_SERVICE);
 
-            MenuGoodsView view = (MenuGoodsView) inflater.inflate(R.layout.page_horizontal1, null);
-            view.setGoods(getType(position), item);
-            view.setVisibility(View.VISIBLE);
+            view = (MenuGoodsView) inflater.inflate(R.layout.page_horizontal1, null);
 
+        }
+        view.setGoods(getType(position), item);
+        view.setVisibility(View.VISIBLE);
             // Change the radioGroup submenu while scrolling to the first item of a category
             if (itemPositionToCategoryMap.get(position - 1) != null) {
                 mContext.checkSliently(itemPositionToCategoryMap.get(position - 1));
             }
+
 
             return view;
     }
