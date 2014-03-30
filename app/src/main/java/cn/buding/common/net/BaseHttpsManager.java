@@ -102,7 +102,7 @@ public class BaseHttpsManager {
 	 * @param params
 	 *            the request param.
 	 * @return result of response
-	 * @throws CustomException
+	 * @throws cn.buding.common.exception.CustomException
 	 */
 	public static String executeRequest(RequestParam params)
 			throws CustomException {
@@ -217,7 +217,7 @@ public class BaseHttpsManager {
 
 	/**
 	 * get http response of a remote file.
-	 * 
+	 *
 	 * @param fileUrl
 	 * @return
 	 */
@@ -250,7 +250,7 @@ public class BaseHttpsManager {
 	 * First load data from native cache, return cache if it is time valid. or
 	 * try to load it from server, but it will still return cache if it fails to
 	 * load from Internet.
-	 * 
+	 *
 	 * @param requestValidTime
 	 *            The valid time that for request. We do not need to call server
 	 *            if the request is still valid.
@@ -317,7 +317,7 @@ public class BaseHttpsManager {
 
 	/**
 	 * base class tools that wrap the params for
-	 * {@link cn.buding.common.net.BaseHttpsManager#postAPI(android.content.Context, String, cn.buding.common.net.BaseHttpsManager.RequestParam, int)}
+	 * {@link BaseHttpsManager#postAPI(android.content.Context, String, BaseHttpsManager.RequestParam, int)}
 	 */
 	public static class RequestParam extends ArrayList<NameValuePair> {
 		private static final long serialVersionUID = 1L;

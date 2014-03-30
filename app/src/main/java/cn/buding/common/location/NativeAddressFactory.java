@@ -5,7 +5,6 @@ import android.content.Context;
 import android.location.Address;
 import android.location.Geocoder;
 import android.os.Parcel;
-import android.os.Parcelable;
 import android.util.Log;
 
 import java.io.IOException;
@@ -102,7 +101,7 @@ public class NativeAddressFactory implements IAddressFactory {
 			mAddress.writeToParcel(dest, flags);
 		}
 
-		public static final Parcelable.Creator<AddressWraper> CREATOR = new Parcelable.Creator<AddressWraper>() {
+		public static final Creator<AddressWraper> CREATOR = new Creator<AddressWraper>() {
 			public AddressWraper createFromParcel(Parcel in) {
 				Address add = Address.CREATOR.createFromParcel(in);
 				return new AddressWraper(add);

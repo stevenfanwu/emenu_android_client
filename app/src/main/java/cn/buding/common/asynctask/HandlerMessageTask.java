@@ -12,7 +12,7 @@ import cn.buding.common.widget.MyToast;
 
 /**
  * handle error and success messages. the {@link #doInBackground(Void...)} will
- * return a value in {@link ECode}, we will show correspond error messages for
+ * return a value in {@link cn.buding.common.exception.ECode}, we will show correspond error messages for
  * the returned error code.
  */
 public abstract class HandlerMessageTask extends BaseTask<Void, Object, Object> {

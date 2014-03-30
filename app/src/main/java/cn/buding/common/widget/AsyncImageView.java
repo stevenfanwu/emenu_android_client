@@ -15,7 +15,7 @@ import net.cloudmenu.emenu.R;
  * @see attr#loadingBackground
  * @see attr#imageUrl
  */
-public class AsyncImageView extends cn.buding.common.widget.BaseAsyncImageView {
+public class AsyncImageView extends BaseAsyncImageView {
 	private static final String TAG = "AsyncImageView";
 	private static final ScaleType[] sScaleTypeArray = { ScaleType.MATRIX,
 			ScaleType.FIT_XY, ScaleType.FIT_START, ScaleType.FIT_CENTER,
@@ -33,7 +33,7 @@ public class AsyncImageView extends cn.buding.common.widget.BaseAsyncImageView {
 
 		int imageLayout = ta
 				.getResourceId(R.styleable.AsyncImageView_imageLayout,
-						getDefaultImageLayout());
+                        getDefaultImageLayout());
 		if (imageLayout != 0) {
 			setImageLayout(imageLayout);
 		}

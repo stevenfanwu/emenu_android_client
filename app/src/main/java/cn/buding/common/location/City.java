@@ -1,7 +1,6 @@
 package cn.buding.common.location;
 
 import android.os.Parcel;
-import android.os.Parcelable;
 
 /**
  * a data model for city. including the city name, city areas and which kinds of data are available in this city.
@@ -99,8 +98,8 @@ public class City implements ICity {
 		dest.writeDouble(latitude);
 	}
 
-	public static final Parcelable.Creator<City> CREATOR =
-			new Parcelable.Creator<City>() {
+	public static final Creator<City> CREATOR =
+			new Creator<City>() {
 
 				@Override
 				public City createFromParcel(Parcel src) {

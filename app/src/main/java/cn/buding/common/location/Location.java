@@ -20,7 +20,7 @@ public class Location extends android.location.Location implements Serializable 
 	/**
 	 * the address of the location.
 	 * 
-	 * @see GoogleAddress
+	 * @see cn.buding.common.location.google.GoogleAddress
 	 */
 	private IAddress mAddress;
 

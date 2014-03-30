@@ -189,7 +189,7 @@ public class ImageBuffer extends MemBuffer<Bitmap> {
 
 	@Override
 	protected void onItemRemoved(
-			cn.buding.common.file.MemBuffer.UrlItem<Bitmap> u) {
+			UrlItem<Bitmap> u) {
 		super.onItemRemoved(u);
 		// recycle the bitmap manually.
 		Bitmap b = u.getItemValue();
@@ -225,13 +225,13 @@ public class ImageBuffer extends MemBuffer<Bitmap> {
 
 	@Override
 	public synchronized UrlBitmap readFromMem(String url,
-			cn.buding.common.file.MemBuffer.ItemParams params) {
+			ItemParams params) {
 		return (UrlBitmap) super.readFromMem(url, params);
 	}
 
 	public class UrlBitmapFactory extends UrlItemFactory<Bitmap> {
 		@Override
-		public cn.buding.common.file.MemBuffer.UrlItem<Bitmap> createUrlItem(
+		public UrlItem<Bitmap> createUrlItem(
 				String url, File file) {
 			return new UrlBitmap(url, file);
 		}

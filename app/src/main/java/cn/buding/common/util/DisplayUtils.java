@@ -3,6 +3,7 @@ package cn.buding.common.util;
 import android.content.Context;
 import android.util.DisplayMetrics;
 import android.view.WindowManager;
+
 /** utils for screen display */
 public class DisplayUtils {
 	public static int getPixel(Context context, float dp) {

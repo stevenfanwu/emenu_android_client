@@ -198,7 +198,7 @@ public class CustomLocManager {
 	private GetGoogleLocationThread mGetGoogleLocationThread;
 
 	/**
-	 * use wifi and tele info to invoke {@link cn.buding.common.location.CustomLocManager.GetGoogleLocationThread}. time
+	 * use wifi and tele info to invoke {@link CustomLocManager.GetGoogleLocationThread}. time
 	 * duration between two request can not within {@link #mMinTimeInterval}
 	 */
 	private void onWifiTelStateChanged() {

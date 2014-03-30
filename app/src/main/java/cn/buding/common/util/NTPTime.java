@@ -99,7 +99,7 @@ public class NTPTime {
 					address, 123);
 
 			NtpMessage.encodeTimestamp(packet.getData(), 40,
-					(System.currentTimeMillis() / 1000.0) + 2208988800.0);
+                    (System.currentTimeMillis() / 1000.0) + 2208988800.0);
 			socket.send(packet);
 
 			packet = new DatagramPacket(buf, buf.length);

@@ -2,8 +2,6 @@ package cn.buding.common.exception;
 
 import java.lang.reflect.Field;
 
-import cn.buding.common.asynctask.HandlerMessageTask;
-
 /**
  * ECode is class for error code. ECode has 2 part<br/>
  * The first part is Server Error. Error codes in this part shares the same
@@ -11,7 +9,7 @@ import cn.buding.common.asynctask.HandlerMessageTask;
  * Server Error {@link #isServerError(int)}, we assign
  * {@link #SERVER_RETURN_ERROR} to error code. this part can be found in
  * {@link JSONParser#parseWithCodeMessage(iw.avatar.net.ServerApi, String)}<br/>
- * The second part is Local Error. which is used by {@link HandlerMessageTask}
+ * The second part is Local Error. which is used by {@link cn.buding.common.asynctask.HandlerMessageTask}
  */
 public class ECode {
 	/************************ Server Error ***************************/

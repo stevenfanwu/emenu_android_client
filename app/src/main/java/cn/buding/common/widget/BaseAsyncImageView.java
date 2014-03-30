@@ -234,11 +234,11 @@ public abstract class BaseAsyncImageView extends RelativeLayout {
 
 	private void postSetLoadingState(final int state) {
 		mHandler.post(new Runnable() {
-			@Override
-			public void run() {
-				setLoadingState(state);
-			}
-		});
+            @Override
+            public void run() {
+                setLoadingState(state);
+            }
+        });
 	}
 
 	public void postLoading(String url) {
@@ -360,8 +360,8 @@ public abstract class BaseAsyncImageView extends RelativeLayout {
 		}
 	};
 
-	protected cn.buding.common.file.ImageBuffer getImageBuffer() {
-		return cn.buding.common.file.ImageBuffer.getInstance();
+	protected ImageBuffer getImageBuffer() {
+		return ImageBuffer.getInstance();
 	}
 
 	private OnResLoadedListener onImgLoadListener = new OnResLoadedListener() {

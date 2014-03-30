@@ -1,7 +1,6 @@
 package cn.buding.common.location.google;
 
 import android.os.Parcel;
-import android.os.Parcelable;
 
 import cn.buding.common.location.BaseAddress;
 
@@ -79,8 +78,8 @@ public class GoogleAddress extends BaseAddress {
 		return getLocality();
 	}
 
-	public static final Parcelable.Creator<GoogleAddress> CREATOR =
-			new Parcelable.Creator<GoogleAddress>() {
+	public static final Creator<GoogleAddress> CREATOR =
+			new Creator<GoogleAddress>() {
 				public GoogleAddress createFromParcel(Parcel in) {
 					GoogleAddress res = new GoogleAddress(in);
 					return res;
