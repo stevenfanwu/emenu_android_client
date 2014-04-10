@@ -6,6 +6,7 @@ import android.os.AsyncTask.Status;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.WindowManager;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.BaseAdapter;
@@ -32,6 +33,7 @@ public class TableInfoDialog extends AlertDialog implements OnItemClickListener 
     private ListView mListview;
     private QueryTableInfoTask mTask;
     private TableInfoAdapter mAdapter;
+    private WindowManager.LayoutParams lp;
 
     public TableInfoDialog(Context context) {
         super(context);
@@ -44,10 +46,20 @@ public class TableInfoDialog extends AlertDialog implements OnItemClickListener 
         mAdapter = new TableInfoAdapter(mTableInfos);
         mListview.setAdapter(mAdapter);
         mListview.setOnItemClickListener(this);
+        initDialogSize();
+    }
+
+    private void initDialogSize() {
+        lp = new WindowManager.LayoutParams();
+        lp.copyFrom(getWindow().getAttributes());
+        lp.width = WindowManager.LayoutParams.MATCH_PARENT;
+        lp.height = WindowManager.LayoutParams.MATCH_PARENT;
     }
 
     @Override
     public void show() {
+        hideCompanyName();
+        getWindow().setAttributes(lp);
         super.show();
         initData();
     }

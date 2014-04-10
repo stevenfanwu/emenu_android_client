@@ -16,6 +16,7 @@ public class AlertDialog extends Dialog {
     private Button bt2;
     private TextView tvTitle;
     private TextView tvMessage;
+    private TextView companyName;
     private ViewGroup mWidgetFrame;
     private View llMessage;
 
@@ -33,6 +34,13 @@ public class AlertDialog extends Dialog {
         tvMessage = (TextView) findViewById(R.id.tv_message);
         mWidgetFrame = (ViewGroup) findViewById(android.R.id.widget_frame);
         llMessage = findViewById(R.id.ll_message);
+        companyName = (TextView) findViewById(R.id.company_name);
+    }
+
+    protected void hideCompanyName() {
+        companyName.setVisibility(View.INVISIBLE);
+        companyName.setPadding(0, 0, 0, 0);
+        tvTitle.setPadding(0, 0, 0, 0);
     }
 
     public AlertDialog setButton1(String text,

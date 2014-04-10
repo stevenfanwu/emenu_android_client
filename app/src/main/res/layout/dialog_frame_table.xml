@@ -10,9 +10,8 @@
         android:gravity="center_vertical" >
 
         <TextView
-            android:text="桌名"
-            android:textAppearance="?android:attr/textAppearanceMedium"
-            android:textColor="@android:color/white" />
+            android:text="Table ID"
+            android:textAppearance="@style/TextAppearance.Black" />
 
         <Spinner
             android:id="@+id/sp_table"
@@ -25,9 +24,8 @@
         android:gravity="center_vertical" >
 
         <TextView
-            android:text="人数"
-            android:textAppearance="?android:attr/textAppearanceMedium"
-            android:textColor="@android:color/white" />
+            android:text="No. of Guest"
+            android:textAppearance="@style/TextAppearance.Black" />
 
         <EditText
             android:id="@+id/et_number"

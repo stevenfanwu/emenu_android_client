@@ -6,6 +6,7 @@ import android.content.DialogInterface.OnClickListener;
 import android.content.Intent;
 import android.os.AsyncTask.Status;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemSelectedListener;
 import android.widget.ArrayAdapter;
@@ -45,12 +46,13 @@ public class TableDialog extends AlertDialog implements OnClickListener,
     private Spinner spTable;
     private QueryTableInfoTask mTask;
     private List<TableInfo> mTableInfos = new ArrayList<TableInfo>();
+    private WindowManager.LayoutParams lp;
 
     public TableDialog(Context context) {
         super(context);
-        setTitle("开台");
-        setButton1("确认", this, false);
-        setButton2("取消", this);
+        setTitle("Check In");
+        setButton1(context.getString(android.R.string.ok), this, false);
+        setButton2(context.getString(android.R.string.cancel), this);
         setView(R.layout.dialog_frame_table);
         initElements();
     }
@@ -59,6 +61,7 @@ public class TableDialog extends AlertDialog implements OnClickListener,
 
     @Override
     public void show() {
+        getWindow().setAttributes(lp);
         super.show();
         if (mFirstTime) {
             initTableData();
@@ -112,6 +115,10 @@ public class TableDialog extends AlertDialog implements OnClickListener,
         spTable = (Spinner) findViewById(R.id.sp_table);
         spTable.setOnItemSelectedListener(this);
         etNumber = (EditText) findViewById(R.id.et_number);
+        lp = new WindowManager.LayoutParams();
+        lp.copyFrom(getWindow().getAttributes());
+        lp.width = WindowManager.LayoutParams.MATCH_PARENT;
+        lp.height = WindowManager.LayoutParams.MATCH_PARENT;
     }
 
     @Override

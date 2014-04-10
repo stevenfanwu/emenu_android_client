@@ -3,6 +3,7 @@ package net.cloudmenu.emenu.dialog;
 import android.content.Context;
 import android.content.Intent;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.Button;
 
 import net.cloudmenu.emenu.R;
@@ -25,6 +26,7 @@ import cn.com.cloudstone.menu.server.thrift.api.AException;
 public class ManageDialog extends ButtonDialog {
     private Button btnUpdate;
     private Button btnSetting;
+    private WindowManager.LayoutParams lp;
 
     public ManageDialog(Context context) {
         super(context);
@@ -32,6 +34,16 @@ public class ManageDialog extends ButtonDialog {
         btnUpdate = addButton(R.id.bt_update, "Menu Update");
         btnSetting = addButton(R.id.bt_setting, "Settings");
         addButton(R.id.bt_cancel, "Cancel");
+        lp = new WindowManager.LayoutParams();
+        lp.copyFrom(getWindow().getAttributes());
+        lp.width = WindowManager.LayoutParams.MATCH_PARENT;
+        lp.height = WindowManager.LayoutParams.MATCH_PARENT;
+    }
+
+    @Override
+    public void show() {
+        getWindow().setAttributes(lp);
+        super.show();
     }
 
     @Override
