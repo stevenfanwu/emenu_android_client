@@ -10,7 +10,6 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.View.OnLongClickListener;
 import android.widget.Button;
-import android.widget.TextView;
 
 import net.cloudmenu.emenu.R;
 import net.cloudmenu.emenu.dialog.AlertDialog;
@@ -66,7 +65,6 @@ public class Main extends Activity implements OnClickListener,
         btnTable.setOnLongClickListener(this);
         btnTableInfo.setOnClickListener(this);
         btnManage.setOnClickListener(this);
-        btnLock.setOnClickListener(this);
     }
 
     @Override

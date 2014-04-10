@@ -3,21 +3,17 @@ package net.cloudmenu.emenu.dialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.DialogInterface.OnClickListener;
-import android.view.View;
-import android.widget.AdapterView;
-import android.widget.AdapterView.OnItemSelectedListener;
+import android.view.WindowManager;
 import android.widget.ArrayAdapter;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.CompoundButton.OnCheckedChangeListener;
 import android.widget.EditText;
-import android.widget.Spinner;
 
 import net.cloudmenu.emenu.R;
 import net.cloudmenu.emenu.net.RPCHelper;
 import net.cloudmenu.emenu.task.LoginTask;
 import net.cloudmenu.emenu.task.TBaseTask;
-import net.cloudmenu.emenu.utils.ProfileHolder;
 
 import org.apache.thrift.TException;
 import org.apache.thrift.TServiceClient;
@@ -37,6 +33,7 @@ public class LoginDialog extends AlertDialog implements OnClickListener,
     private EditText etPassword;
     private EditText spUsername;
     private CheckBox cbRemPwd;
+    private WindowManager.LayoutParams lp;
 
     private OnLoginSuccessListener mOnLoginSuccessListener;
 
@@ -55,6 +52,7 @@ public class LoginDialog extends AlertDialog implements OnClickListener,
 
     @Override
     public void show() {
+        getWindow().setAttributes(lp);
         super.show();
         if (mFirstTime) {
             //initUserData();
@@ -73,6 +71,10 @@ public class LoginDialog extends AlertDialog implements OnClickListener,
             cbRemPwd.setChecked(true);
         }
         cbRemPwd.setOnCheckedChangeListener(this);
+        lp = new WindowManager.LayoutParams();
+        lp.copyFrom(getWindow().getAttributes());
+        lp.width = WindowManager.LayoutParams.MATCH_PARENT;
+        lp.height = WindowManager.LayoutParams.MATCH_PARENT;
     }
 
     @Override

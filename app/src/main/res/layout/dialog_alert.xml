@@ -1,40 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
 <merge xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content" >
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
 
     <LinearLayout
-        android:layout_width="600dp"
-        android:layout_height="wrap_content"
-        android:background="@drawable/panel_background_red"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_centerHorizontal="true"
+        android:background="@android:color/white"
         android:orientation="vertical" >
 
-        <LinearLayout
-            android:layout_width="match_parent"
+        <TextView
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:gravity="center"
-            android:paddingTop="20dp" >
+            android:layout_gravity="center_horizontal"
+            android:paddingTop="160dp"
+            android:text="@string/company_name"
+            android:textAppearance="@style/TextAppearance.Black_large" />
 
-            <ImageView
-                android:layout_width="50dp"
-                android:layout_height="wrap_content"
-                android:background="@drawable/dotted_line5" />
-
-            <TextView
-                android:id="@+id/tv_title"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:paddingLeft="5dp"
-                android:paddingRight="5dp"
-                android:text=""
-                android:textAppearance="?android:attr/textAppearanceLarge" />
-
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:background="@drawable/dotted_line5" />
-        </LinearLayout>
+        <TextView
+            android:id="@+id/tv_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:paddingTop="110dp"
+            android:paddingBottom="50dp"
+            android:text=""
+            android:textAppearance="@style/TextAppearance.Black" />
 
         <LinearLayout
             android:id="@+id/ll_message"
@@ -48,8 +40,9 @@
                 android:id="@+id/tv_message"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textAppearance="?android:attr/textAppearanceLarge"
-                android:textColor="@android:color/white" />
+                android:paddingLeft="100dp"
+                android:paddingRight="100dp"
+                android:textAppearance="@style/TextAppearance.Black"/>
         </LinearLayout>
 
         <FrameLayout
@@ -57,8 +50,8 @@
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:paddingLeft="5dp"
-            android:paddingRight="5dp" >
+            android:paddingLeft="100dp"
+            android:paddingRight="100dp" >
         </FrameLayout>
 
         <LinearLayout

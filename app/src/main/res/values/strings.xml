@@ -3,6 +3,7 @@
 
     <!-- strings in activity_main.xml -->
     <string name="app_name">Hummingbird</string>
+    <string name="company_name">Hummingbird System</string>
     <string name="pre_key_clear_image_cache">pre_key_clear_image_cache</string>
     <string name="pre_key_custom_api_addr">pre_key_custom_api_addr</string>
     <string name="pre_key_custom_api_suffix">pre_key_custom_api_suffix</string>
@@ -12,7 +13,7 @@
     <string name="password">Password</string>
     <string name="password_required">Please enter your password.</string>
     <string name="remember_password">Remember me</string>
-    <string name="login_welcome">Sign In</string>
+    <string name="login_welcome">Login Information:</string>
     <string name="welcome">Welcome</string>
     <string name="not_login">Please log in</string>
     <string name="confirm_logout">Are you sure to log out?</string>
